@@ -19,8 +19,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/tyirv/Desktop/GitHub/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/tyirv/Desktop/GitHub/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Discover.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY292ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tyirv/Desktop/GitHub/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Favourites.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmF2b3VyaXRlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/tyirv/Desktop/GitHub/481-Group-Project/481 Portfolio/CookingInstructor/Pages/FetchData.razor]
