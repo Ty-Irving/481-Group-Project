@@ -1,9 +1,11 @@
-class Recipe{
+namespace CookingInstructor.Recipe;
+
+public class Recipe{
     String Name { get; set;}
-    String Thumbnail ="url" { get; set;}
+    //String Thumbnail ="url" { get; set;}
     String Category { get; set;}
-    Ingredient[] IngredientList { get; set;}
-    String [] Steps { get; set;}
+    Ingredient[]? IngredientList { get; set;}
+    String []? Steps { get; set;}
     int Spicy { get; set;}
     int Difficulty { get; set;}
     int Time { get; set;}
