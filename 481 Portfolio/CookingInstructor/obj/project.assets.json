@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\tyirv\\.nuget\\packages\\": {}
+    "C:\\Users\\sparr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tyirv\\Desktop\\GitHub\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
+      "projectUniqueName": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
       "projectName": "CookingInstructor",
-      "projectPath": "C:\\Users\\tyirv\\Desktop\\GitHub\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
-      "packagesPath": "C:\\Users\\tyirv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tyirv\\Desktop\\GitHub\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\",
+      "projectPath": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
+      "packagesPath": "C:\\Users\\sparr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tyirv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sparr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -63,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

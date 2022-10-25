@@ -1,22 +1,22 @@
-namespace CookingInstructor.Recipe;
+namespace CookingInstructor.RecipeNS;
 
 public class Recipe{
-    String Name { get; set;}
+    public String ? Name { get; set;} // ? here represents nullable variables
     //String Thumbnail ="url" { get; set;}
-    String Category { get; set;}
-    Ingredient[]? IngredientList { get; set;}
-    String []? Steps { get; set;}
-    int Spicy { get; set;}
-    int Difficulty { get; set;}
-    int Time { get; set;}
-    int Servings { get; set;}
-    int CaloriesPerServing { get; set;}
-    bool isFavorite { get; set;}
+    public String ? Category { get; set;}
+    public Ingredient[] ? IngredientList { get; set;}
+    public String[] ? Steps { get; set;}
+    public int Spicy { get; set;}
+    public int Difficulty { get; set;}
+    public int Time { get; set;}
+    public int Servings { get; set;}
+    public int CaloriesPerServing { get; set;}
+    public bool isFavorite { get; set;}
     
 }
 
 
-class Ingredient{
+public class Ingredient{
     public String Name { get; set;}
     public String Unit { get; set;}
     public float Amount { get; set;}

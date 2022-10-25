@@ -25,3 +25,30 @@ C:\Users\tyirv\Desktop\GitHub\481-Group-Project\481 Portfolio\CookingInstructor\
 C:\Users\tyirv\Desktop\GitHub\481-Group-Project\481 Portfolio\CookingInstructor\obj\Debug\net6.0\ref\CookingInstructor.dll
 C:\Users\tyirv\Desktop\GitHub\481-Group-Project\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.pdb
 C:\Users\tyirv\Desktop\GitHub\481-Group-Project\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.genruntimeconfig.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.csproj.AssemblyReference.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.AssemblyInfoInputs.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.AssemblyInfo.cs
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.csproj.CoreCompileInputs.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.RazorAssemblyInfo.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.RazorAssemblyInfo.cs
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.dll
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.pdb
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\appsettings.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.staticwebassets.runtime.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.exe
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.deps.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.runtimeconfig.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.dll
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\bin\Debug\net6.0\CookingInstructor.pdb
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\bundle\CookingInstructor.styles.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\projectbundle\CookingInstructor.bundle.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\refint\CookingInstructor.dll
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.genruntimeconfig.cache
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\ref\CookingInstructor.dll
