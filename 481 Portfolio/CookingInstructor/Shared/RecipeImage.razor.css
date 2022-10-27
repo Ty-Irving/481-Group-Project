@@ -1,0 +1,48 @@
+.Recipe{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.Recipe img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.spicyLevel{
+    color: red;
+    position:absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.difficultyLevel{
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.recipeLink{
+    text-decoration: none;
+    position: relative;
+    width: 300px;
+}
+
+.recipeLink h1{
+    text-align: center;
+    width: 300px;
+    color: black;
+}
+
+.recipeTime{
+    display: inline;
+    color: white;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    
+    font-style: bold;
+}
+
