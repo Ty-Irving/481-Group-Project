@@ -1,0 +1,18 @@
+<a href = "@Link" class = "cuisineLink">
+    <div class = "Cuisine">
+        <img class = "cuisineImage" src = "@Image">
+    </div>
+    <h1>@Name</h1>
+</a>
+
+@code {
+    [Parameter]
+    public string? Image { get; set; }
+
+    [Parameter]
+    public string? Name { get; set; }
+
+    [Parameter]
+    public string? Link { get; set; }
+
+}
