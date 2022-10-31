@@ -21,11 +21,7 @@ jobs:
     
     - name: change directory
       run: |
-        cd 481\ Portfolio/
-
-    - name: change directory
-      run: |
-        cd CookingInstructor/
+        cd 481\ Portfolio/CookingInstructor/
     
     - name: dotnet build and publish
       run: |
