@@ -1,42 +1,33 @@
-on: [push]
-
-name: AzurePowerShellLoginSample
-
-env:
-  DOTNET_VERSION: '6.0.100'
-  AZURE_WEBAPP_NAME: CPSC481
-  AZURE_WEBAPP_PACKAGE_PATH: '.'
-  
+name: Deploy To Azure
+on:
+  push:
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    
-    - uses: actions/checkout@main
-    
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{env.DOTNET_VERSION}}
+    - uses: actions/checkout@master
     
     - name: change directory
       run: |
         cd 481\ Portfolio/CookingInstructor/
-    
-    - name: dotnet build and publish
-      run: |
-        dotnet restore
-        dotnet build --configuration Release
-        dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
         
-    - name: Azure Login
-      uses: azure/login@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        dotnet-version: 6.0.100
+    
+    # dotnet build and publish
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+    - name: dotnet publish
+      run: |
+        dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
         
     - name: 'Run Azure webapp deploy action using publish profile credentials'
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v1
       with: 
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.DEV_AZURE_WEBAPP_PUBLISH_PROFILE  }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
+        app-name: mydotnetcoreapp # Replace with your app name
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }} 
+        package: ${{env.DOTNET_ROOT}}/myapp 
