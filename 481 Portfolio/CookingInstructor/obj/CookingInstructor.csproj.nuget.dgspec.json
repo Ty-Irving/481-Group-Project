@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj": {}
+    "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj": {
+    "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
+        "projectUniqueName": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
         "projectName": "CookingInstructor",
-        "projectPath": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
-        "packagesPath": "C:\\Users\\sparr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\",
+        "projectPath": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\CookingInstructor.csproj",
+        "packagesPath": "C:\\Users\\elgiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sparr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elgiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

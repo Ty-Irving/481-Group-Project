@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OIMRHyTGNjBGZZ2myDyQNw8k9uOGIYS7d56GDVyxv4s=",
+  "Hash": "R19GbgBjafBk5OR7FJ5yk6+Qc8Jo/IGX5m6qBNW3zZI=",
   "Source": "CookingInstructor",
   "BasePath": "_content/CookingInstructor",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CookingInstructor\\wwwroot",
       "Source": "CookingInstructor",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CookingInstructor.styles.css",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CookingInstructor.styles.css",
       "SourceId": "CookingInstructor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "CookingInstructor.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CookingInstructor.styles.css"
+      "OriginalItemSpec": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CookingInstructor.styles.css"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CookingInstructor.bundle.scp.css",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CookingInstructor.bundle.scp.css",
       "SourceId": "CookingInstructor",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "CookingInstructor.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CookingInstructor.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CookingInstructor.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\css\\site.css",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\favicon.ico",
       "SourceId": "CookingInstructor",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "ContentRoot": "D:\\Fun\\481-Group-Project\\481 Portfolio\\CookingInstructor\\wwwroot\\",
       "BasePath": "_content/CookingInstructor",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",

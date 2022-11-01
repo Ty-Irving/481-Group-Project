@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CookingInstructor
 build_property.RootNamespace = CookingInstructor
-build_property.ProjectDir = C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\
+build_property.ProjectDir = D:\Fun\481-Group-Project\481 Portfolio\CookingInstructor\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor
+build_property.MSBuildProjectDirectory = D:\Fun\481-Group-Project\481 Portfolio\CookingInstructor
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/App.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/Discover.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Discover.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY292ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/Favourites.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Favourites.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmF2b3VyaXRlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/FetchData.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/Index.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Shared/SurveyPrompt.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/_Imports.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Shared/MainLayout.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-l5r0d4vev0
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Shared/NavMenu.razor]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-birjrxxdut
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/Error.cshtml]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/_Host.cshtml]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sparr/Desktop/Test/my stuff/cpsc481/481 Portfolio/CookingInstructor/Pages/_Layout.cshtml]
+[D:/Fun/481-Group-Project/481 Portfolio/CookingInstructor/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
