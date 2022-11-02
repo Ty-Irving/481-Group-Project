@@ -39,6 +39,128 @@ public class Recipes
                 Servings = 3,
                 CaloriesPerServing = 621,
                 isFavorite = false
+            },
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Mapo Tofu", 
+                Category = "Chinese",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Tofu","g",700),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",25),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oil","g",20),
+                                  new CookingInstructor.RecipeNS.Ingredient("Ginger","g",20), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Chili Garlic Sauce ","g",30),
+                                  new CookingInstructor.RecipeNS.Ingredient("Soybean Paste","g",20), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Spicy Chili Sauce","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Hot Chili Sauce ","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Cooking wine","g",50),
+                                  new CookingInstructor.RecipeNS.Ingredient("Tapioca","g",15)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Cut Tofu into small cubes and slice Ginger, then add 1.5L water into your pot, add Tofu, Cooking wine, sliced Ginger, wait for boiling.",
+                         "2. Prepare a container, fill with cold water.Then take out the Tofu, put them in container. We want to cool down it, and make it stay like cube.",
+                         "3. Cut Red Paper,Galic,Onion Green into pieces",
+                         "4. Put all the Sauces in one container, more convenience for later useage.",
+                         "5. Add 5g Onion Green, Red Paper, Garlic, Oil and frying them for around 30 seconds.",
+                         "6. Add sauces into the pot and fry them evenly.",
+                         "7. Add 600ml water into pot.",
+                         "8. Add Tofu in the pot.",
+                         "9. Prepare some Tapioca water ---- add Tapioca then add cold water then stir it evenly.",
+                         "10. Add the Tapioca water into pot, immediately push the Tofu like following.",
+                         "11. Keep the pushing loop, you will find soup becomes thick.",
+                         "12. When the soup is thick enough, close the fire and add left Onion Green.",
+                         "13. You'll love it with some rice."},
+                Spicy = 3,
+                Difficulty = 2,
+                Time = 1,
+                Servings = 3,
+                CaloriesPerServing = 210,
+                isFavorite = false
+            },
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Spicy Fry Shredded Potato", 
+                Category = "Chinese",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Potato","g",600),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Rice Vinegar","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Seasoning Soy sauce","g",5),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oil","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt","g",3)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Shred the Potato and wash with cold water until the water looks clean, we want to keep the Potato fresh and crisp.",
+                         "2. Cut the Red Paper into small pieces.",
+                         "3. Add about 1.5L water into your pot and boil it. When you see boiling water, add Shredded Potato and Rice Vinegar, blanching for 20 seconds.After blanching, put Potato in a container(no water).",
+                         "4. Clean your pot, add Oil and Red Paper then frying till you feel sneeze.",
+                         "5. Add the Shredded Potato, keep frying for 40 seconds(at least).",
+                         "6. Add Salt, Seasoning Soy sauce then keep frying till Potato colored evenly.",
+                         "7. Finished!"},
+                Spicy = 2,
+                Difficulty = 1,
+                Time = 1,
+                Servings = 2,
+                CaloriesPerServing = 230,
+                isFavorite = false
+            },
+              new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Tomato-Egg Noodle", 
+                Category = "Chinese",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Tomato","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Egg","g",50),
+                                  new CookingInstructor.RecipeNS.Ingredient("Noodle","g",75),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oil","g",20),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt","g",3)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Cut Onion Green and Tomato into pieces.",
+                         "2. Hot your pot then add Tomato and 1.5g Salt in, keep frying till it looks like tomato paste.",
+                         "3. Add 500ml water into your pot, add 1.5g salt again then wait for the water boiling.",
+                         "4. When the water boiling add the Egg and Noodles. Stir them gentlely, you don't want Noodles stick with pot.",
+                         "5. At least boil the Noodle for 3min then you can add some Onion Green and close fire.",
+                         "6. Enjoy!"},
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 1,
+                Servings = 1,
+                CaloriesPerServing = 300,
+                isFavorite = false
+            },
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Tomato with Egg", 
+                Category = "Chinese",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Tomato","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Egg","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oil","g",70),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt","g",5)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Cut Onion Green into small pieces.",
+                         "2. Cut Tomato into small chunks.",
+                         "3. Stir Eggs with 2g Salt evenly.",
+                         "4. Hot your pot and add 50g Oil, when Oil temperature reach around 150 Celsius add Egg then wait it becomes stable. Then use your slice poke it into pieces.",
+                         "5. Take out the Egg, we will now cook the Tomato.",
+                         "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
+                         "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 1,
+                Servings = 2,
+                CaloriesPerServing = 480,
+                isFavorite = false
             }
         };
         return res;
