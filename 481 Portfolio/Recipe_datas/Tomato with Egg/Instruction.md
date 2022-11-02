@@ -22,3 +22,4 @@ Ingredients needed:
 6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.
    ![Alt text](6.jpg?raw=true)
 7. Then add Egg back to pot, frying for 30 seconds
+   ![Alt text](7.jpg?raw=true)
