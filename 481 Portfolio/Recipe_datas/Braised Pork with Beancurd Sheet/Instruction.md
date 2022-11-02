@@ -25,30 +25,26 @@ Ingredients needed:
    ![Alt text](2.jpg?raw=true)
 3. Use cold water to wash all the knoted Beancurd Sheets and put them somewhere convinence.
    ![Alt text](3.jpg?raw=true)
-   ![Alt text](4.jpg?raw=true)
 4. Cut part of Onion Greens into small pieces(Don't cut them all), as well as red paper.
-   ![Alt text](5.jpg?raw=true)
-   ![Alt text](6.jpg?raw=true)
+   ![Alt text](4.jpg?raw=true)
 5. Once the pork is soaked long enough, remove all the water.You should see the soaked water
    become red, since blood was came out.Then gently rinse it and put in a container.
-   ![Alt text](7.jpg?raw=true)
+   ![Alt text](5.jpg?raw=true)
 6. Heat your pot, add some Oil, Black bean, little bit chopped Onion Green, Garlic, Ginger. And fry until it smells fragrant.
-   ![Alt text](8.jpg?raw=true)
+   ![Alt text](6.jpg?raw=true)
 7. Add the pork and keep frying till the pork looks somehow brownish yellow.
-   ![Alt text](9.jpg?raw=true)
-   ![Alt text](10.jpg?raw=true)
+   ![Alt text](7.jpg?raw=true)
 8. Add both Dark soy sauce and Soy sauce then keep frying till the pork becomes evenly dark.
-   ![Alt text](11.jpg?raw=true)
+   ![Alt text](8.jpg?raw=true)
 9. Add some water that covers the pork.
-   ![Alt text](12.jpg?raw=true)
+   ![Alt text](9.jpg?raw=true)
 10. Add knoted Beancurd Sheets, red paper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on
     the water left in pot), remember to check the water level, we don't want to charred it.
-    ![Alt text](13.jpg?raw=true)
-    ![Alt text](14.jpg?raw=true)
+    ![Alt text](10.jpg?raw=true)
 11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether
     you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.
-    ![Alt text](15.jpg?raw=true)
+    ![Alt text](11.jpg?raw=true)
 12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup
     in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get
     this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion.
-    ![Alt text](16.jpg?raw=true)
+    ![Alt text](12.jpg?raw=true)
