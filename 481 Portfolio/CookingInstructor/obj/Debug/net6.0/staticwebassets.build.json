@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OIMRHyTGNjBGZZ2myDyQNw8k9uOGIYS7d56GDVyxv4s=",
+  "Hash": "it564EIZ8Qr2s+ZWF/CUmFYLd1ZLcNopwhv3y7iITVY=",
   "Source": "CookingInstructor",
   "BasePath": "_content/CookingInstructor",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\images\\star_black.png",
+      "SourceId": "CookingInstructor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "BasePath": "_content/CookingInstructor",
+      "RelativePath": "images/star_black.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\star_black.png"
+    },
+    {
+      "Identity": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\images\\star_yellow.jpg",
+      "SourceId": "CookingInstructor",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sparr\\Desktop\\Test\\my stuff\\cpsc481\\481 Portfolio\\CookingInstructor\\wwwroot\\",
+      "BasePath": "_content/CookingInstructor",
+      "RelativePath": "images/star_yellow.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\star_yellow.jpg"
     }
   ]
 }
