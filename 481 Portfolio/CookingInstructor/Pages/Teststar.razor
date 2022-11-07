@@ -1,0 +1,42 @@
+@page "/Teststar"
+
+<html>
+    <style>
+        button.clickable_img {
+            padding: 0;
+            border: none;
+            background: none;
+        }
+
+
+    </style>
+    <body>
+        <p>
+            Pretend this line to be important instruction!
+            <button @onclick=@change_stage class="clickable_img">
+                @if (is_star == false)
+                {
+                    <img src="/images/star_black.png" />
+                }
+                else
+                {
+                    <img src="/images/star_yellow.jpg" />
+                }
+            </button>
+        </p>
+    </body>
+</html>
+
+
+@code{
+    bool is_star = false;
+
+    void change_stage() {
+        if (is_star == false)
+            is_star = true;
+        else
+            is_star = false;
+    }
+
+
+}
