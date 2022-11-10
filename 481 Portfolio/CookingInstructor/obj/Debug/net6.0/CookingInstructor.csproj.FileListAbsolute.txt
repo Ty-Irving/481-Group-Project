@@ -52,3 +52,11 @@ C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj
 C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\refint\CookingInstructor.dll
 C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\CookingInstructor.genruntimeconfig.cache
 C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\ref\CookingInstructor.dll
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Pages\Discover.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Pages\Filter.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Pages\IngredientList.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Pages\SplitScroll.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Pages\ToolTip.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Shared\CuisineImage.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Shared\RecipeImage.razor.rz.scp.css
+C:\Users\sparr\Desktop\Test\my stuff\cpsc481\481 Portfolio\CookingInstructor\obj\Debug\net6.0\scopedcss\Shared\RecipeImageHorizontal.razor.rz.scp.css
