@@ -4,8 +4,66 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<div class="d-grid gap-3">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <button class="btn btn-primary me-3" type="button">Search Recipes</button>
+        <button class="btn btn-primary" type="button">Search by Ingredient</button>
+    </div>
 
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-primary" @onclick="dropdown">Filter</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+                <circle cx="10.5" cy="10.5" r="8"></circle>
+                <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
+            </svg></button>
+    </div>
+</div>
+
+@if (show == 1)
+{
+<div id="filterChecks" div style=border:5px solid black;">
+    <label>Time:</label>
+    <ul style="padding-left:0px">
+        <li style="display:inline"><input type="checkbox"> &lt;10min </li>
+        <li style="display:inline"><input type="checkbox"> &lt;20min </li>
+        <li style="display:inline"><input type="checkbox"> &lt;30min </li>
+        <li style="display:inline"><input type="checkbox"> &gt;30min </li>
+    </ul>
+
+    <label>Difficulty:</label>
+    <ul style="padding-left:0px">
+        <li style="display:inline"><input type="checkbox">Easy </li>
+        <li style="display:inline"><input type="checkbox">Medium </li>
+        <li style="display:inline"><input type="checkbox">Hard </li>
+    </ul>
+
+    <label>Types:</label>
+    <ul style="padding-left:0px">
+        <li style="display:inline"><input type="checkbox">Vegan </li>
+        <li style="display:inline"><input type="checkbox">Vegetarian </li>
+        <li style="display:inline"><input type="checkbox">GF </li>
+    </ul>
+</div>
+}
+
+@code {
+    private int show = 0;
+    
+    private void dropdown()
+    {
+        if(show == 0)
+        {
+            show = 1;
+        }
+        else
+        {
+            show = 0;
+        } 
+    } 
+}
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 
