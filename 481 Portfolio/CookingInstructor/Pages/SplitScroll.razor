@@ -32,23 +32,16 @@
 
    @if (show == 1)
   {
-     <div class = "stepList">
-           <input type="checkbox" id="Ingridient1" name="Ingridient1" value="XXXX">
-		   			<label for="Ingridient1"> Do this</label><br>
-           <input type="checkbox" id="Ingridient2" name="Ingridient2" value="XXXX">
-					<label for="Ingridient2"> That</label><br> 
-           <input type="checkbox" id="Ingridient3" name="Ingridient3" value="XXXX">
-					<label for="Ingridient3"> Then</label><br> 
-           <input type="checkbox" id="Ingridient4" name="Ingridient4" value="XXXX">
-					<label for="Ingridient4"> Doo that</label><br> 
-           <input type="checkbox" id="Ingridient5" name="Ingridient5" value="XXXX">
-					<label for="Ingridient5"> Bread</label><br>
-            <input type="checkbox" id="Ingridient1" name="Ingridient1" value="XXXX">
-		   			<label for="Ingridient1"> Do this</label><br>
-    </div>  
+<div class="stepList">
+
+    @for (int i=0;i<instruction_lists.Length;i++){
+        <input type="checkbox" />                      <!---id="Instruction" name="Instruction" value="XXXX"-->
+        <Teststar Value=@instruction_lists[i] important=@importants[i]></Teststar>
+
+    }
+
+</div>
 }
-
-
 
 
 @code {
@@ -57,20 +50,31 @@
     private string stepColor = "background-color: #e7e7e7; color: black;";
     private string color1 = "background-color:blue; color: white;";
     private string color2 = "background-color: #e7e7e7; color: black;";
-    
+
+    string[] instruction_lists = {
+    "1. Preheat oven to 325¡ã F.",
+    "2. Season the beef chunks on all sides with salt and pepper. Sprinkle the flour over and toss the seasoned beef to coat it on all sides.",
+    "3. Heat the olive oil in a large Dutch oven over medium heat. Brown the beef in batches, on all sides, for 3-4 minutes per batch. ",
+    "4. Don¡¯t worry about cooking the beef all the way through at this stage. Transfer the browned beef to a plate and set aside.",
+    "5. Add the onions, garlic, and carrots to the Dutch oven, and cook, stirring occasionally, for 2-3 minutes, or until slightly browned.",
+    "6. Add the potatoes, beef broth, tomato paste, bay leaf, thyme, and Worcestershire sauce, and use a wooden spoon to scrape the browned bits from the bottom of the pot.",
+    "7. Bring the mixture to a simmer, stirring, and return the beef to the pot. Cover the Dutch oven, and transfer to the preheated oven.",
+    "8. Cook the stew for 2-2.5 hours, or until the beef is very tender. Remove the bay leaf. Taste the stew and season with additional salt and pepper, if necessary. Serve warm."};
+
+    bool[] importants = {false,true,true,false,true,false,false,true };
 
     private void ing()
     {
         show = 0;
         ingColor = color1;
         stepColor = color2;
-        
-    } 
+
+    }
 
     private void step()
     {
         show = 1;
         ingColor = color2;
         stepColor = color1;
-    } 
+    }
 }

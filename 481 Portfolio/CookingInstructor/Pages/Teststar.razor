@@ -1,40 +1,53 @@
 @page "/Teststar"
 
 <html>
-    <style>
-        button.clickable_img {
-            padding: 0;
-            border: none;
-            background: none;
-        }
-    </style>
-    <body>
-        <p>
-            Pretend this line to be important instruction!
+<style>
+    button.clickable_img {
+        padding: 0;
+        border: none;
+        background: none;   
+    }
+    img.img_layout {
+        width:50px;
+        height:50px;
+    }
+</style>
+<body>
+    <p>
+        @Value
+        @if (important)
+        {
             <button @onclick=@change_stage class="clickable_img">
-                @if (is_star == false)
-                {
-                    <img src="/images/star_black.png" />
-                }
-                else
-                {
-                    <img src="/images/star_black.png" style="filter: invert(80%) sepia(42%) saturate(1211%) hue-rotate(359deg) brightness(103%) contrast(102%);"/>
-                }
+            @if (is_star == false)
+            {
+                <img class="img_layout" src="/images/star_black.png" />
+            }
+            else
+            {
+                <img class="img_layout" src="/images/star_black.png" style="filter: invert(80%) sepia(42%) saturate(1211%) hue-rotate(359deg) brightness(103%) contrast(102%);" />
+            }
             </button>
-        </p>
-    </body>
+        }
+    </p>
+</body>
 </html>
 
 
 @code{
-    bool is_star = false;
+    [Parameter]
+    public string? Value { get; set; }
 
-    void change_stage() {
+    [Parameter]
+    public bool important { get; set; } = false;
+
+
+    bool is_star = false;
+    void change_stage()
+    {
         if (is_star == false)
             is_star = true;
         else
             is_star = false;
     }
-
 
 }
