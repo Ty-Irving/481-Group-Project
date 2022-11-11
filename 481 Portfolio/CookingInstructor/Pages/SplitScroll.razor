@@ -1,55 +1,51 @@
- <button class="ingListBut" style = "@ingColor" @onclick="ing">Ingredients (3/18)</button>
- <button class="stepListBut" style = "@stepColor" @onclick="step">Directions</button>
- 
- @if (show == 0)
-  {
-    <div class = "ingList">
-           <input type="checkbox" id="Ingridient1" name="Ingridient1" value="XXXX">
-		   			<label for="Ingridient1"> Tomatoes</label><br>
-           <input type="checkbox" id="Ingridient2" name="Ingridient2" value="XXXX">
-					<label for="Ingridient2"> Peanut Butter</label><br> 
-           <input type="checkbox" id="Ingridient3" name="Ingridient3" value="XXXX">
-					<label for="Ingridient3"> Beef</label><br> 
-           <input type="checkbox" id="Ingridient4" name="Ingridient4" value="XXXX">
-					<label for="Ingridient4"> Ass cheeks</label><br> 
-           <input type="checkbox" id="Ingridient5" name="Ingridient5" value="XXXX">
-					<label for="Ingridient5"> Bread</label><br>
-            <input type="checkbox" id="Ingridient6" name="Ingridient6" value="XXXX">
-					<label for="Ingridient6"> Coca-Cola</label><br>
-           <input type="checkbox" id="Ingridient7" name="Ingridient7" value="XXXX">
-					<label for="Ingridient7"> Coca-Cola</label><br>
-           <input type="checkbox" id="Ingridient8" name="Ingridient8" value="XXXX">
-					<label for="Ingridient8"> Coca-Cola</label><br>
-           <input type="checkbox" id="Ingridient9" name="Ingridient9" value="XXXX">
-					<label for="Ingridient9"> Coca-Cola</label><br>
-           <input type="checkbox" id="Ingridient10" name="Ingridient10" value="XXXX">
-					<label for="Ingridient10"> Coca-Cola</label><br>
-            <input type="checkbox" id="Ingridient11" name="Ingridient11" value="XXXX">
-		   			<label for="Ingridient11"> Tomatoes</label><br>
-        
-     </div>
-     }
 
-   @if (show == 1)
-  {
-<div class="stepList">
+<button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@incheck_num/@sample_ingredients.Length)</button>
+<button class="stepListBut" style="@stepColor" @onclick="step">Directions</button>
 
-    @for (int i=0;i<instruction_lists.Length;i++){
-        <input type="checkbox" />                      <!---id="Instruction" name="Instruction" value="XXXX"-->
-        <Teststar Value=@instruction_lists[i] important=@importants[i]></Teststar>
+@if (show == 0)
+{
+    <div class="ingList">
+        @for (int i = 0; i < sample_ingredients.Length; i++)
+        {
 
-    }
+            <input type="checkbox"  @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
+            <label>@i.@sample_ingredients[i] </label>
+            <br />
 
-</div>
+        }
+
+    </div>
+}
+
+@if (show == 1)
+{
+    <div class="stepList">
+
+        @for (int i = 0; i < instruction_lists.Length; i++)
+        {
+            <input type="checkbox" /> <!---id="Instruction" name="Instruction" value="XXXX"-->
+            <Teststar Value=@instruction_lists[i] important=@importants[i]></Teststar>
+
+        }
+
+    </div>
 }
 
 
 @code {
+    <!---[Parameter]
+    public string[] ingredient_lists { get; set; }-->
+
     private int show = 0;
     private string ingColor = "background-color:blue; color: white;";
     private string stepColor = "background-color: #e7e7e7; color: black;";
     private string color1 = "background-color:blue; color: white;";
     private string color2 = "background-color: #e7e7e7; color: black;";
+
+    string[] sample_ingredients = {"Beef","Kosher Salt","Black Pepper","Flour","Olive Oil",
+                                   "Yellow Onion","Garlic Cloves","Carrot","Potato", "Beef Broth",
+                                   "Tomato Paste","Worcestershire Sauce","Bay Leaves","Thyme Leaves"};
+
 
     string[] instruction_lists = {
     "1. Preheat oven to 325бу F.",
@@ -61,7 +57,16 @@
     "7. Bring the mixture to a simmer, stirring, and return the beef to the pot. Cover the Dutch oven, and transfer to the preheated oven.",
     "8. Cook the stew for 2-2.5 hours, or until the beef is very tender. Remove the bay leaf. Taste the stew and season with additional salt and pepper, if necessary. Serve warm."};
 
-    bool[] importants = {false,true,true,false,true,false,false,true };
+    bool[] importants = { false, true, true, false, true, false, false, true };
+
+    int incheck_num;
+    bool[] ingMember;
+    public SplitScroll()
+    {
+        ingMember = new bool[sample_ingredients.Length];
+        incheck_num = 0;
+    }
+
 
     private void ing()
     {
@@ -69,6 +74,11 @@
         ingColor = color1;
         stepColor = color2;
 
+    }
+
+    void ingChange(ChangeEventArgs evt)
+    {
+        incheck_num = 5;
     }
 
     private void step()
