@@ -1,12 +1,7 @@
-body {
-  background-color: #ffeead;
-  font-size: 20px;
-}
-
 
 .header1 {
   display: flex;
-  background-color: #ce9d96;
+
   height: 40px;
 }
 .header1 > div:nth-child(4) {
@@ -23,7 +18,7 @@ body {
 }
 
 .header2 {
-  background-color: #96ceb4;
+  
   display: flex;
   justify-content: space-evenly;
 }
@@ -31,11 +26,20 @@ body {
   margin-left: auto;
   padding: 0 10px;
 }
+.header2 > div:nth-child(2) {
+  margin-left: auto;
+  padding: 0 10px;
+}
+.header2 > div:nth-child(1) {
+  
+  padding: 0 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
 
 
 .header3 {
   display: flex;
-  background-color: #96ceb4;
   justify-content: space-evenly;
   font-size: 17px;
 }
@@ -45,7 +49,6 @@ body {
 .content 
 {
   padding: 0 10px;
-  background-color: #ffcc5c;
   width: auto
 }
 
