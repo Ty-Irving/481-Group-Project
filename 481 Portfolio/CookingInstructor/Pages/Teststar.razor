@@ -8,8 +8,17 @@
         background: none;   
     }
     img.img_layout {
-        width:50px;
-        height:50px;
+        position: absolute;
+        width:40px;
+        height:40px;
+        right: 10px;
+        margin-top: -27px;
+        
+    }
+    img.steps_layout {
+        width:350px;
+        height:200px;
+        margin-bottom: 10px;
     }
 </style>
 <body>
@@ -29,6 +38,11 @@
             </button>
         }
     </p>
+
+     @if (image != "")
+        {
+            <img class="steps_layout" src=@image/>
+        }
 </body>
 </html>
 
@@ -39,6 +53,8 @@
 
     [Parameter]
     public bool important { get; set; } = false;
+    [Parameter]
+    public string image { get; set;} = "";
 
 
     bool is_star = false;

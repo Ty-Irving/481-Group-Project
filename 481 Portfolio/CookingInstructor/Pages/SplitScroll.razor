@@ -22,12 +22,12 @@
 
 @if (show == 1)
 {
-    <div class="stepList">
+    <div class="stepList " >
 
         @for (int i = 0; i < instruction_lists.Length; i++)
         {
              <!---id="Instruction" name="Instruction" value="XXXX"-->
-            <Teststar Value=@instruction_lists[i] important=@importants[i]></Teststar>
+            <Teststar Value=@instruction_lists[i] important=@importants[i] image=@image[i]></Teststar>
 
         }
 
@@ -61,6 +61,7 @@
     "8. Cook the stew for 2-2.5 hours, or until the beef is very tender. Remove the bay leaf. Taste the stew and season with additional salt and pepper, if necessary. Serve warm."};
 
     bool[] importants = { true, true, true, true, true, true, true, true };
+    string[] image = {"", "/BeefStew/bef.JPG", "", "", "", "", "", ""};
 
     int incheck_num;
     bool[] ingMember;
