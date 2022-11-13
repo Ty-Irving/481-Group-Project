@@ -21,3 +21,9 @@ div.stepList
   overflow-y:scroll;
 }
 
+.buttons
+{
+  margin-bottom: 10px;
+  margin-left: 60px;
+}
+

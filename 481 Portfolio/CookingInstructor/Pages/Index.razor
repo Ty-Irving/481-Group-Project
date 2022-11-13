@@ -2,23 +2,25 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="text-center">Hello, world!</h1>
 
-<div class="d-grid gap-3">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <button class="btn btn-primary me-3" type="button">Search Recipes</button>
-        <button class="btn btn-primary" type="button">Search by Ingredient</button>
-    </div>
+    <div class="d-grid gap-3">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <button class="btn btn-primary me-3" type="button">Search Recipes</button>
+            <button class="btn btn-primary" type="button">Search by Ingredient</button>
+        </div>
 
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary" @onclick="dropdown">Filter</button>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
-                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="mx-3">
-                <circle cx="10.5" cy="10.5" r="8"></circle>
-                <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
-            </svg></button>
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary" @onclick="dropdown">Filter</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+                    <circle cx="10.5" cy="10.5" r="8"></circle>
+                    <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
+                </svg></button>
+        </div>
     </div>
 </div>
 
@@ -67,4 +69,3 @@
 
 
 
-<!-- If someone can figure out this lame gradient CSS I would appreciate it I cant figure out how to do it -->
