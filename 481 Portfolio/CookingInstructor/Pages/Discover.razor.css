@@ -1,49 +1,4 @@
 
-.header1 {
-  display: flex;
-
-  height: 40px;
-}
-.header1 > div:nth-child(4) {
-  margin-left: auto;
-  padding: 0 10px;
-}
-.header1 > div:nth-child(3) {
-  margin-left: auto;
-  padding: 0 10px;
-}
-.header1 > div:nth-child(2) {
-  margin-left: auto;
-  padding: 0 10px;
-}
-
-.header2 {
-  
-  display: flex;
-  justify-content: space-evenly;
-}
-.header2 > div:nth-child(3) {
-  margin-left: auto;
-  padding: 0 10px;
-}
-.header2 > div:nth-child(2) {
-  margin-left: auto;
-  padding: 0 10px;
-}
-.header2 > div:nth-child(1) {
-  
-  padding: 0 10px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-
-.header3 {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: 17px;
-}
-
 
 
 .content 
@@ -53,4 +8,52 @@
 }
 
 
-  
+.Categories{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-container{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h1{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+@media screen and (min-width:0px) and (max-width: 1130px){
+
+  .cuisineLink{
+    margin-right: 0;
+  }
+
+  .search-container{
+    width: 310px;
+  }
+}
+
+@media (min-width:1131px) and (max-width:1664px) {
+  .search-container{
+    width: 620px;
+  }
+}
+
+
+@media (min-width:1665px){
+  .search-container{
+    width: 940px;
+  }
+}
