@@ -8,11 +8,11 @@
 @if (show == 0)
 {
     <div class="ingList">
-        @for (int i = 0; i < sample_ingredients.Length; i++)
+        @for (int i = 1; i < sample_ingredients.Length + 1; i++)
         {
 
             <input type="checkbox"  @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
-            <label>@i.@sample_ingredients[i] </label>
+            <label>@i.@sample_ingredients[i - 1] </label>
             <br />
 
         }

@@ -1,11 +1,11 @@
 
-.header1 {
+/* .header1 {
   display: flex;
   height: 40px;
   justify-content: left;
-  /* background-color: lightblue; */
+  /* background-color: lightblue; 
   
-}
+}*/
 .header1 > div:nth-child(4) {
   margin-left: auto;
  
@@ -84,7 +84,7 @@
 .difficulty
 {
   margin-top: 5px;
-}
+} */
 
 
 
