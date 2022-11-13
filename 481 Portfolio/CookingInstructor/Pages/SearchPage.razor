@@ -1,0 +1,55 @@
+@page "/searchpage"
+
+<PageTitle>Searches</PageTitle>
+
+<body>
+
+<div class="d-grid gap-3">
+
+    <div class="h-100 d-flex align-items-center justify-content-center" style="max-width: 812px;">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+                <circle cx="10.5" cy="10.5" r="8"></circle>
+                <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
+            </svg></button>
+    </div>
+</div>
+
+
+<div class = "recipeContainer">
+    <RecipeImageHorizontal
+        Image="https://cdn.apartmenttherapy.info/image/upload/v1568036839/k/Photo/Series/2019-09-snapshot-cooking-garlic-butter/2019-09-04_Kitchn83894_.jpg"
+        Difficulty=1
+        SpicyLevel=false
+        Name="Beef"
+        Time=15
+    />
+
+    <RecipeImageHorizontal
+        Image="https://media.istockphoto.com/photos/butter-chicken-curry-with-tender-chicken-breast-cream-butter-honey-picture-id673858790?k=20&m=673858790&s=612x612&w=0&h=OKRaFJU0mHL2-Zr6MdqTf_OLgB7MDcbTSaXvs7OAsDg="
+        Difficulty=2
+        SpicyLevel=true
+        Name="Curry"
+        Time=40
+    />
+
+    <RecipeImageHorizontal
+        Image="https://lemonsandzest.com/wp-content/uploads/2021/05/Air-Fryer-Fish-Tacos-16.jpg"
+        Difficulty=3
+        SpicyLevel=false
+        Name="Fish Tacos"
+        Time=60
+    />
+
+    <RecipeImageHorizontal
+        Image="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-05-Fried-Chicken-Sandwich%2Fchicken-sandwich-4"
+        Difficulty=1
+        SpicyLevel=true
+        Name="Chicken Sandwich"
+        Time=20
+    />
+</div>
+</body>
+
