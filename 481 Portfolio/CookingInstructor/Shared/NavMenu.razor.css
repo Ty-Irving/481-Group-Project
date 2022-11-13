@@ -1,4 +1,18 @@
+a {
+    color: black;
+}
+a:focus {
+    color: black;
+}
+
+li {
+    border: black 1px solid;
+}
 
 .bottom{
     bottom: 0;
+}
+
+.full-width {
+    width: 100%;
 }

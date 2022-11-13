@@ -1,16 +1,56 @@
 ﻿
-<nav class="fixed-bottom bg-light">
+<nav class="fixed-bottom bg-light mw-100">
   <div>
       <ul class="nav justify-content-center">
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <li class="nav-item"
+            style="background-color: @bgHome;">
+              <a class="nav-link"
+                aria-current="page" 
+                href="/"
+                @onclick="OnClickHome" >
+              Home</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="favourites">Favourites</a>
+          <li class="nav-item"
+            style="background-color: @bgDiscover;">
+              <a class="nav-link" 
+                href="discover"
+                @onclick="OnClickDiscover" >
+              Discover</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="discover">Discover</a>
+          <li class="nav-item"
+            style="background-color: @bgFav;">
+              <a class="nav-link" 
+                href="favourites"
+                @onclick="OnClickFavourites" >
+              Favourites</a>
           </li>
       </ul>
   </div>
 </nav>
+
+@code {
+    private static String bgHighlight = "lightgray";
+    private static String bgNormal = "white";
+
+    private String bgHome { get; set; } = bgHighlight;
+    private String bgDiscover { get; set; } = bgNormal;
+    private String bgFav { get; set; } = bgNormal;
+
+    public void OnClickHome() {
+        bgHome      = bgHighlight;
+        bgDiscover  = bgNormal;
+        bgFav       = bgNormal;
+    }
+
+    public void OnClickDiscover() {
+        bgHome      = bgNormal;
+        bgDiscover  = bgHighlight;
+        bgFav       = bgNormal;
+    }
+    
+    public void OnClickFavourites() {
+        bgHome      = bgNormal;
+        bgDiscover  = bgNormal;
+        bgFav       = bgHighlight;
+    }
+}
