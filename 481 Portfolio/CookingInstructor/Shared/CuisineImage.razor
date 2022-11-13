@@ -1,9 +1,9 @@
 <a href = "@Link" class = "cuisineLink">
     <div class = "Cuisine">
         <img class = "cuisineImage" src = "@Image">
-                <div class = "image-overlay"></div>
+        <div class = "image-overlay"></div>
         <h2>@Name</h2>
-        <h6>10 recipes</h6>
+        <h6>@NumberRecipes Recipes</h6>
     </div>
 </a>
 
@@ -13,6 +13,9 @@
 
     [Parameter]
     public string? Name { get; set; }
+    
+    [Parameter]
+    public int? NumberRecipes { get; set; }
 
     [Parameter]
     public string? Link { get; set; }
