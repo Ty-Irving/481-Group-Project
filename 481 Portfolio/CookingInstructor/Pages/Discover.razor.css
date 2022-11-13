@@ -3,6 +3,7 @@
   display: flex;
   height: 40px;
   justify-content: left;
+  /* background-color: lightblue; */
   
 }
 .header1 > div:nth-child(4) {
@@ -44,9 +45,6 @@
   font-size: 17px;
 }
 
-.back {
-  margin-top: 10px;
-}
 
 .image {
   display: flex;
