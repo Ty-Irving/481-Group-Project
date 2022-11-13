@@ -22,6 +22,22 @@
                 </svg></button>
         </div>
     </div>
+
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Your Ingredients</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option class="my-2"><IngredientsEntry title="Potato" addRemove="X"/><IngredientsEntry title="Onion" addRemove="X"/></option>
+            <option class="my-2"><IngredientsEntry title="Garlic" addRemove="X"/><IngredientsEntry title="Ground Beef" addRemove="X"/></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Common Ingredients</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option class="my-2"><IngredientsEntry title="Onion" addRemove="+"/><IngredientsEntry title="Chicken" addRemove="+"/></option>
+            </select>
+        </div>
+    </form>
 </div>
 
 @if (show == 1)
