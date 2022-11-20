@@ -11,10 +11,9 @@
         @for (int i = 1; i < sample_ingredients.Length + 1; i++)
         {
 
-            <input type="checkbox"  @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
-            <label>@i.@sample_ingredients[i - 1] </label>
-            <br />
-
+            <input type="checkbox" id = "ings" name = "ings" @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
+            <label>@sample_ingredients[i - 1]  </label>
+            <br/>
         }
 
     </div>
@@ -45,9 +44,9 @@
     private string color1 = "background-color:blue; color: white;";
     private string color2 = "background-color: #e7e7e7; color: black;";
 
-    string[] sample_ingredients = {"Beef","Kosher Salt","Black Pepper","Flour","Olive Oil",
-                                   "Yellow Onion","Garlic Cloves","Carrot","Potato", "Beef Broth",
-                                   "Tomato Paste","Worcestershire Sauce","Bay Leaves","Thyme Leaves"};
+    string[] sample_ingredients = {"2 lbs Beef cut into 2-inch chunks","1 Tsp Kosher Salt","½ Tsp Black Pepper","2 Tbsp Flour","2 Tbsp Olive Oil",
+                                   "½ Yellow Onion","4 Garlic Cloves","1 Large (or 2 medium) Carrot","2 Potato", "2 cups Beef Broth",
+                                   "quarter cup Tomato Paste","1 tsp Worcestershire Sauce","1 Bay Leaves"," 2 TspThyme Leaves"};
 
 
     string[] instruction_lists = {
@@ -82,7 +81,16 @@
 
     void ingChange(ChangeEventArgs evt)
     {
-        incheck_num = 5;
+        @* if (ings.Checked)
+        {
+            incheck_num++;
+        }
+        if (ings.Checked == false && incheck_num != 0)
+        {
+            incheck_num--;
+        } *@
+
+        incheck_num++;
     }
 
     private void step()
