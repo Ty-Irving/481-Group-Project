@@ -6,12 +6,13 @@ public class Recipe{
     public String ? Category { get; set;}
     public Ingredient[] ? IngredientList { get; set;}
     public String[] ? Steps { get; set;}
-    public int Spicy { get; set;}
+    public bool Spicy { get; set;}
     public int Difficulty { get; set;}
     public int Time { get; set;}
     public int Servings { get; set;}
     public int CaloriesPerServing { get; set;}
     public bool isFavorite { get; set;}
+    
     
 }
 
@@ -27,4 +28,3 @@ public class Ingredient{
     }
 
 }
-
