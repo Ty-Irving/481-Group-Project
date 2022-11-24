@@ -12,6 +12,8 @@ public class Recipe{
     public int Servings { get; set;}
     public int CaloriesPerServing { get; set;}
     public bool isFavorite { get; set;}
+    public String[] ? stepImages {get; set;}
+    public String ? imagePath {get; set;}
     
 }
 

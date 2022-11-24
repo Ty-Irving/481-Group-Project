@@ -5,7 +5,7 @@
 
 <body>
 <div class="header1">
-    <div class = "bacK">
+    <div class = "back" >
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z"/>
         </svg>
@@ -55,10 +55,10 @@
     </div>
 
 <div class="header2">
-    <div class = "name">Beef Stew</div>
-    <div class = "difficulty">Difficulty:  Medium</div>
+    <div class = "name">@res.Name</div>
+    <div class = "difficulty">Difficulty: @getDif() </div>
     <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16" color = "red">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill=@checkSpicy() class="bi bi-fire" viewBox="0 0 16 16">
             <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
         </svg>
     </div>
@@ -72,12 +72,12 @@
         </svg> 
     </div>
     <div>
-         15 min
+         @res.Time min
     </div>
     <div> - </div>
-    <div>8 servings</div>
+    <div>@res.Servings servings</div>
     <div> - </div>
-    <div>275 cal/servings</div>
+    <div>@res.CaloriesPerServing cal/servings</div>
 </div>
 
 <div class="content">
@@ -95,6 +95,66 @@
 
 @code {
     private bool IsShared { get; set; } = false;
+    CookingInstructor.RecipeNS.Recipe res = new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Braised Pork With Beancurd Sheet", 
+                Category = "Chinese",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Pork","g",500),
+                                  new CookingInstructor.RecipeNS.Ingredient("Beancurd Sheet","g",250),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",20),
+                                  new CookingInstructor.RecipeNS.Ingredient("Black Bean","g",5), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Dark Soy Sauce","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Seasoning Soy Sauce","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Soy Sauce","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oyster Flavoured Sauce","g",5),
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","pieces",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Ginger","g",5), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",50),
+                                  new CookingInstructor.RecipeNS.Ingredient("Oil","g",25)},
+                Steps = new String[]
+                        {"1. Put the pork inside a container and fill with cold water that covers it, wait for 1.5 ~ 2 hours",
+                         "2. Cut the Beancurd Sheet into small slices( 15 ~ 20cm long, 2cm wide), and knot it.",
+                         "3. Use cold water to wash all the knoted Beancurd Sheets and put them somewhere convinence.",
+                         "4. Cut part of Onion Greens into small pieces(Don't cut them all), as well as red paper.",
+                         "5. Once the pork is soaked long enough, remove all the water.You should see the soaked water become red, since blood was came out.Then gently rinse it and put in a container.",
+                         "6. Heat your pot, add some Oil, Black bean, little bit chopped Onion Green, Garlic, Ginger. And fry until it smells fragrant.",
+                         "7. Add the pork and keep frying till the pork looks somehow brownish yellow.",
+                         "8. Add both Dark soy sauce and Soy sauce then keep frying till the pork becomes evenly dark.",
+                         "9. Add some water that covers the pork.",
+                         "10. Add knoted Beancurd Sheets, red paper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on the water left in pot), remember to check the water level, we don't want to charred it. ",
+                         "11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.",
+                         "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
+                Spicy = 2,
+                Difficulty = 2,
+                Time = 30,
+                Servings = 3,
+                CaloriesPerServing = 621,
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "/BraisedPork/BeanCurd.JPG",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                        }
+    };
+
+    public String getDif()
+    {
+     if (res.Difficulty == 1)
+        return "Easy";
+     else if (res.Difficulty == 2)
+        return "Medium";
+     else
+        return "Hard";
+    }
     public String Message {
         get { return IsShared ? "Link copied!" : "Share Link"; }
     }
@@ -109,7 +169,23 @@
         get { return IsFavorite ? "Remove Favorite" : "Add Favorite"; }
     }
     
+
     private void ToggleFavorite() {
         IsFavorite = ! IsFavorite;
     }
+
+    public String checkSpicy() 
+    {
+        if (res.Spicy > 1)
+        {   String temp = "red";
+            return (temp);
+        }
+        else
+        {
+            String temp = "black";
+            return (temp);
+        }
+    }
+
+   
 }

@@ -35,10 +35,25 @@ public class Recipes
                          "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
                 Spicy = 2,
                 Difficulty = 2,
-                Time = 3,
+                Time = 25,
                 Servings = 3,
                 CaloriesPerServing = 621,
-                isFavorite = false
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "/Recipe_datas/BraisedPork/2.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "/Recipe_datas/BraisedPork/8.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                        },
+                imagePath = "/BraisedPork/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Mapo Tofu", 
@@ -75,10 +90,26 @@ public class Recipes
                          "13. You'll love it with some rice."},
                 Spicy = 3,
                 Difficulty = 2,
-                Time = 1,
+                Time = 30,
                 Servings = 3,
                 CaloriesPerServing = 210,
-                isFavorite = false
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"/Recipe_datas/MapoTofu/1.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "/Recipe_datas/MapoTofu/11.jpg",
+                         "/Recipe_datas/MapoTofu/12.jpg",
+                         ""
+                        },
+                        imagePath = "/Recipe_datas/MapoTofu/13.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Spicy Fry Shredded Potato", 
@@ -103,10 +134,20 @@ public class Recipes
                          "7. Finished!"},
                 Spicy = 2,
                 Difficulty = 1,
-                Time = 1,
+                Time = 17,
                 Servings = 2,
                 CaloriesPerServing = 230,
-                isFavorite = false
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"/Recipe_datas/SpicyPotato/1.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "/Recipe_datas/SpicyPotato/6.jpg",
+                         ""
+                        },
+                imagePath = "/Recipe_datas/SpicyPotato/7.jpg"
             },
               new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Tomato-Egg Noodle", 
@@ -130,10 +171,19 @@ public class Recipes
                          "6. Enjoy!"},
                 Spicy = 1,
                 Difficulty = 1,
-                Time = 1,
+                Time = 15,
                 Servings = 1,
                 CaloriesPerServing = 300,
-                isFavorite = false
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        },
+                imagePath = "/Recipe_datas/TomatoEggNoodle/6.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Tomato with Egg", 
@@ -157,11 +207,169 @@ public class Recipes
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = 1,
                 Difficulty = 1,
-                Time = 1,
+                Time = 15,
                 Servings = 2,
                 CaloriesPerServing = 480,
                 isFavorite = false
-            }
+                ,stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        },
+                imagePath = "/Recipe_datas/TomatoWithEgg/7.jpg"
+            },
+
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Margaiana - Dummy", 
+                Category = "Italian",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",70),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",5)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Dummy",
+                         "2. Cut Tomato into small chunks.",
+                         "3. Stir Eggs with 2g Salt evenly.",
+                         "4. Hot your pot and add 50g Oil, when Oil temperature reach around 150 Celsius add Egg then wait it becomes stable. Then use your slice poke it into pieces.",
+                         "5. Take out the Egg, we will now cook the Tomato.",
+                         "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
+                         "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 15,
+                Servings = 2,
+                CaloriesPerServing = 480,
+                isFavorite = false
+                ,stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        }
+            },
+
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Margaiana - Dummy", 
+                Category = "Asian",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",70),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",5)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Dummy",
+                         "2. Cut Tomato into small chunks.",
+                         "3. Stir Eggs with 2g Salt evenly.",
+                         "4. Hot your pot and add 50g Oil, when Oil temperature reach around 150 Celsius add Egg then wait it becomes stable. Then use your slice poke it into pieces.",
+                         "5. Take out the Egg, we will now cook the Tomato.",
+                         "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
+                         "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 15,
+                Servings = 2,
+                CaloriesPerServing = 480,
+                isFavorite = false
+                ,stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        }
+            },
+
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Margaiana - Dummy", 
+                Category = "European",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",70),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",5)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Dummy",
+                         "2. Cut Tomato into small chunks.",
+                         "3. Stir Eggs with 2g Salt evenly.",
+                         "4. Hot your pot and add 50g Oil, when Oil temperature reach around 150 Celsius add Egg then wait it becomes stable. Then use your slice poke it into pieces.",
+                         "5. Take out the Egg, we will now cook the Tomato.",
+                         "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
+                         "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 15,
+                Servings = 2,
+                CaloriesPerServing = 480,
+                isFavorite = false
+                ,stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        }
+            },
+
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Tofu Bowl - Dummy", 
+                Category = "Western",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",10),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",70),
+                                  new CookingInstructor.RecipeNS.Ingredient("Dummy","g",5)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Dummy",
+                         "2. Cut Tomato into small chunks.",
+                         "3. Stir Eggs with 2g Salt evenly.",
+                         "4. Hot your pot and add 50g Oil, when Oil temperature reach around 150 Celsius add Egg then wait it becomes stable. Then use your slice poke it into pieces.",
+                         "5. Take out the Egg, we will now cook the Tomato.",
+                         "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
+                         "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
+                Spicy = 1,
+                Difficulty = 3,
+                Time = 40,
+                Servings = 2,
+                CaloriesPerServing = 480,
+                isFavorite = false
+                ,stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        }
+            },
         };
         return res;
     }
