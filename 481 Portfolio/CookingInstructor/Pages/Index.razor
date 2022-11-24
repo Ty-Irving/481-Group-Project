@@ -18,10 +18,12 @@
             Search by Ingredient</button>
         </div>
 
-        <Searchbar />
+        <Searchbar 
+            searchMode="@searchMode"
+         />
     </div>
 
-    @if (areIngredientBoxesVisible) {
+    @if (searchMode == SearchModeEnum.ByIngredient) {
         <SearchIngredientsDisplay />
     }
 </div>
@@ -33,17 +35,17 @@
     private String bgRecipeButton { get; set; } = bgHighlight;
     private String bgIngredientButton { get; set; } = bgNormal;
 
-    private bool areIngredientBoxesVisible = false;
+    private SearchModeEnum searchMode = SearchModeEnum.ByRecipe;
     
     private void onSearchRecipes()
     {
-        areIngredientBoxesVisible = false;
+        searchMode = SearchModeEnum.ByRecipe;
         bgRecipeButton = bgHighlight;
         bgIngredientButton = bgNormal;
     } 
     private void onSearchIngredients()
     {
-        areIngredientBoxesVisible = true;
+        searchMode = SearchModeEnum.ByIngredient;
         bgRecipeButton = bgNormal;
         bgIngredientButton = bgHighlight;
     }

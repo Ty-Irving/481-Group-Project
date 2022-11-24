@@ -7,16 +7,14 @@
         <option value="Slow Cooked Beef Stew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></option>
     </datalist>
 
-    <SearchFilter />
+    @if (searchMode == SearchModeEnum.ByRecipe) {
+        <SearchFilter />
+    }
     <SearchButton />
 </div>
     
 
 @code {
-    private bool isFilterVisible = false;
-    
-    private void toggleFilter()
-    {
-        isFilterVisible = ! isFilterVisible;
-    } 
+    [Parameter]
+    public SearchModeEnum? searchMode { get; set; }
 }
