@@ -17,6 +17,7 @@
 <div class = "recipeContainer">
         @for(var i = 0; i < list.Length; i++){
             if(list[i].isFavorite == true){
+                display = true;
                 <RecipeImageHorizontal
                     Image =""
                     Difficulty = "@list[i].Difficulty"
@@ -28,11 +29,15 @@
             }
         }
 
+        @if(display == false){
+            <h1>No favourites found...</h1>
+        }
+
 </div>
 
 @code{
     private CookingInstructor.RecipeNS.Recipe[]? list;
-
+    private bool display = false;
     protected override void OnInitialized()
     {
         Data.Recipes myClass = new Data.Recipes();
