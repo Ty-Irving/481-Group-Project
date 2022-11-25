@@ -1,6 +1,6 @@
 
 <div class ="buttons">
-    <button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@incheck_num/@sample_ingredients.Length)</button>
+    <button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@incheck_num/@RecipeObj.IngredientList.Length)</button>
     <button class="stepListBut" style="@stepColor" @onclick="step">Directions</button>
 </div>
 
@@ -8,11 +8,11 @@
 @if (show == 0)
 {
     <div class="ingList">
-        @for (int i = 1; i < sample_ingredients.Length + 1; i++)
+        @for (int i = 1; i < @RecipeObj.IngredientList.Length + 1; i++)
         {
 
-            <input type="checkbox" id = "ings" name = "ings" @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
-            <label>@sample_ingredients[i - 1]  </label>
+            <input type="checkbox" id = "ings" name = "ings" @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">
+            <label>@RecipeObj.IngredientList[i - 1]  </label>
             <br/>
         }
 
@@ -35,8 +35,8 @@
 
 
 @code {
-    <!---[Parameter]
-    public string[] ingredient_lists { get; set; }-->
+    [Parameter]
+    public CookingInstructor.RecipeNS.Recipe? RecipeObj { get; set; }
 
     private int show = 0;
     private string ingColor = "background-color:blue; color: white;";
