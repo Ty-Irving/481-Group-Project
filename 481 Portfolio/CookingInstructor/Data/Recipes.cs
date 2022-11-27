@@ -359,7 +359,7 @@ public class Recipes
                 Time = 40,
                 Servings = 2,
                 CaloriesPerServing = 480,
-                isFavorite = false
+                isFavorite = false,
                 stepImages = new String[] 
                         {"",
                          "",
