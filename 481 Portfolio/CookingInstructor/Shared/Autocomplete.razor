@@ -1,0 +1,20 @@
+<datalist id="datalistOptions">
+    @foreach (var suggestion in autocompleteContents(searchMode) ) {
+        <option value="@suggestion"></option>
+    }
+</datalist>
+
+@code {
+    [Parameter]
+    public SearchModeEnum searchMode { get; set; }
+
+    public String[] autocompleteContents(SearchModeEnum mode) {
+        //return mode == SearchModeEnum.ByRecipe ? recipeList : ingredientList;
+        if (mode == SearchModeEnum.ByRecipe) {
+            return new String[] { "Beef Stew", "Chicken Stew", "Old West Chicken Stew", "Slow Cooked Beef Stew" };
+        }
+        else { // ByIngredient
+            return new String[] { "Beef", "Chicken", "Chicken Stock", "Potato" };
+        }
+    }
+}
