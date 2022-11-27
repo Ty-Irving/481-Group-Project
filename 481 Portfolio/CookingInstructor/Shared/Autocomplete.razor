@@ -1,6 +1,6 @@
 <datalist id="datalistOptions">
     @foreach (var suggestion in autocompleteContents(searchMode) ) {
-        <option value="@suggestion"></option>
+        <option value="@formatSuggestion(suggestion)"></option>
     }
 </datalist>
 
@@ -16,5 +16,17 @@
         else { // ByIngredient
             return new String[] { "Beef", "Chicken", "Chicken Stock", "Potato" };
         }
+    }
+
+    // This sorta works, but might want to replace with CSS in the future if we can figure that out
+    public String formatSuggestion(String suggestion) {
+        int paddingLength = 50;
+
+        if ( suggestion.Length < paddingLength ) {
+            int difference = paddingLength - suggestion.Length;
+            suggestion = suggestion.PadRight(difference, '\u00A0'); // \u00A0 = non-breaking space
+        }
+
+        return suggestion;
     }
 }
