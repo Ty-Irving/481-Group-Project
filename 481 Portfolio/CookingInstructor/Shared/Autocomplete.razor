@@ -9,7 +9,7 @@
     public SearchModeEnum searchMode { get; set; }
 
     public String[] autocompleteContents(SearchModeEnum mode) {
-        //return mode == SearchModeEnum.ByRecipe ? recipeList : ingredientList;
+        // TODO: Remove hardcode and draw from recipes/ingredients
         if (mode == SearchModeEnum.ByRecipe) {
             return new String[] { "Beef Stew", "Chicken Stew", "Old West Chicken Stew", "Slow Cooked Beef Stew" };
         }
