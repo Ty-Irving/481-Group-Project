@@ -28,5 +28,9 @@ public class Ingredient{
         Amount = a;
     }
 
+    public string toString() {
+        return Name + Amount + Unit;
+    }
+
 }
 

@@ -10,7 +10,7 @@ public class Recipes
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Pork","g",500),
                                   new CookingInstructor.RecipeNS.Ingredient("Beancurd Sheet","g",250),
-                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",20),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","g",20),
                                   new CookingInstructor.RecipeNS.Ingredient("Black Bean","g",5), 
                                   new CookingInstructor.RecipeNS.Ingredient("Dark Soy Sauce","g",10),
                                   new CookingInstructor.RecipeNS.Ingredient("Seasoning Soy Sauce","g",15),
@@ -24,13 +24,13 @@ public class Recipes
                         {"1. Put the pork inside a container and fill with cold water that covers it, wait for 1.5 ~ 2 hours",
                          "2. Cut the Beancurd Sheet into small slices( 15 ~ 20cm long, 2cm wide), and knot it.",
                          "3. Use cold water to wash all the knoted Beancurd Sheets and put them somewhere convinence.",
-                         "4. Cut part of Onion Greens into small pieces(Don't cut them all), as well as red paper.",
+                         "4. Cut part of Onion Greens into small pieces(Don't cut them all), as well as red pepper.",
                          "5. Once the pork is soaked long enough, remove all the water.You should see the soaked water become red, since blood was came out.Then gently rinse it and put in a container.",
                          "6. Heat your pot, add some Oil, Black bean, little bit chopped Onion Green, Garlic, Ginger. And fry until it smells fragrant.",
                          "7. Add the pork and keep frying till the pork looks somehow brownish yellow.",
                          "8. Add both Dark soy sauce and Soy sauce then keep frying till the pork becomes evenly dark.",
                          "9. Add some water that covers the pork.",
-                         "10. Add knoted Beancurd Sheets, red paper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on the water left in pot), remember to check the water level, we don't want to charred it. ",
+                         "10. Add knoted Beancurd Sheets, red pepper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on the water left in pot), remember to check the water level, we don't want to charred it. ",
                          "11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.",
                          "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
                 Spicy = 2,
@@ -60,7 +60,7 @@ public class Recipes
                 Category = "Chinese",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Tofu","g",700),
-                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",25),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","g",25),
                                   new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",15),
                                   new CookingInstructor.RecipeNS.Ingredient("Garlic","g",10),
                                   new CookingInstructor.RecipeNS.Ingredient("Oil","g",20),
@@ -77,9 +77,9 @@ public class Recipes
                 Steps = new String[]
                         {"1. Cut Tofu into small cubes and slice Ginger, then add 1.5L water into your pot, add Tofu, Cooking wine, sliced Ginger, wait for boiling.",
                          "2. Prepare a container, fill with cold water.Then take out the Tofu, put them in container. We want to cool down it, and make it stay like cube.",
-                         "3. Cut Red Paper,Galic,Onion Green into pieces",
+                         "3. Cut Red Pepper,Galic,Onion Green into pieces",
                          "4. Put all the Sauces in one container, more convenience for later useage.",
-                         "5. Add 5g Onion Green, Red Paper, Garlic, Oil and frying them for around 30 seconds.",
+                         "5. Add 5g Onion Green, Red Pepper, Garlic, Oil and frying them for around 30 seconds.",
                          "6. Add sauces into the pot and fry them evenly.",
                          "7. Add 600ml water into pot.",
                          "8. Add Tofu in the pot.",
@@ -116,7 +116,7 @@ public class Recipes
                 Category = "Chinese",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Potato","g",600),
-                                  new CookingInstructor.RecipeNS.Ingredient("Red Paper","g",15),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","g",15),
                                   new CookingInstructor.RecipeNS.Ingredient("Rice Vinegar","g",10),
                                   new CookingInstructor.RecipeNS.Ingredient("Seasoning Soy sauce","g",5),
                                   new CookingInstructor.RecipeNS.Ingredient("Oil","g",10),
@@ -126,9 +126,9 @@ public class Recipes
                                   
                 Steps = new String[]
                         {"1. Shred the Potato and wash with cold water until the water looks clean, we want to keep the Potato fresh and crisp.",
-                         "2. Cut the Red Paper into small pieces.",
+                         "2. Cut the Red Pepper into small pieces.",
                          "3. Add about 1.5L water into your pot and boil it. When you see boiling water, add Shredded Potato and Rice Vinegar, blanching for 20 seconds.After blanching, put Potato in a container(no water).",
-                         "4. Clean your pot, add Oil and Red Paper then frying till you feel sneeze.",
+                         "4. Clean your pot, add Oil and Red Pepper then frying till you feel sneeze.",
                          "5. Add the Shredded Potato, keep frying for 40 seconds(at least).",
                          "6. Add Salt, Seasoning Soy sauce then keep frying till Potato colored evenly.",
                          "7. Finished!"},
@@ -210,8 +210,8 @@ public class Recipes
                 Time = 15,
                 Servings = 2,
                 CaloriesPerServing = 480,
-                isFavorite = false
-                ,stepImages = new String[] 
+                isFavorite = false,
+                stepImages = new String[] 
                         {"",
                          "",
                          "",
@@ -248,8 +248,8 @@ public class Recipes
                 Time = 15,
                 Servings = 2,
                 CaloriesPerServing = 480,
-                isFavorite = false
-                ,stepImages = new String[] 
+                isFavorite = false,
+                stepImages = new String[] 
                         {"",
                          "",
                          "",
@@ -285,8 +285,8 @@ public class Recipes
                 Time = 15,
                 Servings = 2,
                 CaloriesPerServing = 480,
-                isFavorite = false
-                ,stepImages = new String[] 
+                isFavorite = false,
+                stepImages = new String[] 
                         {"",
                          "",
                          "",
@@ -322,8 +322,8 @@ public class Recipes
                 Time = 15,
                 Servings = 2,
                 CaloriesPerServing = 480,
-                isFavorite = false
-                ,stepImages = new String[] 
+                isFavorite = false,
+                stepImages = new String[] 
                         {"",
                          "",
                          "",
@@ -360,7 +360,7 @@ public class Recipes
                 Servings = 2,
                 CaloriesPerServing = 480,
                 isFavorite = false
-                ,stepImages = new String[] 
+                stepImages = new String[] 
                         {"",
                          "",
                          "",
