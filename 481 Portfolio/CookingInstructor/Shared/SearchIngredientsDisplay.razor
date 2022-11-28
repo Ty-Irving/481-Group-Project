@@ -1,24 +1,30 @@
 <div>
-    <label for="exampleFormControlSelect2">Your Ingredients</label>
-    <div class="d-flex align-content-center flex-wrap justify-content-center">
-        @foreach (var name in yourIngredients) {
-            <IngredientEntry 
-                name="@name"
-                addRemove="IngredientEntryMode.Remove"
-                OnClickIngredient="handleIngredientMove"
-            />
-        }
+    <label for="yourIngredients">Your Ingredients</label>
+    <div 
+        class="ingredient-box d-flex align-content-center flex-wrap justify-content-center"
+        id="yourIngredients"
+        style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+            @foreach (var name in yourIngredients) {
+                <IngredientEntry 
+                    name="@name"
+                    addRemove="IngredientEntryMode.Remove"
+                    OnClickIngredient="handleIngredientMove"
+                />
+            }
     </div>
 
-    <label for="exampleFormControlSelect2">Common Ingredients</label>
-    <div class="d-flex align-content-center flex-wrap justify-content-center">
-        @foreach (var name in visibleCommonIngredients) {
-            <IngredientEntry 
-                name="@name"
-                addRemove="IngredientEntryMode.Add"
-                OnClickIngredient="handleIngredientMove"
-            />
-        }
+    <label for="commonIngredients">Common Ingredients</label>
+    <div 
+        class="ingredient-box d-flex align-content-center flex-wrap justify-content-center"
+        id="commonIngredients"
+        style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+            @foreach (var name in visibleCommonIngredients) {
+                <IngredientEntry 
+                    name="@name"
+                    addRemove="IngredientEntryMode.Add"
+                    OnClickIngredient="handleIngredientMove"
+                />
+            }
     </div>
 </div>
 
