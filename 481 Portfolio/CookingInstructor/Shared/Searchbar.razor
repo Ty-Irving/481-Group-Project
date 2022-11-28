@@ -1,11 +1,8 @@
 <div class="h-100 d-flex align-items-center justify-content-center">
     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-    <datalist id="datalistOptions">
-        <option value="Beef Stew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></option>
-        <option value="Chicken Stew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></option>
-        <option value="Old West Chicken Stew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></option>
-        <option value="Slow Cooked Beef Stew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"></option>
-    </datalist>
+    <Autocomplete 
+        searchMode="@searchMode"
+    />
 
     @if (searchMode == SearchModeEnum.ByRecipe) {
         <SearchFilter />
@@ -16,5 +13,5 @@
 
 @code {
     [Parameter]
-    public SearchModeEnum? searchMode { get; set; }
+    public SearchModeEnum searchMode { get; set; }
 }
