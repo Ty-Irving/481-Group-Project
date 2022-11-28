@@ -10,8 +10,7 @@
             @foreach (var name in YourIngredients.list)
             {
                 <IngredientEntry
-                    name="@name"
-                    addRemove="IngredientEntryMode.Remove"
+                    data="@(new IngredientEntryData(name, IngredientEntryMode.Remove))"
                     OnClickIngredient="handleIngredientMove"
                 />
             }
@@ -25,8 +24,7 @@
             @foreach (var name in CommonIngredients.list)
             {
                 <IngredientEntry
-                    name="@name"
-                    addRemove="IngredientEntryMode.Add"
+                    data="@(new IngredientEntryData(name, IngredientEntryMode.Add))"
                     OnClickIngredient="handleIngredientMove"
                 />
             }
