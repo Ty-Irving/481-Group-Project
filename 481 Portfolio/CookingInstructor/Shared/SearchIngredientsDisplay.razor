@@ -1,7 +1,7 @@
 <div>
     <label for="exampleFormControlSelect2">Your Ingredients</label>
     <div class="d-flex align-content-center flex-wrap justify-content-center">
-        @foreach (var name in yourIngredients()) {
+        @foreach (var name in yourIngredients) {
             <IngredientEntry 
                 name="@name"
                 addRemove="IngredientEntryMode.Remove"
@@ -12,7 +12,7 @@
 
     <label for="exampleFormControlSelect2">Common Ingredients</label>
     <div class="d-flex align-content-center flex-wrap justify-content-center">
-        @foreach (var name in commonIngredients()) {
+        @foreach (var name in visibleCommonIngredients) {
             <IngredientEntry 
                 name="@name"
                 addRemove="IngredientEntryMode.Add"
@@ -23,20 +23,24 @@
 </div>
 
 @code {
-    public String[] yourIngredients() {
-        return new String[] {"Tomato", "Chicken"};
-    }
+    public List<String> yourIngredients {get; set;} = new List<String> {"Tomato", "Chicken"};
 
-    public String[] commonIngredients() {
-        return new String[] {"Garlic", "Onion"};
-    }
+    public List<String> visibleCommonIngredients {get; set;} = new List<String> {"Garlic", "Onion"};
+
+    private CommonIngredients commonIngredients = new CommonIngredients();
 
     public void handleIngredientMove(IngredientEntryData ingredient) {
         if (ingredient.mode == IngredientEntryMode.Add) {
             Console.WriteLine("Add " + ingredient.name);
+            visibleCommonIngredients.Remove(ingredient.name);
+            yourIngredients.Add(ingredient.name);
         }
         else { // Remove
             Console.WriteLine("Remove " + ingredient.name);
+            yourIngredients.Remove(ingredient.name);
+            if (commonIngredients.Contains(ingredient.name)) {
+                visibleCommonIngredients.Add(ingredient.name);
+            }
         }
     }
 }
