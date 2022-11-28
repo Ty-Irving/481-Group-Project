@@ -1,0 +1,25 @@
+<button 
+    type="button" 
+    class="btn btn-secondary pill"
+    @onclick="onIngredientClicked">
+        @name &#8205; &#8205; &#8205; &#8205; &#8205; | &#8205; &#8205; &#8205; &#8205; @formatMode() &#8205;
+</button>
+
+@code { 
+    [Parameter] 
+    public String name { get; set;} = "";
+    
+    [Parameter] 
+    public IngredientEntryMode addRemove { get; set;}
+
+    [Parameter]
+    public EventCallback<IngredientEntryData> OnClickIngredient { get; set; }
+
+    public async Task onIngredientClicked() {
+        await OnClickIngredient.InvokeAsync(new IngredientEntryData(name, addRemove));
+    }
+
+    public String formatMode() {
+        return addRemove == IngredientEntryMode.Add ? "+" : "X";
+    }
+}
