@@ -1,11 +1,15 @@
+@inject YourIngredients YourIngredients
+@inject CommonIngredients CommonIngredients
+
 <div>
     <label for="yourIngredients">Your Ingredients</label>
     <div 
-        class="ingredient-box d-flex align-content-center flex-wrap justify-content-center"
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
         id="yourIngredients"
         style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
-            @foreach (var name in yourIngredients) {
-                <IngredientEntry 
+            @foreach (var name in YourIngredients.list)
+            {
+                <IngredientEntry
                     name="@name"
                     addRemove="IngredientEntryMode.Remove"
                     OnClickIngredient="handleIngredientMove"
@@ -15,11 +19,12 @@
 
     <label for="commonIngredients">Common Ingredients</label>
     <div 
-        class="ingredient-box d-flex align-content-center flex-wrap justify-content-center"
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
         id="commonIngredients"
         style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
-            @foreach (var name in visibleCommonIngredients) {
-                <IngredientEntry 
+            @foreach (var name in visibleCommonIngredients)
+            {
+                <IngredientEntry
                     name="@name"
                     addRemove="IngredientEntryMode.Add"
                     OnClickIngredient="handleIngredientMove"
@@ -29,22 +34,24 @@
 </div>
 
 @code {
-    public List<String> yourIngredients {get; set;} = new List<String> {"Tomato", "Chicken"};
+    public List<String> visibleCommonIngredients {get; set;} = new List<String> {};
 
-    public List<String> visibleCommonIngredients {get; set;} = new List<String> {"Garlic", "Onion"};
-
-    private CommonIngredients commonIngredients = new CommonIngredients();
+    protected override void OnInitialized()
+    {
+        visibleCommonIngredients = CommonIngredients.Get();
+    }
 
     public void handleIngredientMove(IngredientEntryData ingredient) {
-        if (ingredient.mode == IngredientEntryMode.Add) {
-            Console.WriteLine("Add " + ingredient.name);
+        if (ingredient.mode == IngredientEntryMode.Add)
+        {
             visibleCommonIngredients.Remove(ingredient.name);
-            yourIngredients.Add(ingredient.name);
+            YourIngredients.Add(ingredient.name);
         }
-        else { // Remove
-            Console.WriteLine("Remove " + ingredient.name);
-            yourIngredients.Remove(ingredient.name);
-            if (commonIngredients.Contains(ingredient.name)) {
+        else // Remove
+        {
+            YourIngredients.Remove(ingredient.name);
+            if (CommonIngredients.Contains(ingredient.name))
+            {
                 visibleCommonIngredients.Add(ingredient.name);
             }
         }
