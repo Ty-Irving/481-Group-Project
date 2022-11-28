@@ -324,12 +324,8 @@ public class Recipes
                          "",
                          "",
                          "",
-                         "",
-                         "",
-                         "",
-                         "",
                          ""
-                        },
+                         },
                 imagePath = ""
             },
             
