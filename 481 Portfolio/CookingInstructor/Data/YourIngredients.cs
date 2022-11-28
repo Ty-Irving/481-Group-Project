@@ -19,6 +19,15 @@ public class YourIngredients
         }
     }
 
+    public void Insert(int index, String name)
+    {
+        if (! list.Contains(name))
+        {
+            list.Insert(index, name);
+            OnChange?.Invoke();
+        }
+    }
+
     public void Remove(String name)
     {
         list.Remove(name);

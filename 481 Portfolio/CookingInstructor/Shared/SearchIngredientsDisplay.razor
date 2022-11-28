@@ -22,7 +22,7 @@
         class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
         id="commonIngredients"
         style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
-            @foreach (var name in visibleCommonIngredients)
+            @foreach (var name in CommonIngredients.list)
             {
                 <IngredientEntry
                     name="@name"
@@ -34,26 +34,16 @@
 </div>
 
 @code {
-    public List<String> visibleCommonIngredients {get; set;} = new List<String> {};
-
-    protected override void OnInitialized()
-    {
-        visibleCommonIngredients = CommonIngredients.Get();
-    }
-
     public void handleIngredientMove(IngredientEntryData ingredient) {
         if (ingredient.mode == IngredientEntryMode.Add)
         {
-            visibleCommonIngredients.Remove(ingredient.name);
-            YourIngredients.Add(ingredient.name);
+            CommonIngredients.Remove(ingredient.name);
+            YourIngredients.Insert(0, ingredient.name);
         }
         else // Remove
         {
             YourIngredients.Remove(ingredient.name);
-            if (CommonIngredients.Contains(ingredient.name))
-            {
-                visibleCommonIngredients.Add(ingredient.name);
-            }
+            CommonIngredients.Insert(0, ingredient.name);
         }
     }
 }
