@@ -222,6 +222,162 @@ public class Recipes
                         },
                 imagePath = "/Recipe_datas/TomatoWithEgg/7.jpg"
             },
+            
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "German Potato Salad", 
+                Category = "European",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Diced Peeled Potatoes","cups",3),
+                                  new CookingInstructor.RecipeNS.Ingredient("Bacon","slices",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion - diced", "qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Vinegar","cup",1/4), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Water","tbs",2),
+                                  new CookingInstructor.RecipeNS.Ingredient("White Sugar","tbs",1.5),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt","tsp",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Pepper","tsp",1/8),
+                                  new CookingInstructor.RecipeNS.Ingredient("Chopped Parsley","tbsp",1)},
+                Steps = new String[]
+                        {"1. Put the pork inside a container and fill with cold water that covers it, wait for 1.5 ~ 2 hours",
+                         "2. Cut the Beancurd Sheet into small slices( 15 ~ 20cm long, 2cm wide), and knot it.",
+                         "3. Use cold water to wash all the knoted Beancurd Sheets and put them somewhere convinence.",
+                         "4. Cut part of Onion Greens into small pieces(Don't cut them all), as well as red paper.",
+                         "5. Once the pork is soaked long enough, remove all the water.You should see the soaked water become red, since blood was came out.Then gently rinse it and put in a container.",
+                         "6. Heat your pot, add some Oil, Black bean, little bit chopped Onion Green, Garlic, Ginger. And fry until it smells fragrant.",
+                         "7. Add the pork and keep frying till the pork looks somehow brownish yellow.",
+                         "8. Add both Dark soy sauce and Soy sauce then keep frying till the pork becomes evenly dark.",
+                         "9. Add some water that covers the pork.",
+                         "10. Add knoted Beancurd Sheets, red paper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on the water left in pot), remember to check the water level, we don't want to charred it. ",
+                         "11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.",
+                         "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
+                Spicy = 2,
+                Difficulty = 1,
+                Time = 30,
+                Servings = 4,
+                CaloriesPerServing = 183,
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "/Recipe_datas/BraisedPork/2.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "/Recipe_datas/BraisedPork/8.jpg",
+                         "",
+                         "",
+                         "",
+                         "",
+                        },
+                imagePath = "/BraisedPork/final.jpg"
+            },
+            
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Fideua Paella", 
+                Category = "European",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Bronzini","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Shrimp/prawns","lb",0.5),
+                                  new CookingInstructor.RecipeNS.Ingredient("Stick celery","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Carrot","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Stems Parsley","qty",2),
+                                  new CookingInstructor.RecipeNS.Ingredient("Olive Oil","tbs",5)},
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","cloves",3),
+                                  new CookingInstructor.RecipeNS.Ingredient("Crushed Tomatoes","g",400),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Pasta (fideos/borken spaghetti)","g",340),
+                                  new CookingInstructor.RecipeNS.Ingredient("Clams","g",225)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Remove the shells from the shrimp/prawns and keep the shells.",
+                         "2. Make the stock by placing the fish bones, shells of the shrimp, celery, carrot, parsley stems, sprig of thyme and a small wedge of the onion in a pot and cover with water. You'll need to add around 4 cups/960ml water to the pot. Bring the pot to a boil and reduce to a simmer (covered)."
+                         "3. Meanwhile, finely chop the remaining onion, pepper and garlic",
+                         "4. Heat 2 tablespoon olive oil in a large skillet/frying pan over a medium-low heat and fry the fish and shrimp gently until almost cooked through. Remove from the pan and set aside.",
+                         "5. Clean out any stuck-on skin etc from pan, add the remaining oil and then the onion and pepper.",
+                         "6. Cook for around 10min, stirring now and then (turn lower after a few mins), then add paprika, garlic and fennel seeds.",
+                         "7. By now the stock should be ready; strain it to remove all the bones and vegetables and add the saffron to infuse.",
+                         "8. Cook the onions and spice mixture for 5 more minutes then add tomatoes."
+                         "9. Cook a further few mins then add fideos (pasta). Stir well so that they are covered by the oily mixture and cook another couple minutes.",
+                         "10. Add the stock (3cups/750ml) to the pan, stir then leave to cook at a simmer for 10min.",
+                         "11. Stir then add the clams, pushing them under the liquid and pasta. Allow them to cook a minute and add the shrimp/prawns and fish as well.",
+                         "12. After about 5 mins the clams should open and all should be ready.",
+                         "13. Finished!"}
+            ,
+                Spicy = 1,
+                Difficulty = 3,
+                Time = 50,
+                Servings = 5,
+                CaloriesPerServing = 817/5,
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                        },
+                imagePath = ""
+            },
+        
+        
+            new CookingInstructor.RecipeNS.Recipe{ 
+                Name = "Balsamic Chicken Breast", 
+                Category = "Western",
+                IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
+                                 {new CookingInstructor.RecipeNS.Ingredient("Chicken Breasts","qty",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt & Pepper","N/A",0),
+                                  new CookingInstructor.RecipeNS.Ingredient("Olvie Oil","tbs",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Bell Peppers","cups",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Meidium Onion","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Olive Oil","cup",1)},
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","cloves",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Fresh Basil","cup",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Balsamic Vinegar","tbs",4)},
+                                 
+                                  
+                                  
+                Steps = new String[]
+                        {"1. Season chicken with salt and pepper.",
+                         "2. In a large skillet, saute chicken in 2 tablespoons of oil over medium high heat, turning once for a total of about 8 minutes or until golden brown."
+                         "3. Transfer chicken to a plate",
+                         "4. Add 2 remaining tablespoons of oil to the skillet and cook peppers and onions, stirring often until just softened..",
+                         "5. Add garlic and stir for about 1 minute.",
+                         "6. Stir in basil and vinegar and return chicken and juices to the skillet.",
+                         "7. Reduce heat to low and simmer until chicken is cooked through, about 3 more minutes.",
+                         "8. Taste and adjust salt and pepper seasonings",
+                         "9 Finished!"}
+            ,
+                Spicy = 1,
+                Difficulty = 1,
+                Time = 30,
+                Servings = 4,
+                CaloriesPerServing = 313,
+                isFavorite = false,
+                stepImages = new String[] 
+                        {"",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         "",
+                         ""
+                         },
+                imagePath = ""
+            },
+            
 
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Margaiana - Dummy", 
