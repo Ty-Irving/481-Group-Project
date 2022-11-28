@@ -1,0 +1,32 @@
+<datalist id="datalistOptions">
+    @foreach (var suggestion in autocompleteContents(searchMode) ) {
+        <option value="@formatSuggestion(suggestion)"></option>
+    }
+</datalist>
+
+@code {
+    [Parameter]
+    public SearchModeEnum searchMode { get; set; }
+
+    public String[] autocompleteContents(SearchModeEnum mode) {
+        // TODO: Remove hardcode and draw from recipes/ingredients
+        if (mode == SearchModeEnum.ByRecipe) {
+            return new String[] { "Beef Stew", "Chicken Stew", "Old West Chicken Stew", "Slow Cooked Beef Stew" };
+        }
+        else { // ByIngredient
+            return new String[] { "Beef", "Chicken", "Chicken Stock", "Potato" };
+        }
+    }
+
+    // This sorta works, but might want to replace with CSS in the future if we can figure that out
+    public String formatSuggestion(String suggestion) {
+        int paddingLength = 50;
+
+        if ( suggestion.Length < paddingLength ) {
+            int difference = paddingLength - suggestion.Length;
+            suggestion = suggestion.PadRight(difference, '\u00A0'); // \u00A0 = non-breaking space
+        }
+
+        return suggestion;
+    }
+}
