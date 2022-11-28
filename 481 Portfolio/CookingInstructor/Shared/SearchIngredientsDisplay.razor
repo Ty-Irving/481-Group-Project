@@ -4,9 +4,9 @@
 <div>
     <label for="yourIngredients">Your Ingredients</label>
     <div 
-        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center mb-3"
         id="yourIngredients"
-        style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+        style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
             @foreach (var name in YourIngredients.list)
             {
                 <IngredientEntry
@@ -21,7 +21,7 @@
     <div 
         class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
         id="commonIngredients"
-        style="min-height: 40px; max-height: 90px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+        style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
             @foreach (var name in visibleCommonIngredients)
             {
                 <IngredientEntry
