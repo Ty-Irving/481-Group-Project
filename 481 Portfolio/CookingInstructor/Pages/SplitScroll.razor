@@ -1,18 +1,20 @@
-<div class ="buttons">
-    <button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@incheck_num/@RecipeObj.IngredientList.Length)</button>
+
+<div class="buttons">
+    <button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@ClubMember.Count/@RecipeObj.IngredientList.Length)</button>
     <button class="stepListBut" style="@stepColor" @onclick="step">Directions</button>
+   
 </div>
 
 
 @if (show == 0)
 {
     <div class="ingList">
-        @for (int i = 1; i < RecipeObj.IngredientList.Length + 1; i++)
+        @foreach (string x in ClubList())
         {
-
-            <input type="checkbox" id = "ings" name = "ings" @onchange="ingChange" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
-            <label>@RecipeObj.IngredientList[i - 1].toString()  </label>
-            <br/>
+            <input type="checkbox" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
+            string[] subs = x.Split(' ');
+            <label>@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString()  </label>
+            <br />   
         }
 
     </div>
@@ -20,11 +22,11 @@
 
 @if (show == 1)
 {
-    <div class="stepList " >
+    <div class="stepList ">
 
         @for (int i = 0; i < RecipeObj.Steps.Length; i++)
         {
-             <!---id="Instruction" name="Instruction" value="XXXX"-->
+            <!---id="Instruction" name="Instruction" value="XXXX"-->
             <Teststar Value=@RecipeObj.Steps[i] important=@checkImportance(RecipeObj.stepImages[i]) image=@RecipeObj.stepImages[i]></Teststar>
 
         }
@@ -36,75 +38,65 @@
 @code {
     [Parameter]
     public CookingInstructor.RecipeNS.Recipe? RecipeObj { get; set; }
-    <!---[Parameter]
-    public string[] ingredient_lists { get; set; }-->
 
-    //CookingInstructor.RecipeNS.Recipe res = //passed value
+    public EventCallback<ChangeEventArgs> ValueChanged { get; set; }
     private int show = 0;
     private string ingColor = "background-color:blue; color: white;";
     private string stepColor = "background-color: #e7e7e7; color: black;";
     private string color1 = "background-color:blue; color: white;";
     private string color2 = "background-color: #e7e7e7; color: black;";
-    public 
 
 
-    @* for (int i = 0; i < 3; i++)
+    int incheck_num;
+    bool[] ingMember;
+
+    protected override void OnInitialized()
     {
-        //combine each Ingredient class data into 1 string and append to list.
-    } *@
+        ingMember = new bool[RecipeObj.IngredientList.Length];
+        incheck_num = 0;
+    }
 
+    public bool checkImportance(string x)
+    {
+        return x != "";
+    }
 
+    private void ing()
+    {
+        show = 0;
+        ingColor = color1;
+        stepColor = color2;
 
-    string[] sample_ingredients = {"2 lbs Beef cut into 2-inch chunks","1 Tsp Kosher Salt","½ Tsp Black Pepper","2 Tbsp Flour","2 Tbsp Olive Oil",
-                                   "½ Yellow Onion","4 Garlic Cloves","1 Large (or 2 medium) Carrot","2 Potato", "2 cups Beef Broth",
-                                   "quarter cup Tomato Paste","1 tsp Worcestershire Sauce","1 Bay Leaves"," 2 TspThyme Leaves"};
+    }
 
-
-string[] instruction_lists = {
-    "1. Preheat oven to 325F.",
-    "2. Season the beef chunks on all sides with salt and pepper. Sprinkle the flour over and toss the seasoned beef to coat it on all sides.",
-    "3. Heat the olive oil in a large Dutch oven over medium heat. Brown the beef in batches, on all sides, for 3-4 minutes per batch. ",
-    "4. Don't worry about cooking the beef all the way through at this stage. Transfer the browned beef to a plate and set aside.",
-    "5. Add the onions, garlic, and carrots to the Dutch oven, and cook, stirring occasionally, for 2-3 minutes, or until slightly browned.",
-    "6. Add the potatoes, beef broth, tomato paste, bay leaf, thyme, and Worcestershire sauce, and use a wooden spoon to scrape the browned bits from the bottom of the pot.",
-    "7. Bring the mixture to a simmer, stirring, and return the beef to the pot. Cover the Dutch oven, and transfer to the preheated oven.",
-    "8. Cook the stew for 2-2.5 hours, or until the beef is very tender. Remove the bay leaf. Taste the stew and season with additional salt and pepper, if necessary. Serve warm."};
-
-bool[] importants = { true, true, true, true, true, true, true, true };
-string[] image = {"", "/BeefStew/bef.JPG", "", "", "", "", "", ""};
-
-int incheck_num;
-bool[] ingMember;
-public SplitScroll()
-{
-    ingMember = new bool[sample_ingredients.Length];
-    incheck_num = 0;
-}
-
-public bool checkImportance(string x) {
-    return x != "";
-}
-
-private void ing()
-{
-    show = 0;
-    ingColor = color1;
-    stepColor = color2;
-
-}
-
-void ingChange(ChangeEventArgs evt)
-{
-        @* if (ings.Checked)
+    public List<string> ClubMember { get; set; } = new List<string>();
+    void CheckboxClicked(string clubID, object checkedValue)
+    {
+        if ((bool)checkedValue)
         {
-            incheck_num++;
+            if (!ClubMember.Contains(clubID))
+            {
+                ClubMember.Add(clubID);
+            }
         }
-        if (ings.Checked == false && incheck_num != 0)
+        else
         {
-            incheck_num--;
-        } *@
+            if (ClubMember.Contains(clubID))
+            {
+                ClubMember.Remove(clubID);
+            }
+        }
+    }
 
-        incheck_num++;
+    public List<String> ClubList()
+    {
+        List<String> c = new List<String>();
+        for (int i = 0; i < RecipeObj.IngredientList.Length; i++)
+        {
+            c.Add("club "+i);
+            Console.WriteLine(c[i]);
+        }
+        return c;
     }
 
     private void step()
