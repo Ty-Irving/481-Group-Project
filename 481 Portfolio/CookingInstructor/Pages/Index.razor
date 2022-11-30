@@ -36,13 +36,13 @@
     private String bgIngredientButton { get; set; } = bgNormal;
 
     private SearchModeEnum searchMode = SearchModeEnum.ByRecipe;
-    
+
     private void onSearchRecipes()
     {
         searchMode = SearchModeEnum.ByRecipe;
         bgRecipeButton = bgHighlight;
         bgIngredientButton = bgNormal;
-    } 
+    }
     private void onSearchIngredients()
     {
         searchMode = SearchModeEnum.ByIngredient;

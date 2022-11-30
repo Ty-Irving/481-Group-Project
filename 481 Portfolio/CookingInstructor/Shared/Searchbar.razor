@@ -1,5 +1,5 @@
 <div class="h-100 d-flex align-items-center justify-content-center">
-    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search... " @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
     <Autocomplete 
         searchMode="@searchMode"
     />
@@ -7,11 +7,16 @@
     @if (searchMode == SearchModeEnum.ByRecipe) {
         <SearchFilter />
     }
-    <SearchButton />
+    <SearchButton CurrentValue =@CurrentValue />
 </div>
     
 
 @code {
+    private string ? CurrentValue { get; set; }
+    
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
+
+    [Parameter]
+    public bool ReadyGo { get; set; }
 }

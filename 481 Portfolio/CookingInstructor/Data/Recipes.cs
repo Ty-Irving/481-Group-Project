@@ -2,7 +2,7 @@ namespace CookingInstructor.Data;
 
 public class Recipes
 {
-    public CookingInstructor.RecipeNS.Recipe[] getRecipes(){
+    public CookingInstructor.RecipeNS.Recipe[] GetRecipes(){
         CookingInstructor.RecipeNS.Recipe[] res = {
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Braised Pork With Beancurd Sheet", 
@@ -33,9 +33,9 @@ public class Recipes
                          "10. Add knoted Beancurd Sheets, red pepper, Onion Green(not chopped). Then cover the pot and wait for sometime(depends on the water left in pot), remember to check the water level, we don't want to charred it. ",
                          "11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.",
                          "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
-                Spicy = 2,
+                Spicy = true,
                 Difficulty = 2,
-                Time = 25,
+                Time = 120,
                 Servings = 3,
                 CaloriesPerServing = 621,
                 isFavorite = false,
@@ -53,10 +53,11 @@ public class Recipes
                          "",
                          "",
                         },
+                
                 imagePath = "/BraisedPork/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
-                Name = "Mapo Tofu", 
+                Name = "MapoTofu", 
                 Category = "Chinese",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Tofu","g",700),
@@ -88,7 +89,7 @@ public class Recipes
                          "11. Keep the pushing loop, you will find soup becomes thick.",
                          "12. When the soup is thick enough, close the fire and add left Onion Green.",
                          "13. You'll love it with some rice."},
-                Spicy = 3,
+                Spicy = true,
                 Difficulty = 2,
                 Time = 30,
                 Servings = 3,
@@ -107,9 +108,9 @@ public class Recipes
                          "",
                          "/Recipe_datas/MapoTofu/11.jpg",
                          "/Recipe_datas/MapoTofu/12.jpg",
-                         ""
+                         "/Recipe_datas/MapoTofu/13.jpg"
                         },
-                        imagePath = "/Recipe_datas/MapoTofu/13.jpg"
+                imagePath = "/Recipe_datas/MapoTofu/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Spicy Fry Shredded Potato", 
@@ -132,7 +133,7 @@ public class Recipes
                          "5. Add the Shredded Potato, keep frying for 40 seconds(at least).",
                          "6. Add Salt, Seasoning Soy sauce then keep frying till Potato colored evenly.",
                          "7. Finished!"},
-                Spicy = 2,
+                Spicy = true,
                 Difficulty = 1,
                 Time = 17,
                 Servings = 2,
@@ -169,7 +170,7 @@ public class Recipes
                          "4. When the water boiling add the Egg and Noodles. Stir them gentlely, you don't want Noodles stick with pot.",
                          "5. At least boil the Noodle for 3min then you can add some Onion Green and close fire.",
                          "6. Enjoy!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 1,
@@ -205,7 +206,7 @@ public class Recipes
                          "5. Take out the Egg, we will now cook the Tomato.",
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -243,7 +244,7 @@ public class Recipes
                          "4. Once boiling, add potatoes, and 1/2 of the crumbled bacon. Cook until heated through, 3 to 4 minutes.",
                          "5. Transfer warm potato salad to a serving dish and sprinkle remaining bacon over top. Garnish with parsley.",
                          "6. Finished! Best Served Immediately"},
-                Spicy = 2,
+                Spicy = true,
                 Difficulty = 1,
                 Time = 30,
                 Servings = 4,
@@ -294,7 +295,7 @@ public class Recipes
                          "12. After about 5 mins the clams should open and all should be ready.",
                          "13. Finished!"}
             ,
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 3,
                 Time = 50,
                 Servings = 5,
@@ -315,7 +316,7 @@ public class Recipes
                          "",
                          ""
                         },
-                imagePath = ""
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
         
         
@@ -346,7 +347,7 @@ public class Recipes
                          "8. Taste and adjust salt and pepper seasonings",
                          "9 Finished!"}
             ,
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
                 Time = 30,
                 Servings = 4,
@@ -363,7 +364,7 @@ public class Recipes
                          "",
                          ""
                          },
-                imagePath = ""
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
             
 
@@ -387,7 +388,7 @@ public class Recipes
                          "5. Take out the Egg, we will now cook the Tomato.",
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -401,7 +402,8 @@ public class Recipes
                          "",
                          "",
                          ""
-                        }
+                        },
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -424,9 +426,9 @@ public class Recipes
                          "5. Take out the Egg, we will now cook the Tomato.",
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
-                Time = 15,
+                Time = 45,
                 Servings = 2,
                 CaloriesPerServing = 480,
                 isFavorite = false,
@@ -438,7 +440,8 @@ public class Recipes
                          "",
                          "",
                          ""
-                        }
+                        },
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -461,7 +464,7 @@ public class Recipes
                          "5. Take out the Egg, we will now cook the Tomato.",
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -475,7 +478,8 @@ public class Recipes
                          "",
                          "",
                          ""
-                        }
+                        },
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -498,7 +502,7 @@ public class Recipes
                          "5. Take out the Egg, we will now cook the Tomato.",
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 3,
                 Time = 40,
                 Servings = 2,
@@ -512,7 +516,8 @@ public class Recipes
                          "",
                          "",
                          ""
-                        }
+                        },
+                imagePath = "/Recipe_datas/Dump/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
                 Name = "Chili Chicken",
@@ -548,21 +553,22 @@ public class Recipes
                 },
                 stepImages = new String[]{
                     "",
-                    "/Recipe_datas/chili chicken/1.jpg",
+                    "/Recipe_datas/chilli chicken/1.jpg",
                     "",
-                    "/Recipe_datas/chili chicken/3.jpg",
-                    "/Recipe_datas/chili chicken/5.jpg",
+                    "/Recipe_datas/chilli chicken/3.jpg",
+                    "/Recipe_datas/chilli chicken/5.jpg",
                     "",
                     "",
-                    "/Recipe_datas/chili chicken/8.jpg",
-                    "/Recipe_datas/chili chicken/9.jpg"
+                    "/Recipe_datas/chilli chicken/8.jpg",
+                    "/Recipe_datas/chilli chicken/9.jpg"
                 },
-                Spicy = 3,
+                Spicy = true,
                 Difficulty = 3,
                 Time = 60,
                 Servings = 2,
                 CaloriesPerServing = 452,
                 isFavorite = false,
+                imagePath = "/Recipe_datas/chilli chicken/9.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
                 Name = "Beef Donburi",
@@ -601,13 +607,13 @@ public class Recipes
                     "/Recipe_datas/Beef Donburi/3.jpg",
                     "/Recipe_datas/Beef Donburi/4.jpg"
                 },
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 3,
                 Time = 45,
                 Servings = 1,
                 CaloriesPerServing = 670,
                 isFavorite = false,
-
+                imagePath = "/Recipe_datas/Beef Donburi/4.jpg"
             },
             
             new CookingInstructor.RecipeNS.Recipe{
@@ -636,13 +642,13 @@ public class Recipes
                     "",
                     "/Recipe_datas/French Bisque/2.jpg"
                 },
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 2,
                 Time = 30,
                 Servings = 1,
                 CaloriesPerServing = 300,
                 isFavorite = false,
-
+                imagePath = "/Recipe_datas/French Bisque/2.jpg"
             },
 
             new CookingInstructor.RecipeNS.Recipe{
@@ -676,12 +682,13 @@ public class Recipes
                     "",
                     "/Recipe_datas/French Apple Tart/5.jpg"
                 },
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 3,
                 Time = 60,
                 Servings = 3,
                 CaloriesPerServing = 400,
                 isFavorite = false,
+                imagePath = "/Recipe_datas/French Apple Tart/5.jpg"
             },
 
              new CookingInstructor.RecipeNS.Recipe{
@@ -712,12 +719,13 @@ public class Recipes
                     "/Recipe_datas/Dongpo Pork/5.jpg",
                     "/Recipe_datas/Dongpo Pork/6.jpg"
                 },
-                Spicy = 1,
+                Spicy = false,
                 Difficulty = 3,
                 Time = 120,
                 Servings = 2,
                 CaloriesPerServing = 483,
                 isFavorite = false,
+                imagePath = "/Recipe_datas/Dongpo Pork/6.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
                 Name = "Frying Chicken",
@@ -753,12 +761,13 @@ public class Recipes
                     "",
                     "/Recipe_datas/Frying Chicken/4.jpg"
                 },
-                Spicy = 3,
+                Spicy = true,
                 Difficulty = 1,
                 Time = 45,
                 Servings = 2,
                 CaloriesPerServing = 467,
                 isFavorite = false,
+                imagePath = "/Recipe_datas/Frying Chicken/4.jpg"
             }
         };
         return res;
