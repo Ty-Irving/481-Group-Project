@@ -25,7 +25,7 @@
     <div class="recipeContainer">
         @for (int i = 0; i < list.Length; i++)
         {
-            if (list[i].Name.Contains(_name))
+            if (list[i].Name.ToUpper().Contains(_name.ToUpper()))
             {
                 current = list[i];
                 diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
@@ -39,33 +39,6 @@
             }
         }
 
-        <!---<RecipeImageHorizontal Image="https://healthyfitnessmeals.com/wp-content/uploads/2020/01/Classic-beef-stew-4.jpg"
-                               Difficulty=2
-                               SpicyLevel=true
-                               Calories=275
-                               Name="Beef Stew"
-                               Time=15 />
-
-        <RecipeImageHorizontal Image="https://media.istockphoto.com/photos/butter-chicken-curry-with-tender-chicken-breast-cream-butter-honey-picture-id673858790?k=20&m=673858790&s=612x612&w=0&h=OKRaFJU0mHL2-Zr6MdqTf_OLgB7MDcbTSaXvs7OAsDg="
-                               Difficulty=2
-                               SpicyLevel=true
-                               Calories=500
-                               Name="Curry"
-                               Time=40 />
-
-        <RecipeImageHorizontal Image="https://lemonsandzest.com/wp-content/uploads/2021/05/Air-Fryer-Fish-Tacos-16.jpg"
-                               Difficulty=3
-                               SpicyLevel=false
-                               Calories=350
-                               Name="Fish Tacos"
-                               Time=60 />
-
-        <RecipeImageHorizontal Image="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-05-Fried-Chicken-Sandwich%2Fchicken-sandwich-4"
-                               Difficulty=1
-                               SpicyLevel=true
-                               Calories=400
-                               Name="Chicken Sandwich"
-                               Time=20 />-->
     </div>
 </body>
 
