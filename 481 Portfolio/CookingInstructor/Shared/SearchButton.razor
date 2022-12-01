@@ -1,3 +1,4 @@
+@inject YourIngredients YourIngredients
 @inject IJSRuntime jsRuntime
 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick=@NavigateToNewTab>
     <svg xmlns="http://www.w3.org/2000/svg"
@@ -12,10 +13,31 @@
 @code {
     [Parameter]
     public string? CurrentValue { get; set; }
+    [Parameter]
+    public SearchModeEnum searchMode { get; set; }
 
     public async Task NavigateToNewTab()
     {
-        string url = "https://localhost:7041/SearchPage?name="+CurrentValue;
+        string url = "https://localhost:7041/SearchPage?name=";
+
+        if (searchMode == SearchModeEnum.ByRecipe)
+        {
+            url += CurrentValue;
+        }
+        else 
+        { 
+            foreach (var name in YourIngredients.list)
+            {
+                if (name == YourIngredients.list[0])
+                {
+                    url += name;
+                }
+                else
+                {
+                    url += "," + name;
+                }
+            }
+        }
         await jsRuntime.InvokeAsync<object>("open", url, "_blank");
     }
 }

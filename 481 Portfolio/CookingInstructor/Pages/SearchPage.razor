@@ -6,20 +6,9 @@
 
 <body>
 
-    <div class="d-grid gap-3">
-
-        <div class="h-100 d-flex align-items-center justify-content-center" style="max-width: 812px;">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" class="mx-3">
-                    <circle cx="10.5" cy="10.5" r="8"></circle>
-                    <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
-                </svg>
-            </button>
-        </div>
-    </div>
+    <Searchbar 
+            searchMode="SearchModeEnum.ByRecipe"
+    />
 
 
     <div class="recipeContainer">
@@ -33,10 +22,29 @@
                     Image =@current.imagePath
                     Difficulty =@current.Difficulty
                     SpicyLevel =@current.Spicy
+                    Calories =@current.CaloriesPerServing
                     Name =@current.Name
                     Time =@current.Time/>
 
             }
+        }
+
+    </div>
+
+    <div class="ingredientContainer">
+        @for (int i = 0; i < list.Length; i++)
+        {
+            int count = 0;
+            @for (int j = 0; j < list[i].IngredientList.Length; j++)
+            {
+                if (list[i].IngredientList[j].Name.ToUpper() == _name.ToUpper())
+                {
+                    count += 1;
+                    current = list[i];
+                }
+            }
+            // add to a dict, (searchedIngredient1, count)
+            // add to another dict the (recipe that had at least 1 matching searched Ingredient, and its count of ingredients matched) to then show in order of relevance.
         }
 
     </div>
