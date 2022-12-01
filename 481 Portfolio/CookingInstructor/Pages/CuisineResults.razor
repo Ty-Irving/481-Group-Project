@@ -14,7 +14,7 @@
         @for(var i = 0; i < list.Length; i++){
             display = true;
             <RecipeImageHorizontal
-                Image =""
+                Image ="@list[i].imagePath"
                 Difficulty = "@list[i].Difficulty"
                 SpicyLevel = "@list[i].Spicy"
                 Calories = "@list[i].CaloriesPerServing"
@@ -28,7 +28,7 @@
             if(@list[i].Category == _cuisine){
                 display = true;
                 <RecipeImageHorizontal
-                    Image =""
+                    Image = "@list[i].imagePath"
                     Difficulty = "@list[i].Difficulty"
                     SpicyLevel = "@list[i].Spicy"
                     Calories = "@list[i].CaloriesPerServing"
