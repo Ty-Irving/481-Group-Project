@@ -12,8 +12,11 @@ public class Recipe{
     public int Servings { get; set;}
     public int CaloriesPerServing { get; set;}
     public bool isFavorite { get; set;}
+    public String[] ? stepImages {get; set;}
+    public String ? imagePath {get; set;}
     
-    
+
+    public bool[]? importance { get; set; }
 }
 
 
@@ -25,6 +28,10 @@ public class Ingredient{
         Name = n;
         Unit = u;
         Amount = a;
+    }
+
+    public string toString() {
+        return Name + Amount + Unit;
     }
 
 }
