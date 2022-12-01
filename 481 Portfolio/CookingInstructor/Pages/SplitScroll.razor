@@ -13,8 +13,8 @@
         {
             <input type="checkbox" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
             string[] subs = x.Split(' ');
-            <label>@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString()  </label>
-            <br />   
+            <label>@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
+            <br />    
         }
 
     </div>
