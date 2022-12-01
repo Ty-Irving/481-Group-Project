@@ -1,0 +1,65 @@
+@page "/Discover/Cuisineresults"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
+
+
+<PageTitle>Results</PageTitle>
+    
+<div class = "recipeContainer">
+    @if(list == null){
+        <h1>Error loading recipes...</h1>
+    }
+    else if(_cuisine == "All")
+    {
+        @for(var i = 0; i < list.Length; i++){
+            display = true;
+            <RecipeImageHorizontal
+                Image =""
+                Difficulty = "@list[i].Difficulty"
+                SpicyLevel = "@list[i].Spicy"
+                Calories = "@list[i].CaloriesPerServing"
+                Name = "@list[i].Name"
+                Time = "@list[i].Time"
+            />
+        }
+    }
+    else{
+        @for(var i = 0; i < list.Length; i++){
+            if(@list[i].Category == _cuisine){
+                display = true;
+                <RecipeImageHorizontal
+                    Image =""
+                    Difficulty = "@list[i].Difficulty"
+                    SpicyLevel = "@list[i].Spicy"
+                    Calories = "@list[i].CaloriesPerServing"
+                    Name = "@list[i].Name"
+                    Time = "@list[i].Time"
+                />
+            }
+        }
+    }
+
+    @if(display == false){
+        <h1>No results found...</h1>
+    }
+</div>
+
+
+@code{
+    private string? _cuisine;
+    private CookingInstructor.RecipeNS.Recipe[]? list;
+    private bool display = false;
+
+    protected override void OnInitialized()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+        if(queryStrings.TryGetValue("cuisine", out var cuisine))
+        {
+            _cuisine = cuisine;
+        
+        }
+        Data.Recipes myClass = new Data.Recipes();
+        list = myClass.getRecipes();
+    }
+}
