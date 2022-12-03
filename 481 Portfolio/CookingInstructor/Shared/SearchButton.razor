@@ -1,6 +1,7 @@
 @inject YourIngredients YourIngredients
+@inject NavigationManager NavigationManager
 @inject IJSRuntime jsRuntime
-<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick=@NavigateToNewTab>
+<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick=@NavigateToURL>
     <svg xmlns="http://www.w3.org/2000/svg"
          width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round"
@@ -16,9 +17,9 @@
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
 
-    public async Task NavigateToNewTab()
+    private void NavigateToURL()
     {
-        string url = "https://localhost:7041/SearchPage?name=";
+        string url = "/SearchPage?name=";
 
         if (searchMode == SearchModeEnum.ByRecipe)
         {
@@ -38,6 +39,6 @@
                 }
             }
         }
-        await jsRuntime.InvokeAsync<object>("open", url, "_blank");
+        NavigationManager.NavigateTo(url);
     }
 }
