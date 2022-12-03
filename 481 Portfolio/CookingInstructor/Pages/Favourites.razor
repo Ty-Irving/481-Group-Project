@@ -1,4 +1,5 @@
 ﻿@page "/favourites"
+@inject CookingInstructor.Data.SessionFavourites listFavourite;
 
 <PageTitle>Favourites</PageTitle>
 <div class="d-grid gap-3">
@@ -16,7 +17,7 @@
 
 <div class = "recipeContainer">
         @for(var i = 0; i < list.Length; i++){
-            if(list[i].isFavorite == true){
+            if(favList != null && favList.Contains(list[i].Name) == true){
                 display = true;
                 <RecipeImageHorizontal
                     Image = "@list[i].imagePath"
@@ -37,9 +38,11 @@
 
 @code{
     private CookingInstructor.RecipeNS.Recipe[]? list;
+    private string[]? favList;
     private bool display = false;
     protected override void OnInitialized()
     {
+        favList = (listFavourite.favourites != null) ?listFavourite.favourites.ToArray(): null;
         Data.Recipes myClass = new Data.Recipes();
         list = myClass.GetRecipes();
     }

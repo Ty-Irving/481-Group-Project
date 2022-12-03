@@ -2,6 +2,7 @@
 
 @using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavManager
+@inject CookingInstructor.Data.SessionFavourites listFavourite
 
 <PageTitle>Recipe</PageTitle>
 
@@ -113,6 +114,8 @@
     private string diff;
     public string diffcolor;
     public string spicyColor;
+
+
     protected override void OnInitialized()
     {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
@@ -150,6 +153,10 @@
 
         spicyColor = (current.Spicy == true) ? "Red" :  "Black";
 
+        if(listFavourite.favourites != null && listFavourite.favourites.Contains(_name)){
+            IsFavorite = true;
+        }
+
         
     }
     private bool IsShared { get; set; } = false;
@@ -173,5 +180,22 @@
     private void ToggleFavorite()
     {
         IsFavorite = !IsFavorite;
+        if(_name == null){
+            return;
+        }
+        if(IsFavorite==true){
+            if(listFavourite.favourites == null){
+                listFavourite.favourites = new List<string>{_name};
+                    Console.WriteLine("Created new list");
+            }
+            else{
+                listFavourite.addToList(_name);
+                Console.WriteLine("Added to list");
+            }
+        }
+        else{
+            listFavourite.removeFromList(_name);
+            Console.WriteLine("Removed from list");
+        }
     }
 }
