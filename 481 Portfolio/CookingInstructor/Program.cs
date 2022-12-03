@@ -9,6 +9,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<YourIngredients>();
 builder.Services.AddSingleton<CommonIngredients>();
+builder.Services.AddScoped<SessionFavourites>();
 
 var app = builder.Build();
 
