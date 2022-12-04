@@ -4,20 +4,20 @@ public class Recipes
 {
     public CookingInstructor.RecipeNS.Recipe[] GetRecipes(){
         CookingInstructor.RecipeNS.Recipe[] res = {
-            new CookingInstructor.RecipeNS.Recipe{ 
-                Name = "Braised Pork With Beancurd Sheet", 
+            new CookingInstructor.RecipeNS.Recipe{
+                Name = "Braised Pork With Beancurd Sheet",
                 Category = "Chinese",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Pork","g",500),
                                   new CookingInstructor.RecipeNS.Ingredient("Beancurd Sheet","g",250),
                                   new CookingInstructor.RecipeNS.Ingredient("Red Pepper","g",20),
-                                  new CookingInstructor.RecipeNS.Ingredient("Black Bean","g",5), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Black Bean","g",5),
                                   new CookingInstructor.RecipeNS.Ingredient("Dark Soy Sauce","g",10),
                                   new CookingInstructor.RecipeNS.Ingredient("Seasoning Soy Sauce","g",15),
                                   new CookingInstructor.RecipeNS.Ingredient("Soy Sauce","g",15),
                                   new CookingInstructor.RecipeNS.Ingredient("Oyster Flavoured Sauce","g",5),
                                   new CookingInstructor.RecipeNS.Ingredient("Garlic","pieces",4),
-                                  new CookingInstructor.RecipeNS.Ingredient("Ginger","g",5), 
+                                  new CookingInstructor.RecipeNS.Ingredient("Ginger","g",5),
                                   new CookingInstructor.RecipeNS.Ingredient("Onion Green","g",50),
                                   new CookingInstructor.RecipeNS.Ingredient("Oil","g",25)},
                 Steps = new String[]
@@ -39,7 +39,7 @@ public class Recipes
                 Servings = 3,
                 CaloriesPerServing = 621,
                 isFavorite = false,
-                stepImages = new String[] 
+                stepImages = new String[]
                         {"",
                          "/Recipe_datas/BraisedPork/2.jpg",
                          "",
@@ -53,7 +53,7 @@ public class Recipes
                          "",
                          "",
                         },
-                
+                importance = Enumerable.Repeat(false, 12).ToArray(),
                 imagePath = "/BraisedPork/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -110,6 +110,7 @@ public class Recipes
                          "/Recipe_datas/MapoTofu/12.jpg",
                          "/Recipe_datas/MapoTofu/13.jpg"
                         },
+                importance = System.Linq.Enumerable.Repeat(false, 13).ToArray(),
                 imagePath = "/Recipe_datas/MapoTofu/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -148,6 +149,7 @@ public class Recipes
                          "/Recipe_datas/SpicyPotato/6.jpg",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/SpicyPotato/7.jpg"
             },
               new CookingInstructor.RecipeNS.Recipe{ 
@@ -184,6 +186,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 6).ToArray(),
                 imagePath = "/Recipe_datas/TomatoEggNoodle/6.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{ 
@@ -221,6 +224,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/TomatoWithEgg/7.jpg"
             },
             
@@ -258,6 +262,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 6).ToArray(),
                 imagePath = "/Recipe_datas/PotatoSalad/final.jpg"
             },
             
@@ -316,6 +321,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 13).ToArray(),
                 imagePath = "/Recipe_datas/paella/final.JPG"
             },
         
@@ -364,6 +370,7 @@ public class Recipes
                          "",
                          ""
                          },
+                importance = Enumerable.Repeat(false, 9).ToArray(),
                 imagePath = "/Recipe_datas/BalsamicChicken/final.jpg"
             },
             
@@ -403,6 +410,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
@@ -441,6 +449,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
@@ -479,6 +488,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/Dump/final.jpg"
             },
 
@@ -517,6 +527,7 @@ public class Recipes
                          "",
                          ""
                         },
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/Dump/final.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
@@ -568,6 +579,7 @@ public class Recipes
                 Servings = 2,
                 CaloriesPerServing = 452,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 9).ToArray(),
                 imagePath = "/Recipe_datas/chilli chicken/9.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
@@ -613,6 +625,7 @@ public class Recipes
                 Servings = 1,
                 CaloriesPerServing = 670,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 6).ToArray(),
                 imagePath = "/Recipe_datas/Beef Donburi/4.jpg"
             },
             
@@ -648,6 +661,7 @@ public class Recipes
                 Servings = 1,
                 CaloriesPerServing = 300,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 5).ToArray(),
                 imagePath = "/Recipe_datas/French Bisque/2.jpg"
             },
 
@@ -688,6 +702,7 @@ public class Recipes
                 Servings = 3,
                 CaloriesPerServing = 400,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/French Apple Tart/5.jpg"
             },
 
@@ -725,6 +740,7 @@ public class Recipes
                 Servings = 2,
                 CaloriesPerServing = 483,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 5).ToArray(),
                 imagePath = "/Recipe_datas/Dongpo Pork/6.jpg"
             },
             new CookingInstructor.RecipeNS.Recipe{
@@ -767,6 +783,7 @@ public class Recipes
                 Servings = 2,
                 CaloriesPerServing = 467,
                 isFavorite = false,
+                importance = Enumerable.Repeat(false, 7).ToArray(),
                 imagePath = "/Recipe_datas/Frying Chicken/4.jpg"
             }
         };

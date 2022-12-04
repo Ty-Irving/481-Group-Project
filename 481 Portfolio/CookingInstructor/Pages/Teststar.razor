@@ -24,19 +24,18 @@
 <body>
     <p>
         @Value
-        @if (important)
+       
+        <button @onclick=@change_stage class="clickable_img">
+        @if (!get_stage())
         {
-            <button @onclick=@change_stage class="clickable_img">
-            @if (is_star == false)
-            {
-                <img class="img_layout" src="/images/star_black.png" />
-            }
-            else
-            {
-                <img class="img_layout" src="/images/star_black.png" style="filter: invert(80%) sepia(42%) saturate(1211%) hue-rotate(359deg) brightness(103%) contrast(102%);" />
-            }
-            </button>
+            <img class="img_layout" src="/images/star_black.png" />
         }
+        else
+        {
+            <img class="img_layout" src="/images/star_black.png" style="filter: invert(80%) sepia(42%) saturate(1211%) hue-rotate(359deg) brightness(103%) contrast(102%);" />
+        }
+        </button>
+        
     </p>
 
      @if (image != "")
@@ -50,17 +49,22 @@
 @code{
     [Parameter]
     public string? Value { get; set; }
-
     [Parameter]
-    public bool important { get; set; } = false;
+    public int? index { get; set; }
+
     [Parameter]
     public string image { get; set;} = "";
 
+    [Parameter]
+    public int? CurrentStep { get; set; }
 
-    bool is_star = false;
+    bool get_stage() {
+        return Index.staticlist[index ?? 0].importance[CurrentStep ?? 0];
+    }
+
     void change_stage()
     {
-        is_star = ! is_star;
+        Index.staticlist[index ?? 0].importance[CurrentStep ?? 0] = !Index.staticlist[index ?? 0].importance[CurrentStep ?? 0];
     }
 
 }

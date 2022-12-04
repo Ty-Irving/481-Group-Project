@@ -100,7 +100,7 @@
         </div>
 
         <div class="splitScroll">
-            <SplitScroll RecipeObj="@current" />
+            <SplitScroll RecipeObj="@current" index=@_index />
         </div>
     </div>
 
@@ -108,6 +108,7 @@
 
 @code {
     private string? _name;
+    private int? _index;
     private CookingInstructor.RecipeNS.Recipe[]? list;
     private bool display = false;
     private CookingInstructor.RecipeNS.Recipe? current;
@@ -125,6 +126,11 @@
             _name = name;
 
         }
+        if (queryStrings.TryGetValue("Index", out var index))
+        {
+            _index = System.Int32.Parse(index);
+
+        }
         Data.Recipes myClass = new Data.Recipes();
         list = myClass.GetRecipes();
 
@@ -137,7 +143,7 @@
         }
 
         diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
-      
+
         if (current.Difficulty == 1)
         {
             diffcolor = "color: green";
@@ -157,7 +163,7 @@
             IsFavorite = true;
         }
 
-        
+
     }
     private bool IsShared { get; set; } = false;
     public String Message
@@ -186,7 +192,7 @@
         if(IsFavorite==true){
             if(listFavourite.favourites == null){
                 listFavourite.favourites = new List<string>{_name};
-                    Console.WriteLine("Created new list");
+                Console.WriteLine("Created new list");
             }
             else{
                 listFavourite.addToList(_name);
