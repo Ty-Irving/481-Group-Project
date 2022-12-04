@@ -3,7 +3,6 @@
 <html>
 <style>
     button.clickable_img {
-        padding: 0;
         border: none;
         background: none;   
     }
@@ -24,7 +23,7 @@
 <body>
     <p>
         @Value
-       
+         
         <button @onclick=@change_stage class="clickable_img">
         @if (!get_stage())
         {
@@ -35,7 +34,7 @@
             <img class="img_layout" src="/images/star_black.png" style="filter: invert(80%) sepia(42%) saturate(1211%) hue-rotate(359deg) brightness(103%) contrast(102%);" />
         }
         </button>
-        
+        <br />
     </p>
 
      @if (image != "")
