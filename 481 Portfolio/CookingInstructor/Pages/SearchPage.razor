@@ -19,6 +19,7 @@
                 current = list[i];
                 diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
                 <RecipeImageHorizontal 
+                    Index =@i
                     Image =@current.imagePath
                     Difficulty =@current.Difficulty
                     SpicyLevel =@current.Spicy
@@ -52,7 +53,7 @@
 
 @code{
     private string? _name;
-    private CookingInstructor.RecipeNS.Recipe[]? list;
+    public CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
 
@@ -66,7 +67,6 @@
 
         }
         Data.Recipes myClass = new Data.Recipes();
-        list = myClass.GetRecipes();
     }
 
 }

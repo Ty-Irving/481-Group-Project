@@ -1,5 +1,5 @@
 
-<a href = "/recipe?name=@Name" class = "recipeLink">
+<a href = "/recipe?name=@Name&Index=@Index" class = "recipeLink">
 
     <div class = "Recipe">
         <img class = "recipeImage" src = "@Image">
@@ -45,11 +45,11 @@
     public string? Image { get; set; }
 
     [Parameter]
-    public int? Difficulty { get; set; } 
+    public int? Difficulty { get; set; }
 
     [Parameter]
     public bool? SpicyLevel { get; set; }
-    
+
     [Parameter]
     public int? Calories { get; set; }
 
@@ -59,4 +59,6 @@
     [Parameter]
     public int? Time { get; set; }
 
+    [Parameter]
+    public int? Index { get; set; }
 }

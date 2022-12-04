@@ -11,7 +11,7 @@
     <div class="ingList">
         @foreach (string x in ClubList())
         {
-            <input type="checkbox" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
+            <input type="checkbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
             string[] subs = x.Split(' ');
             <label>@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
             <br />    
@@ -27,7 +27,7 @@
         @for (int i = 0; i < RecipeObj.Steps.Length; i++)
         {
             <!---id="Instruction" name="Instruction" value="XXXX"-->
-            <Teststar Value=@RecipeObj.Steps[i] important=@checkImportance(RecipeObj.stepImages[i]) image=@RecipeObj.stepImages[i]></Teststar>
+            <Teststar index=@index CurrentStep=@i Value=@RecipeObj.Steps[i] image=@RecipeObj.stepImages[i] ></Teststar>
 
         }
 
@@ -38,6 +38,9 @@
 @code {
     [Parameter]
     public CookingInstructor.RecipeNS.Recipe? RecipeObj { get; set; }
+
+    [Parameter]
+    public int? index { get; set; }
 
     public EventCallback<ChangeEventArgs> ValueChanged { get; set; }
     private int show = 0;
@@ -88,13 +91,19 @@
         }
     }
 
+    bool ischeck(string x) {
+        if (!ClubMember.Contains(x))
+            return false;
+        else
+            return true;
+    }
+
     public List<String> ClubList()
     {
         List<String> c = new List<String>();
         for (int i = 0; i < RecipeObj.IngredientList.Length; i++)
         {
             c.Add("club "+i);
-            Console.WriteLine(c[i]);
         }
         return c;
     }
