@@ -26,6 +26,7 @@
                     Calories = "@list[i].CaloriesPerServing"
                     Name = "@list[i].Name"
                     Time = "@list[i].Time"
+                    Index ="@i"
                 />
             }
         }
@@ -37,13 +38,12 @@
 </div>
 
 @code{
-    private CookingInstructor.RecipeNS.Recipe[]? list;
+    private CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
     private string[]? favList;
     private bool display = false;
     protected override void OnInitialized()
     {
         favList = (listFavourite.favourites != null) ?listFavourite.favourites.ToArray(): null;
         Data.Recipes myClass = new Data.Recipes();
-        list = myClass.GetRecipes();
     }
 }
