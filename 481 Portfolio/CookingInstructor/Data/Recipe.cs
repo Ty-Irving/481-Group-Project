@@ -15,6 +15,7 @@ public class Recipe{
     public String[] ? stepImages {get; set;}
     public String ? imagePath {get; set;}
     
+
     public bool[]? importance { get; set; }
 }
 
@@ -34,4 +35,3 @@ public class Ingredient{
     }
 
 }
-

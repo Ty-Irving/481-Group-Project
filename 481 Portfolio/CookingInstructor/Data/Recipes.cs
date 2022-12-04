@@ -302,9 +302,9 @@ public class Recipes
                 CaloriesPerServing = 817/5,
                 isFavorite = false,
                 stepImages = new String[] 
-                        {"",
-                         "",
-                         "",
+                        {"/Recipe_datas/paella/1.gif",
+                         "/Recipe_datas/paella/2.JPG",
+                         "/Recipe_datas/paella/3.JPG",
                          "",
                          "",
                          "",
@@ -316,7 +316,7 @@ public class Recipes
                          "",
                          ""
                         },
-                imagePath = "/Recipe_datas/Dump/final.jpg"
+                imagePath = "/Recipe_datas/paella/final.JPG"
             },
         
         
@@ -355,16 +355,16 @@ public class Recipes
                 isFavorite = false,
                 stepImages = new String[] 
                         {"",
+                         "/Recipe_datas/BalsamicChicken/2.JPG",
                          "",
                          "",
                          "",
-                         "",
-                         "",
+                         "/Recipe_datas/BalsamicChicken/6.JPG",
                          "",
                          "",
                          ""
                          },
-                imagePath = "/Recipe_datas/Dump/final.jpg"
+                imagePath = "/Recipe_datas/BalsamicChicken/final.jpg"
             },
             
 

@@ -7,7 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton<YourIngredients>();
+builder.Services.AddSingleton<CommonIngredients>();
+builder.Services.AddScoped<SessionFavourites>();
 
 var app = builder.Build();
 

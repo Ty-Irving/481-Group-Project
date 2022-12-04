@@ -1,4 +1,5 @@
 ﻿@page "/favourites"
+@inject CookingInstructor.Data.SessionFavourites listFavourite;
 
 <PageTitle>Favourites</PageTitle>
 <div class="d-grid gap-3">
@@ -15,23 +16,34 @@
 </div>
 
 <div class = "recipeContainer">
-    <RecipeImageHorizontal
-        Image="https://healthyfitnessmeals.com/wp-content/uploads/2020/01/Classic-beef-stew-4.jpg"
-        Difficulty=2
-        SpicyLevel=true
-        Calories=275
-        Name="Beef Stew"
-        Time=15
-    />
+        @for(var i = 0; i < list.Length; i++){
+            if(favList != null && favList.Contains(list[i].Name) == true){
+                display = true;
+                <RecipeImageHorizontal
+                    Image = "@list[i].imagePath"
+                    Difficulty = "@list[i].Difficulty"
+                    SpicyLevel = "@list[i].Spicy"
+                    Calories = "@list[i].CaloriesPerServing"
+                    Name = "@list[i].Name"
+                    Time = "@list[i].Time"
+                />
+            }
+        }
 
-    <RecipeImageHorizontal
-        Image="https://media.istockphoto.com/photos/butter-chicken-curry-with-tender-chicken-breast-cream-butter-honey-picture-id673858790?k=20&m=673858790&s=612x612&w=0&h=OKRaFJU0mHL2-Zr6MdqTf_OLgB7MDcbTSaXvs7OAsDg="
-        Difficulty=2
-        SpicyLevel=true
-        Calories=500
-        Name="Curry"
-        Time=40
-    />
+        @if(display == false){
+            <h1>No favourites found...</h1>
+        }
 
 </div>
 
+@code{
+    private CookingInstructor.RecipeNS.Recipe[]? list;
+    private string[]? favList;
+    private bool display = false;
+    protected override void OnInitialized()
+    {
+        favList = (listFavourite.favourites != null) ?listFavourite.favourites.ToArray(): null;
+        Data.Recipes myClass = new Data.Recipes();
+        list = myClass.GetRecipes();
+    }
+}
