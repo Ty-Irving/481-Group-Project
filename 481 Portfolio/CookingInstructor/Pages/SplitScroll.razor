@@ -10,18 +10,23 @@
     input.largerCheckbox {
         width:20px;
         height:20px;
+        margin-bottom: 20px;
     }
+    label {
+        display: inline-block;
+        text-align: left;
+        
+      }
 </style>
 @if (show == 0)
 {
     <div class="ingList">
         @foreach (string x in ClubList())
         {
-            <input type="checkbox" class ="largerCheckbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" /><!---id="Ingridient1" name="Ingridient1" value="XXXX">-->
+            <input type="checkbox" class ="largerCheckbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" />
             string[] subs = x.Split(' ');
             <label>&nbsp;&nbsp;&nbsp;@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
             <br />    
-            <br />
         }
 
     </div>

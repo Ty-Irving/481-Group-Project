@@ -36,6 +36,11 @@
     padding-left: 5%;
 }
 
+.recipeName h2
+{
+    font-size: 20px;
+}
+
 .recipeInfo{
     vertical-align: middle;
 }
