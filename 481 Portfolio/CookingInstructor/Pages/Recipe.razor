@@ -2,7 +2,6 @@
 
 @using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavManager
-@inject CookingInstructor.Data.SessionFavourites listFavourite
 
 <PageTitle>Recipe</PageTitle>
 
@@ -39,7 +38,7 @@
 
         <div @onclick="ToggleFavorite" class="fs-2">
             <div class="d-inline-flex">
-                @if (@IsFavorite)
+                @if (list[_index??0].isFavorite)
                 {
                     // Bookmark Heart Fill
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
@@ -109,7 +108,7 @@
 @code {
     private string? _name;
     private int? _index;
-    private CookingInstructor.RecipeNS.Recipe[]? list;
+    private CookingInstructor.RecipeNS.Recipe[]? list =Index.staticlist;
     private bool display = false;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
@@ -132,15 +131,8 @@
 
         }
         Data.Recipes myClass = new Data.Recipes();
-        list = myClass.GetRecipes();
 
-        for (var i = 0; i < list.Length; i++)
-        {
-            if (list[i].Name == name)
-            {
-                current = list[i];
-            }
-        }
+        current = list[_index??0];
 
         diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
 
@@ -158,10 +150,6 @@
         }
 
         spicyColor = (current.Spicy == true) ? "Red" :  "Black";
-
-        if(listFavourite.favourites != null && listFavourite.favourites.Contains(_name)){
-            IsFavorite = true;
-        }
 
 
     }
@@ -185,22 +173,14 @@
 
     private void ToggleFavorite()
     {
-        IsFavorite = !IsFavorite;
+        list[_index??0].isFavorite = !list[_index??0].isFavorite;
         if(_name == null){
             return;
         }
-        if(IsFavorite==true){
-            if(listFavourite.favourites == null){
-                listFavourite.favourites = new List<string>{_name};
-                Console.WriteLine("Created new list");
-            }
-            else{
-                listFavourite.addToList(_name);
-                Console.WriteLine("Added to list");
-            }
+        if(list[_index??0].isFavorite == true){
+            Console.WriteLine("Added to list");
         }
         else{
-            listFavourite.removeFromList(_name);
             Console.WriteLine("Removed from list");
         }
     }
