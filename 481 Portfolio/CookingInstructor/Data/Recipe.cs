@@ -31,7 +31,7 @@ public class Ingredient{
     }
 
     public string toString() {
-        return Amount+ "\t" + Unit + "\t" + Name;
+        return Amount + Unit + "\t" + Name;
     }
 
 }
