@@ -1,5 +1,8 @@
 @page "/searchpage"
 @using Microsoft.AspNetCore.WebUtilities
+@using System
+@using System.Linq
+@using System.Collections.Generic;
 @inject NavigationManager NavManager
 
 <PageTitle>Searches</PageTitle>
@@ -28,33 +31,55 @@
 
             }
         }
-
     </div>
 
     <div class="ingredientContainer">
         @for (int i = 0; i < list.Length; i++)
         {
             int count = 0;
-            @for (int j = 0; j < list[i].IngredientList.Length; j++)
+            string[] ingredients = _name.Split(',');
+            string[] recipeIngrList = new string[list[i].IngredientList.Length];
+            
+            @for (int k = 0; k < list[i].IngredientList.Length; k++)
             {
-                if (list[i].IngredientList[j].Name.ToUpper() == _name.ToUpper())
+                recipeIngrList[k] = list[i].IngredientList[k].Name;
+            }
+
+            @for (int j = 0; j < ingredients.Length; j++)
+            {
+                if (recipeIngrList.Contains(ingredients[j], StringComparer.OrdinalIgnoreCase))
                 {
                     count += 1;
-                    current = list[i];
+                    matchedRecipes[list[i]] = count;
                 }
             }
-            // add to a dict, (searchedIngredient1, count)
-            // add to another dict the (recipe that had at least 1 matching searched Ingredient, and its count of ingredients matched) to then show in order of relevance.
         }
 
+        @foreach(KeyValuePair<CookingInstructor.RecipeNS.Recipe?, int> entry in matchedRecipes.OrderByDescending(key => key.Value))
+        {
+            current = entry.Key;
+            Console.WriteLine(entry.Key.Name + ": " + entry.Value);
+            <RecipeImageHorizontal 
+                Image =@current.imagePath
+                Difficulty =@current.Difficulty
+                SpicyLevel =@current.Spicy
+                Calories =@current.CaloriesPerServing
+                Name =@current.Name
+                Time =@current.Time/>
+        }
     </div>
+    
 </body>
 
 @code{
+    // TODO: Show recipe container if ByRecipe, show ingr container if ByIngredient
+    [Parameter]
+    public SearchModeEnum searchMode { get; set; }
     private string? _name;
     private CookingInstructor.RecipeNS.Recipe[]? list;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
+    private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
 
     protected override void OnInitialized()
     {
@@ -63,10 +88,8 @@
         if (queryStrings.TryGetValue("name", out var name))
         {
             _name = name;
-
         }
         Data.Recipes myClass = new Data.Recipes();
         list = myClass.GetRecipes();
     }
-
 }
