@@ -10,6 +10,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<YourIngredients>();
 builder.Services.AddSingleton<CommonIngredients>();
 builder.Services.AddScoped<SessionFavourites>();
+builder.Services.AddScoped<FilterData>();
 
 var app = builder.Build();
 
