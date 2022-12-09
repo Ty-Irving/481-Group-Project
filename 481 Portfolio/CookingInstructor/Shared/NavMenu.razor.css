@@ -7,6 +7,7 @@ a:focus {
 
 li {
     border: black 1px solid;
+    text-align: center;
 }
 
 .bottom{
@@ -16,3 +17,4 @@ li {
 .full-width {
     width: 100%;
 }
+
