@@ -1,6 +1,5 @@
 .content 
 {
-  padding: 0 10px;
   width: auto
 }
 
@@ -8,7 +7,7 @@
 .Categories{
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 5pxpx;
   flex-wrap: wrap;
   width: 60%;
   margin-left: auto;
@@ -29,7 +28,7 @@ h1{
   }
 
   .search-container{
-    width: 310px;
+    width: 370px;
   }
 }
 
