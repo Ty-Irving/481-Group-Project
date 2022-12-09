@@ -274,7 +274,7 @@ public class Recipes
                 Category = "European",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Bronzini","x",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Shrimp/prawns","lb",1/2),
+                                  new CookingInstructor.RecipeNS.Ingredient("Shrimp/prawns","lb",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Stick celery","x",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Carrot","x",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Stems Parsley","x",2),
@@ -323,6 +323,7 @@ public class Recipes
                          "",
                          "",
                          "",
+                         "",
                          ""
                         },
                 importance = Enumerable.Repeat(false, 14).ToArray(),
@@ -332,10 +333,10 @@ public class Recipes
         
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Balsamic Chicken Breast", 
-                Category = "Western",
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Chicken Breasts","x",4),
-                                  new CookingInstructor.RecipeNS.Ingredient("Salt & Pepper","N/A",0),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt & Pepper","",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Olvie Oil","tbs",4),
                                   new CookingInstructor.RecipeNS.Ingredient("Bell Peppers","cups",4),
                                   new CookingInstructor.RecipeNS.Ingredient("Meidium Onion","x",1),
@@ -497,8 +498,8 @@ public class Recipes
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
-                Name = "Tofu Bowl - Dummy", 
-                Category = "Western",
+                Name = "Poutine - Dummy", 
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
                                   new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
@@ -749,7 +750,7 @@ public class Recipes
             },
             new CookingInstructor.RecipeNS.Recipe{
                 Name = "Frying Chicken",
-                Category = "Western",
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Chicken Wings","g",600),
                                   new CookingInstructor.RecipeNS.Ingredient("Oil","g",500),
