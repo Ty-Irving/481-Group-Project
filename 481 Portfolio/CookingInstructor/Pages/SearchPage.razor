@@ -51,16 +51,18 @@
                 if (recipeIngrList.Contains(ingredients[j], StringComparer.OrdinalIgnoreCase))
                 {
                     count += 1;
-                    matchedRecipes[list[i]] = count;
+                    matchedRecipesCounts[list[i]] = count;
+                    matchedRecipesIndexes[list[i]] = i;
                 }
             }
         }
 
-        @foreach(KeyValuePair<CookingInstructor.RecipeNS.Recipe?, int> entry in matchedRecipes.OrderByDescending(key => key.Value))
+        @foreach(KeyValuePair<CookingInstructor.RecipeNS.Recipe?, int> entry in matchedRecipesCounts.OrderByDescending(key => key.Value))
         {
             current = entry.Key;
             Console.WriteLine(entry.Key.Name + ": " + entry.Value);
             <RecipeImageHorizontal 
+                Index=@matchedRecipesIndexes[entry.Key]
                 Image =@current.imagePath
                 Difficulty =@current.Difficulty
                 SpicyLevel =@current.Spicy
@@ -80,7 +82,8 @@
     public CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
-    private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
+    private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipesCounts = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
+    private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipesIndexes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
 
     protected override void OnInitialized()
     {
