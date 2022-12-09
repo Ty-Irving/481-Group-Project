@@ -1,4 +1,4 @@
-<div id="filterChecks" div style=border:5px solid black;">
+<div id="filterChecks">
     <label><u>Time:</u></label>
     <ul style="padding-left:0px">
         <li class="mx-1" style="display:inline"><input type="checkbox"> &lt; 10min</li>
@@ -9,9 +9,9 @@
 
     <label><u>Difficulty:</u></label>
     <ul style="padding-left:0px">
-        <li class="mx-2" style="display:inline"><input type="checkbox">Easy </li>
-        <li class="mx-2" style="display:inline"><input type="checkbox">Medium </li>
-        <li class="mx-2" style="display:inline"><input type="checkbox">Hard </li>
+        @foreach (var difficulty in DifficultyOptions) {
+            <li class="mx-1" style="display:inline"><input type="checkbox"> @difficulty</li>
+        }
     </ul>
 
     <label><u>Types:</u></label>
@@ -21,3 +21,8 @@
         <li class="mx-2" style="display:inline"><input type="checkbox">GF </li>
     </ul>
 </div>
+
+@code {
+    public List<String> DifficultyOptions = new List<String> { "Easy", "Medium", "Hard" };
+    public List<String> ChosenDifficultyOptions = new List<String> {};
+}
