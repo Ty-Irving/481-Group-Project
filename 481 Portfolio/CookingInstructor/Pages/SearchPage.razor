@@ -22,6 +22,7 @@
                 current = list[i];
                 diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
                 <RecipeImageHorizontal 
+                    Index =@i
                     Image =@current.imagePath
                     Difficulty =@current.Difficulty
                     SpicyLevel =@current.Spicy
@@ -76,7 +77,7 @@
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
     private string? _name;
-    private CookingInstructor.RecipeNS.Recipe[]? list;
+    public CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
     private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
@@ -90,6 +91,5 @@
             _name = name;
         }
         Data.Recipes myClass = new Data.Recipes();
-        list = myClass.GetRecipes();
     }
 }

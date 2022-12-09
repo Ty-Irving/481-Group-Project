@@ -38,7 +38,7 @@
 
         <div @onclick="ToggleFavorite" class="fs-2">
             <div class="d-inline-flex">
-                @if (@IsFavorite)
+                @if (list[_index??0].isFavorite)
                 {
                     // Bookmark Heart Fill
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bookmark-heart-fill" viewBox="0 0 16 16">
@@ -99,7 +99,7 @@
         </div>
 
         <div class="splitScroll">
-            <SplitScroll RecipeObj="@current" />
+            <SplitScroll RecipeObj="@current" index=@_index />
         </div>
     </div>
 
@@ -107,12 +107,15 @@
 
 @code {
     private string? _name;
-    private CookingInstructor.RecipeNS.Recipe[]? list;
+    private int? _index;
+    private CookingInstructor.RecipeNS.Recipe[]? list =Index.staticlist;
     private bool display = false;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
     public string diffcolor;
     public string spicyColor;
+
+
     protected override void OnInitialized()
     {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
@@ -122,19 +125,17 @@
             _name = name;
 
         }
-        Data.Recipes myClass = new Data.Recipes();
-        list = myClass.GetRecipes();
-
-        for (var i = 0; i < list.Length; i++)
+        if (queryStrings.TryGetValue("Index", out var index))
         {
-            if (list[i].Name == name)
-            {
-                current = list[i];
-            }
+            _index = System.Int32.Parse(index);
+
         }
+        Data.Recipes myClass = new Data.Recipes();
+
+        current = list[_index??0];
 
         diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
-      
+
         if (current.Difficulty == 1)
         {
             diffcolor = "color: green";
@@ -150,7 +151,7 @@
 
         spicyColor = (current.Spicy == true) ? "Red" :  "Black";
 
-        
+
     }
     private bool IsShared { get; set; } = false;
     public String Message
@@ -172,6 +173,15 @@
 
     private void ToggleFavorite()
     {
-        IsFavorite = !IsFavorite;
+        list[_index??0].isFavorite = !list[_index??0].isFavorite;
+        if(_name == null){
+            return;
+        }
+        if(list[_index??0].isFavorite == true){
+            Console.WriteLine("Added to list");
+        }
+        else{
+            Console.WriteLine("Removed from list");
+        }
     }
 }
