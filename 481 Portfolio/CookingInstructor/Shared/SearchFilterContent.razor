@@ -1,33 +1,24 @@
+@inject FilterData FilterData
+
 <div id="filterChecks">
     <label><u>Time</u></label>
     <div>
-        @foreach (var time in TimeOptions) {
+        @foreach (var time in FilterData.Times.TotalOptions()) {
             <li class="mx-1" style="display:inline"><input type="checkbox"> &lt; @time</li>
         }
     </div>
 
     <label><u>Difficulty</u></label>
      <div> @* style="padding-left:0px" *@
-        @foreach (var difficulty in DifficultyOptions) {
+        @foreach (var difficulty in FilterData.Difficulties.TotalOptions()) {
             <li class="mx-1" style="display:inline"><input type="checkbox"> @difficulty</li>
         }
     </div>
 
     <label><u>Types</u></label>
     <div>
-        @foreach(var restriction in RestrictionOptions) {
+        @foreach(var restriction in FilterData.Restrictions.TotalOptions()) {
             <li class="mx-1" style="display:inline"><input type="checkbox"> @restriction</li>
         }
     </div>
 </div>
-
-@code {
-    public List<String> TimeOptions = new List<String> { "15", "30", "45", "60" };
-    public List<String> ChosenTimeOptions = new List<String> {};
-
-    public List<String> DifficultyOptions = new List<String> { "Easy", "Medium", "Hard" };
-    public List<String> ChosenDifficultyOptions = new List<String> {};
-
-    public List<String> RestrictionOptions = new List<String> { "Vegan", "Vegetarian", "Gluten-Free" };
-    public List<String> ChosenRestrictionOptions = new List<String> {};
-}

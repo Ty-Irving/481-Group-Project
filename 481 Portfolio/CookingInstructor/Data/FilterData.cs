@@ -27,6 +27,8 @@ public class FilterData
             "Vegetarian", 
             "Gluten-Free" 
         });
+
+        Console.WriteLine();
     }
 
     public class FilterDataStore<T>
@@ -37,6 +39,11 @@ public class FilterData
         public FilterDataStore(List<T> options)
         {
             TotalOptions_ = options;
+        }
+
+        public List<T> TotalOptions() 
+        {
+            return TotalOptions_;
         }
 
         public void Add(T item)
