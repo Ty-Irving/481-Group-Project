@@ -1,0 +1,16 @@
+<div class="mx-1" style="display:inline">
+    <input type="checkbox"> @item
+</div>
+
+@code {
+    [Parameter] 
+    public String item { get; set; } = "";
+
+     [Parameter]
+    public EventCallback<(String, bool)> CheckboxState { get; set; }
+
+    private async Task HandleClick()
+    {
+        await CheckboxState.InvokeAsync(("Hello, world!", true));
+    }
+}

@@ -8,17 +8,17 @@
         }
     </div>
 
-    <label><u>Difficulty</u></label>
-     <div> @* style="padding-left:0px" *@
-        @foreach (var difficulty in FilterData.Difficulties.TotalOptions()) {
-            <li class="mx-1" style="display:inline"><input type="checkbox"> @difficulty</li>
-        }
-    </div>
+    <FilterOptionsContainer 
+        label="Difficulty"
+        filterData="@FilterData.Difficulties"
+    />
 
     <label><u>Types</u></label>
     <div>
         @foreach(var restriction in FilterData.Restrictions.TotalOptions()) {
-            <li class="mx-1" style="display:inline"><input type="checkbox"> @restriction</li>
+            <FilterOptionCheckbox 
+                item="@restriction"
+            />
         }
     </div>
 </div>

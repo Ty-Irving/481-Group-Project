@@ -1,0 +1,31 @@
+<label><u>@label</u></label>
+<div> @* style="padding-left:0px" *@
+    @foreach (var option in filterType.TotalOptions()) {
+        <FilterOptionCheckbox 
+            item="@option"
+            @bind-CheckboxState="HandleClick" @* Custom type requred? *@
+        />
+    }
+</div>
+
+@code {
+    [Parameter]
+    public String label { get; set; } = "";
+
+    [Parameter]
+    public FilterDataStore filterType { get; set; } = new FilterDataStore(new List<String>() {});
+
+    // Optionally take a flag here for String or int to show "< 15"
+
+    public void HandleClick(String item, bool data)
+    {
+        if (data == true) // isClicked == true
+        {
+
+        }
+        else // isClicked == false
+        {
+
+        }
+    }
+}

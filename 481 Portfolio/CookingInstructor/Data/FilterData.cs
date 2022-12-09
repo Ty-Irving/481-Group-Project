@@ -1,27 +1,27 @@
 public class FilterData
 {
-    public FilterDataStore<String> Times;
-    public FilterDataStore<String> Difficulties;
-    public FilterDataStore<String> Restrictions;
+    public FilterDataStore Times;
+    public FilterDataStore Difficulties;
+    public FilterDataStore Restrictions;
 
     public FilterData()
     {
-        Times = new FilterDataStore<String>(new List<String>
+        Times = new FilterDataStore(new List<String>
         {
-            "15",
-            "30",
-            "45",
-            "60"
+            "&lt; 15",
+            "&lt; 30",
+            "&lt; 45",
+            "&gt; 60"
         });
 
-        Difficulties = new FilterDataStore<String>(new List<String>
+        Difficulties = new FilterDataStore(new List<String>
         { 
             "Easy", 
             "Medium", 
             "Hard" 
         });
 
-        Restrictions = new FilterDataStore<String>(new List<String>
+        Restrictions = new FilterDataStore(new List<String>
         { 
             "Vegan", 
             "Vegetarian", 
@@ -30,41 +30,41 @@ public class FilterData
 
         Console.WriteLine();
     }
+}
 
-    public class FilterDataStore<T>
+public class FilterDataStore
+{
+    private List<String> TotalOptions_ { get; set; }
+    public List<String> Options { get; private set; } = new List<String> {};
+
+    public FilterDataStore(List<String> options)
     {
-        private List<T> TotalOptions_ { get; set; }
-        public List<T> Options { get; private set; } = new List<T> {};
+        TotalOptions_ = options;
+    }
 
-        public FilterDataStore(List<T> options)
-        {
-            TotalOptions_ = options;
-        }
+    public List<String> TotalOptions() 
+    {
+        return TotalOptions_;
+    }
 
-        public List<T> TotalOptions() 
+    public void Add(String item)
+    {
+        if (TotalOptions_.Contains(item) && ! Options.Contains(item))
         {
-            return TotalOptions_;
+            Options.Add(item);
         }
+    }
 
-        public void Add(T item)
+    public void Insert(int index, String item)
+    {
+        if (TotalOptions_.Contains(item) && ! Options.Contains(item))
         {
-            if (TotalOptions_.Contains(item) && ! Options.Contains(item))
-            {
-                Options.Add(item);
-            }
+            Options.Insert(index, item);
         }
+    }
 
-        public void Insert(int index, T item)
-        {
-            if (TotalOptions_.Contains(item) && ! Options.Contains(item))
-            {
-                Options.Insert(index, item);
-            }
-        }
-
-        public void Remove(T item)
-        {
-            Options.Remove(item);
-        }
+    public void Remove(String item)
+    {
+        Options.Remove(item);
     }
 }
