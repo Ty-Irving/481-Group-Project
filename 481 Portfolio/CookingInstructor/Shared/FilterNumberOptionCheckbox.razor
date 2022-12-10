@@ -1,7 +1,12 @@
+@* Ideally I wouldn't inject this here and break data flow, but this is pastaland babyyy *@
+@inject FilterData FilterData
+
 <div class="mx-1" style="display:inline">
     <input 
         type="checkbox"
-        @onclick="HandleClick"> 
+        class="largerCheckbox"
+        @onclick="HandleClick"
+        @bind="@state"> 
     @formatNumber(item, isLast)
 </div>
 
@@ -15,6 +20,13 @@
     public bool isLast { get; set; } = false;
 
     private bool state { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+       state = FilterData.Times.Options.Contains(item) ||
+               FilterData.Difficulties.Options.Contains(item) ||
+               FilterData.Restrictions.Options.Contains(item);
+    }
 
     private async Task HandleClick()
     {

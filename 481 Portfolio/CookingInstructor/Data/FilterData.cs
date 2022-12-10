@@ -27,8 +27,6 @@ public class FilterData
             "Vegetarian", 
             "Gluten-Free" 
         });
-
-        Console.WriteLine();
     }
 }
 
