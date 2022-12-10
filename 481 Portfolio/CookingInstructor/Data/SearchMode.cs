@@ -18,9 +18,9 @@ public class SearchMode
         }
     }
 
-    public async Task NotifyStateChanged()
+    public void NotifyStateChanged()
     {
-        OnChange?.Invoke(this, null);
+        OnChange?.Invoke(this, new EventArgs());
     }
 
     public SearchMode ()
