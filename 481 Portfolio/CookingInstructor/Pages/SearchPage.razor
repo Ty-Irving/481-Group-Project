@@ -4,78 +4,82 @@
 @using System.Linq
 @using System.Collections.Generic;
 @inject NavigationManager NavManager
+@inject SearchMode SearchMode
 
 <PageTitle>Searches</PageTitle>
 
 <body>
 
     <Searchbar 
-            searchMode="SearchModeEnum.ByRecipe"
+            searchMode="@SearchMode.state"
     />
 
-
-    <div class="recipeContainer">
-        @for (int i = 0; i < list.Length; i++)
-        {
-            if (list[i].Name.ToUpper().Contains(_name.ToUpper()))
+    @if (SearchMode.state == SearchModeEnum.ByRecipe)
+    {
+        <div class="recipeContainer" style="margin-bottom: 100px;">
+            @for (int i = 0; i < list.Length; i++)
             {
-                current = list[i];
-                diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
+                if (list[i].Name.ToUpper().Contains(_name.ToUpper()))
+                {
+                    current = list[i];
+                    diff = (current.Difficulty == 1) ? "Easy" : (current.Difficulty == 2) ? "Medium" : "Hard";
+                    <RecipeImageHorizontal
+                        Index =@i
+                        Image =@current.imagePath
+                        Difficulty =@current.Difficulty
+                        SpicyLevel =@current.Spicy
+                        Calories =@current.CaloriesPerServing
+                        Name =@current.Name
+                        Time =@current.Time/>
+
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div class="ingredientContainer" style="margin-bottom: 100px;">
+            @for (int i = 0; i < list.Length; i++)
+            {
+                int count = 0;
+                string[] ingredients = _name.Split(',');
+                string[] recipeIngrList = new string[list[i].IngredientList.Length];
+                
+                @for (int k = 0; k < list[i].IngredientList.Length; k++)
+                {
+                    recipeIngrList[k] = list[i].IngredientList[k].Name;
+                }
+
+                @for (int j = 0; j < ingredients.Length; j++)
+                {
+                    if (recipeIngrList.Contains(ingredients[j], StringComparer.OrdinalIgnoreCase))
+                    {
+                        count += 1;
+                        matchedRecipesCounts[list[i]] = count;
+                        matchedRecipesIndexes[list[i]] = i;
+                    }
+                }
+            }
+
+            @foreach(KeyValuePair<CookingInstructor.RecipeNS.Recipe?, int> entry in matchedRecipesCounts.OrderByDescending(key => key.Value))
+            {
+                current = entry.Key;
+                Console.WriteLine(entry.Key.Name + ": " + entry.Value);
                 <RecipeImageHorizontal 
-                    Index =@i
+                    Index=@matchedRecipesIndexes[entry.Key]
                     Image =@current.imagePath
                     Difficulty =@current.Difficulty
                     SpicyLevel =@current.Spicy
                     Calories =@current.CaloriesPerServing
                     Name =@current.Name
                     Time =@current.Time/>
-
             }
-        }
-    </div>
-
-    <div class="ingredientContainer">
-        @for (int i = 0; i < list.Length; i++)
-        {
-            int count = 0;
-            string[] ingredients = _name.Split(',');
-            string[] recipeIngrList = new string[list[i].IngredientList.Length];
-            
-            @for (int k = 0; k < list[i].IngredientList.Length; k++)
-            {
-                recipeIngrList[k] = list[i].IngredientList[k].Name;
-            }
-
-            @for (int j = 0; j < ingredients.Length; j++)
-            {
-                if (recipeIngrList.Contains(ingredients[j], StringComparer.OrdinalIgnoreCase))
-                {
-                    count += 1;
-                    matchedRecipesCounts[list[i]] = count;
-                    matchedRecipesIndexes[list[i]] = i;
-                }
-            }
-        }
-
-        @foreach(KeyValuePair<CookingInstructor.RecipeNS.Recipe?, int> entry in matchedRecipesCounts.OrderByDescending(key => key.Value))
-        {
-            current = entry.Key;
-            Console.WriteLine(entry.Key.Name + ": " + entry.Value);
-            <RecipeImageHorizontal 
-                Index=@matchedRecipesIndexes[entry.Key]
-                Image =@current.imagePath
-                Difficulty =@current.Difficulty
-                SpicyLevel =@current.Spicy
-                Calories =@current.CaloriesPerServing
-                Name =@current.Name
-                Time =@current.Time/>
-        }
-    </div>
+        </div>
+    }
     
 </body>
 
 @code{
-    // TODO: Show recipe container if ByRecipe, show ingr container if ByIngredient
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
     private string? _name;
