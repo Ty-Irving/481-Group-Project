@@ -1,4 +1,4 @@
-<label><u>@label</u></label>
+<h4><u>@label</u></h4>
 <div> @* style="padding-left:0px" *@
     @if (displayNumbers)
     {
@@ -39,7 +39,6 @@
 
     public void HandleClick(CheckboxData checkbox)
     {
-        Console.WriteLine("selected " + checkbox.item);
         if (checkbox.isClicked)
         {
             filterType.Add(checkbox.item);

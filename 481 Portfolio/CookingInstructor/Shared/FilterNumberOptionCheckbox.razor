@@ -7,8 +7,23 @@
         class="largerCheckbox"
         @onclick="HandleClick"
         @bind="@state"> 
-    @formatNumber(item, isLast)
+    <label class="checkboxOffset">
+        @formatNumber(item, isLast)
+    </label>
 </div>
+
+<style>
+    input.largerCheckbox {
+        width:20px;
+        height:20px;
+        margin-bottom: 20px;
+    }
+	label.checkboxOffset {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -2px;
+     }
+</style>
 
 @code {
     [Parameter]
