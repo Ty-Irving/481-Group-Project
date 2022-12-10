@@ -11,7 +11,7 @@
 <body>
 
     <Searchbar 
-            searchMode="@SearchMode.state"
+        searchMode="@SearchModeEnum.ByRecipe"
     />
 
     @if (SearchMode.state == SearchModeEnum.ByRecipe)
@@ -86,6 +86,8 @@
     public CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
     private CookingInstructor.RecipeNS.Recipe? current;
     private string diff;
+
+    public List<CookingInstructor.RecipeNS.Recipe> recipeResults = new List<CookingInstructor.RecipeNS.Recipe>();
     private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipesCounts = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
     private Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipesIndexes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
 
@@ -98,5 +100,62 @@
             _name = name;
         }
         Data.Recipes myClass = new Data.Recipes();
+        GetRecipeResults();
+
+        @* Console.WriteLine("\n Results");
+        foreach (var recipe in recipeResults)
+        {
+            Console.WriteLine(recipe.Name);
+        } *@
+    }
+
+    public void GetRecipeResults()
+    {
+        recipeResults = new List<CookingInstructor.RecipeNS.Recipe>();
+        if(SearchMode.state == SearchModeEnum.ByRecipe)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                if (list[i].Name.ToUpper().Contains(_name.ToUpper()))
+                {
+                    recipeResults.Add(list[i]);
+                    matchedRecipesIndexes[list[i]] = i;
+                }
+            }
+        }
+        else
+        {
+            Dictionary<CookingInstructor.RecipeNS.Recipe, int> matchedRecipesCounts = new Dictionary<CookingInstructor.RecipeNS.Recipe, int>();
+            
+            for (int i = 0; i < list.Length; i++)
+            {
+                int count = 0;
+                string[] ingredients = _name.Split(',');
+                string[] recipeIngrList = new string[list[i].IngredientList.Length];
+                
+                for (int k = 0; k < list[i].IngredientList.Length; k++)
+                {
+                    recipeIngrList[k] = list[i].IngredientList[k].Name;
+                }
+
+                for (int j = 0; j < ingredients.Length; j++)
+                {
+                    if (recipeIngrList.Contains(ingredients[j], StringComparer.OrdinalIgnoreCase))
+                    {
+                        count += 1;
+                        matchedRecipesCounts[list[i]] = count;
+                        matchedRecipesIndexes[list[i]] = i;
+                    }
+                }
+            }
+
+            matchedRecipesCounts = matchedRecipesCounts.OrderByDescending(key => key.Value).ToDictionary(k => k.Key, v => v.Value);
+            foreach (var entry in matchedRecipesCounts)
+            {
+                Console.WriteLine(entry.Key.Name + ": " + entry.Value);
+            }
+
+            recipeResults = new List<CookingInstructor.RecipeNS.Recipe>(matchedRecipesCounts.Keys);
+        }
     }
 }
