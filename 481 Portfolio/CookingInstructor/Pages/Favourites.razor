@@ -1,11 +1,14 @@
 ﻿@page "/favourites"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
 
 <PageTitle>Favourites</PageTitle>
 <div class="d-grid gap-3">
 
     <div class="h-100 d-flex align-items-center justify-content-center" style="max-width: 812px;">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" >
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
+        <SearchFilter/>
+        <button class="btn btn-outline-primary my-2 my-sm-0" @onclick="@Toggle"><svg xmlns="http://www.w3.org/2000/svg"
                 width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" class="mx-3">
                 <circle cx="10.5" cy="10.5" r="8"></circle>
@@ -13,8 +16,20 @@
             </svg></button>
     </div>
 </div>
-
-<div class = "recipeContainer">
+@if(!Tofu){
+<div class = "Tofu" >
+    <RecipeImageHorizontal
+        Image = "/Recipe_datas/MapoTofu/final.jpg"
+        Difficulty = "2"
+        SpicyLevel = "true"
+        Calories = "210"
+        Name = "MapoTofu"
+        Time = "30"
+        Index="1"
+    />
+</div>
+}
+<div class = "recipeContainer" hidden=@(!Tofu) style="margin-bottom: 100px;">
         @for(var i = 0; i < list.Length; i++){
             if(list[i].isFavorite == true){
                 display = true;
@@ -31,17 +46,23 @@
         }
 
         @if(display == false){
-            <h1>No favourites found...</h1>
+            <h1 style="margin-top: 10px;">No favourites found...</h1>
         }
-
+        
 </div>
 
 @code{
     private CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
-    
+    private bool Tofu {get;set;} = true;
+
     private bool display = false;
     protected override void OnInitialized()
     {
         Data.Recipes myClass = new Data.Recipes();
+    }
+
+    private void Toggle(){
+        Tofu = false;
+        Console.Write(Tofu);
     }
 }

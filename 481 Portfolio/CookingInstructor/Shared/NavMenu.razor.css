@@ -1,12 +1,20 @@
 a {
     color: black;
+    text-decoration: none;
 }
 a:focus {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
     color: black;
 }
 
 li {
     border: black 1px solid;
+    text-align: center;
 }
 
 .bottom{

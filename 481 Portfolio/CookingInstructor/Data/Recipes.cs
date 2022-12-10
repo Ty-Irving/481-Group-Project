@@ -34,6 +34,7 @@ public class Recipes
                          "11. Once the water level gets low, you can pick the Onion Green out and throw them. Maybe taste a piece of pork and decide whether you want to stew it longer, since we want the pork become soft to chew. If so, add more water and keep wait.",
                          "12. When you think the pork is soft enough for you, remove the pot cover and keep frying. We want the pork to absorb some soup in order to make it tasty. Then at the time you believe you are done, close the fire and try a piece, you still get this chance to add some salt if you want to do so. Finally, serve out on a plate, sprinkle with some chopped green onion."},
                 Spicy = true,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 2,
                 Time = 120,
                 Servings = 3,
@@ -90,6 +91,7 @@ public class Recipes
                          "12. When the soup is thick enough, close the fire and add left Onion Green.",
                          "13. You'll love it with some rice."},
                 Spicy = true,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegi,
                 Difficulty = 2,
                 Time = 30,
                 Servings = 3,
@@ -135,6 +137,7 @@ public class Recipes
                          "6. Add Salt, Seasoning Soy sauce then keep frying till Potato colored evenly.",
                          "7. Finished!"},
                 Spicy = true,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 1,
                 Time = 17,
                 Servings = 2,
@@ -173,6 +176,7 @@ public class Recipes
                          "5. At least boil the Noodle for 3min then you can add some Onion Green and close fire.",
                          "6. Enjoy!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegi,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 1,
@@ -210,6 +214,7 @@ public class Recipes
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegi,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -234,7 +239,7 @@ public class Recipes
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Diced Peeled Potatoes","cups",3),
                                   new CookingInstructor.RecipeNS.Ingredient("Bacon","slices",4),
-                                  new CookingInstructor.RecipeNS.Ingredient("Onion - diced", "qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion - diced", "x",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Vinegar","cup",1/4), 
                                   new CookingInstructor.RecipeNS.Ingredient("Water","tbs",2),
                                   new CookingInstructor.RecipeNS.Ingredient("White Sugar","tbs",2),
@@ -251,6 +256,7 @@ public class Recipes
                          "7. Transfer warm potato salad to a serving dish and sprinkle remaining bacon over top. Garnish with parsley.",
                          "8. Finished! Best Served Immediately"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegan,
                 Difficulty = 1,
                 Time = 30,
                 Servings = 4,
@@ -273,16 +279,16 @@ public class Recipes
                 Name = "Fideua Paella", 
                 Category = "European",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
-                                 {new CookingInstructor.RecipeNS.Ingredient("Bronzini","qty",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Shrimp/prawns","lb",1/2),
-                                  new CookingInstructor.RecipeNS.Ingredient("Stick celery","qty",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Carrot","qty",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Stems Parsley","qty",2),
+                                 {new CookingInstructor.RecipeNS.Ingredient("Bronzini","x",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Shrimp/prawns","lb",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Stick celery","x",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Carrot","x",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Stems Parsley","x",2),
                                   new CookingInstructor.RecipeNS.Ingredient("Olive Oil","tbs",5),
-                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","cloves",3),
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic"," cloves of",3),
                                   new CookingInstructor.RecipeNS.Ingredient("Crushed Tomatoes","g",400),
-                                  new CookingInstructor.RecipeNS.Ingredient("Onion","qty",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Onion","x",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Red Pepper","x",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Pasta (fideos/borken spaghetti)","g",340),
                                   new CookingInstructor.RecipeNS.Ingredient("Clams","g",225)},
                                  
@@ -290,20 +296,22 @@ public class Recipes
                                   
                 Steps = new String[]
                         {"1. Remove the shells from the shrimp/prawns and keep the shells.",
-                         "2. Make the stock by placing the fish bones, shells of the shrimp, celery, carrot, parsley stems, sprig of thyme and a small wedge of the onion in a pot and cover with water. You'll need to add around 4 cups/960ml water to the pot. Bring the pot to a boil and reduce to a simmer (covered).",
-                         "3. Meanwhile, finely chop the remaining onion, pepper and garlic",
-                         "4. Heat 2 tablespoon olive oil in a large skillet/frying pan over a medium-low heat and fry the fish and shrimp gently until almost cooked through. Remove from the pan and set aside.",
-                         "5. Clean out any stuck-on skin etc from pan, add the remaining oil and then the onion and pepper.",
-                         "6. Cook for around 10min, stirring now and then (turn lower after a few mins), then add paprika, garlic and fennel seeds.",
-                         "7. By now the stock should be ready; strain it to remove all the bones and vegetables and add the saffron to infuse.",
-                         "8. Cook the onions and spice mixture for 5 more minutes then add tomatoes.",
-                         "9. Cook a further few mins then add fideos (pasta). Stir well so that they are covered by the oily mixture and cook another couple minutes.",
-                         "10. Add the stock (3cups/750ml) to the pan, stir then leave to cook at a simmer for 10min.",
-                         "11. Stir then add the clams, pushing them under the liquid and pasta. Allow them to cook a minute and add the shrimp/prawns and fish as well.",
-                         "12. After about 5 mins the clams should open and all should be ready.",
-                         "13. Finished!"}
+                         "2. Place the fish bones, shells of the shrimp, celery, carrot, parsley stems, sprig of thyme and a small wedge of the onion in a pot.",
+                         "3. You'll need to add around 4 cups/960ml water to the pot. Bring the pot to a boil and reduce to a simmer (covered).",
+                         "4. Meanwhile, finely chop the remaining onion, pepper and garlic",
+                         "5. Heat 2 tablespoon olive oil in a large skillet/frying pan over a medium-low heat and fry the fish and shrimp gently until almost cooked through. Remove from the pan and set aside.",
+                         "6. Clean out any stuck-on skin etc from pan, add the remaining oil and then the onion and pepper.",
+                         "7. Cook for around 10min, stirring now and then (turn lower after a few mins), then add paprika, garlic and fennel seeds.",
+                         "8. By now the stock should be ready; strain it to remove all the bones and vegetables and add the saffron to infuse.",
+                         "9. Cook the onions and spice mixture for 5 more minutes then add tomatoes.",
+                         "10. Cook a further few mins then add fideos (pasta). Stir well so that they are covered by the oily mixture and cook another couple minutes.",
+                         "11. Add the stock (3cups/750ml) to the pan, stir then leave to cook at a simmer for 10min.",
+                         "12. Stir then add the clams, pushing them under the liquid and pasta. Allow them to cook a minute and add the shrimp/prawns and fish as well.",
+                         "13. After about 5 mins the clams should open and all should be ready.",
+                         "14. Finished!"}
             ,
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 3,
                 Time = 50,
                 Servings = 5,
@@ -311,6 +319,7 @@ public class Recipes
                 isFavorite = false,
                 stepImages = new String[] 
                         {"/Recipe_datas/paella/1.gif",
+                         "",
                          "/Recipe_datas/paella/2.JPG",
                          "/Recipe_datas/paella/3.JPG",
                          "",
@@ -324,22 +333,22 @@ public class Recipes
                          "",
                          ""
                         },
-                importance = Enumerable.Repeat(false, 13).ToArray(),
+                importance = Enumerable.Repeat(false, 14).ToArray(),
                 imagePath = "/Recipe_datas/paella/final.JPG"
             },
         
         
             new CookingInstructor.RecipeNS.Recipe{ 
                 Name = "Balsamic Chicken Breast", 
-                Category = "Western",
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
-                                 {new CookingInstructor.RecipeNS.Ingredient("Chicken Breasts","qty",4),
-                                  new CookingInstructor.RecipeNS.Ingredient("Salt & Pepper","N/A",0),
+                                 {new CookingInstructor.RecipeNS.Ingredient("Chicken Breasts","x",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Salt & Pepper","",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Olvie Oil","tbs",4),
                                   new CookingInstructor.RecipeNS.Ingredient("Bell Peppers","cups",4),
-                                  new CookingInstructor.RecipeNS.Ingredient("Meidium Onion","qty",1),
+                                  new CookingInstructor.RecipeNS.Ingredient("Meidium Onion","x",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Olive Oil","cup",1),
-                                  new CookingInstructor.RecipeNS.Ingredient("Garlic","cloves",4),
+                                  new CookingInstructor.RecipeNS.Ingredient("Garlic"," cloves of",4),
                                   new CookingInstructor.RecipeNS.Ingredient("Fresh Basil","cup",1),
                                   new CookingInstructor.RecipeNS.Ingredient("Balsamic Vinegar","tbs",4)},
                                  
@@ -357,6 +366,7 @@ public class Recipes
                          "9 Finished!"}
             ,
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 1,
                 Time = 30,
                 Servings = 4,
@@ -399,6 +409,7 @@ public class Recipes
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.GF,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -438,6 +449,7 @@ public class Recipes
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.GF,
                 Difficulty = 1,
                 Time = 45,
                 Servings = 2,
@@ -457,7 +469,7 @@ public class Recipes
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
-                Name = "Margaiana - Dummy", 
+                Name = "MargaianaVegan - Dummy", 
                 Category = "European",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
@@ -477,6 +489,7 @@ public class Recipes
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegan,
                 Difficulty = 1,
                 Time = 15,
                 Servings = 2,
@@ -496,8 +509,8 @@ public class Recipes
             },
 
             new CookingInstructor.RecipeNS.Recipe{ 
-                Name = "Tofu Bowl - Dummy", 
-                Category = "Western",
+                Name = "Poutine - Dummy", 
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
                                   new CookingInstructor.RecipeNS.Ingredient("Dummy","g",200),
@@ -516,6 +529,7 @@ public class Recipes
                          "6. Add Tomato, Onion Green, 20g Oil and 3g Salt then keep frying till it looks like tomato paste.",
                          "7. Then add Egg back to pot, frying for 30 seconds. Done!"},
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 3,
                 Time = 40,
                 Servings = 2,
@@ -577,6 +591,7 @@ public class Recipes
                     "/Recipe_datas/chilli chicken/9.jpg"
                 },
                 Spicy = true,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 3,
                 Time = 60,
                 Servings = 2,
@@ -623,6 +638,7 @@ public class Recipes
                     "/Recipe_datas/Beef Donburi/4.jpg"
                 },
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 3,
                 Time = 45,
                 Servings = 1,
@@ -659,6 +675,7 @@ public class Recipes
                     "/Recipe_datas/French Bisque/2.jpg"
                 },
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 2,
                 Time = 30,
                 Servings = 1,
@@ -700,6 +717,7 @@ public class Recipes
                     "/Recipe_datas/French Apple Tart/5.jpg"
                 },
                 Spicy = false,
+                Specialty = CookingInstructor.RecipeNS.Classification.vegi,
                 Difficulty = 3,
                 Time = 60,
                 Servings = 3,
@@ -748,7 +766,7 @@ public class Recipes
             },
             new CookingInstructor.RecipeNS.Recipe{
                 Name = "Frying Chicken",
-                Category = "America",
+                Category = "Canadian",
                 IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                  {new CookingInstructor.RecipeNS.Ingredient("Chicken Wings","g",600),
                                   new CookingInstructor.RecipeNS.Ingredient("Oil","g",500),
@@ -781,6 +799,7 @@ public class Recipes
                     "/Recipe_datas/Frying Chicken/4.jpg"
                 },
                 Spicy = true,
+                Specialty = CookingInstructor.RecipeNS.Classification.normal,
                 Difficulty = 1,
                 Time = 45,
                 Servings = 2,
