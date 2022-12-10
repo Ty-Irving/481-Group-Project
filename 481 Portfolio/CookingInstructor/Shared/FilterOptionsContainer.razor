@@ -39,7 +39,7 @@
 
     public void HandleClick(CheckboxData checkbox)
     {
-        Console.WriteLine(checkbox.item);
+        Console.WriteLine("selected " + checkbox.item);
         if (checkbox.isClicked)
         {
             filterType.Add(checkbox.item);
@@ -49,11 +49,11 @@
             filterType.Remove(checkbox.item);
         }
 
-        @* Console.WriteLine(filterType.Options.Count);
+        Console.WriteLine("options has " + filterType.Options.Count);
         foreach(var i in filterType.Options)
         {
             Console.WriteLine(i);
         }
-        Console.WriteLine(""); *@
+        Console.WriteLine("");
     }
 }

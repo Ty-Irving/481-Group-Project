@@ -18,6 +18,7 @@
 
     private async Task HandleClick()
     {
+        state = ! state;
         await OnClickCheckbox.InvokeAsync(new CheckboxData(item, state));
     }
 
