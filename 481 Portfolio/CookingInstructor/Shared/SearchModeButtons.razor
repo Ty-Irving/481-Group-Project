@@ -37,28 +37,45 @@
     private static String textLight = "white";
     private static String textDark = "black";
 
-    private String recipeBGColor { get; set; } = bgHighlight;
-    private String recipeTextColor { get; set; } = textLight;
+    private String recipeBGColor { get; set; }// = bgHighlight;
+    private String recipeTextColor { get; set; }// = textLight;
 
-    private String ingredientBGColor { get; set; } = bgNormal;
-    private String ingredientTextColor { get; set; } = textDark;
+    private String ingredientBGColor { get; set; }// = bgNormal;
+    private String ingredientTextColor { get; set; }// = textDark;
+
+    protected override void OnInitialized()
+    {
+        updateButtonStyling();
+    }
 
     private void onSearchRecipes()
     {
         SearchMode.state = SearchModeEnum.ByRecipe;
-        recipeBGColor = bgHighlight;
-        ingredientBGColor = bgNormal;
-
-        recipeTextColor = textLight;
-        ingredientTextColor = textDark;
+        updateButtonStyling();
     }
     private void onSearchIngredients()
     {
         SearchMode.state = SearchModeEnum.ByIngredient;
-        recipeBGColor = bgNormal;
-        ingredientBGColor = bgHighlight;
+        updateButtonStyling();
+    }
 
-        recipeTextColor = textDark;
-        ingredientTextColor = textLight;
+    public void updateButtonStyling()
+    {
+        if (SearchMode.state == SearchModeEnum.ByRecipe)
+        {
+            recipeBGColor = bgHighlight;
+            ingredientBGColor = bgNormal;
+
+            recipeTextColor = textLight;
+            ingredientTextColor = textDark;
+        }
+        else
+        {
+            recipeBGColor = bgNormal;
+            ingredientBGColor = bgHighlight;
+
+            recipeTextColor = textDark;
+            ingredientTextColor = textLight;
+        }
     }
 }
