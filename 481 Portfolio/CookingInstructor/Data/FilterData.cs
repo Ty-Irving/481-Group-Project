@@ -8,10 +8,10 @@ public class FilterData
     {
         Times = new FilterDataStore(new List<String>
         {
-            "&lt; 15",
-            "&lt; 30",
-            "&lt; 45",
-            "&gt; 60"
+            "15",
+            "30",
+            "45",
+            "60"
         });
 
         Difficulties = new FilterDataStore(new List<String>

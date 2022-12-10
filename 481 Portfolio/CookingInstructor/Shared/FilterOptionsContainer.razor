@@ -1,10 +1,29 @@
 <label><u>@label</u></label>
 <div> @* style="padding-left:0px" *@
-    @foreach (var option in filterType.TotalOptions()) {
-        <FilterOptionCheckbox 
-            item="@option"
-            @bind-CheckboxState="HandleClick" @* Custom type requred? *@
+    @if (displayNumbers)
+    {
+        var indexLastItem = filterType.TotalOptions().Count - 1;
+        @for (int i = 0; i < indexLastItem; ++i) {
+            <FilterNumberOptionCheckbox 
+                item="@filterType.TotalOptions()[i]"
+                isLast="@false"
+                OnClickCheckbox="HandleClick"
+            />
+        }
+        <FilterNumberOptionCheckbox 
+            item="@filterType.TotalOptions()[indexLastItem]"
+            isLast="@true"
+            OnClickCheckbox="HandleClick"
         />
+    }
+    else
+    {
+        @foreach (var option in filterType.TotalOptions()) {
+            <FilterOptionCheckbox 
+                item="@option"
+                OnClickCheckbox="HandleClick"
+            />
+        }
     }
 </div>
 
@@ -15,17 +34,26 @@
     [Parameter]
     public FilterDataStore filterType { get; set; } = new FilterDataStore(new List<String>() {});
 
-    // Optionally take a flag here for String or int to show "< 15"
+    [Parameter]
+    public bool displayNumbers { get; set; } = false;
 
-    public void HandleClick(String item, bool data)
+    public void HandleClick(CheckboxData checkbox)
     {
-        if (data == true) // isClicked == true
+        Console.WriteLine(checkbox.item);
+        if (checkbox.isClicked)
         {
-
+            filterType.Add(checkbox.item);
         }
         else // isClicked == false
         {
-
+            filterType.Remove(checkbox.item);
         }
+
+        @* Console.WriteLine(filterType.Options.Count);
+        foreach(var i in filterType.Options)
+        {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine(""); *@
     }
 }

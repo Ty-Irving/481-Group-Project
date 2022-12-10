@@ -2,19 +2,34 @@
     <input 
         type="checkbox"
         @onclick="HandleClick"> 
-    @item
+    @formatNumber(item, isLast)
 </div>
 
 @code {
-    [Parameter] 
+    [Parameter]
     public String item { get; set; } = "";
     [Parameter]
     public EventCallback<CheckboxData> OnClickCheckbox { get; set; }
+
+    [Parameter] 
+    public bool isLast { get; set; } = false;
 
     private bool state { get; set; } = false;
 
     private async Task HandleClick()
     {
         await OnClickCheckbox.InvokeAsync(new CheckboxData(item, state));
+    }
+
+    public String formatNumber(String number, bool isLast)
+    {
+        if (isLast)
+        {
+            return "> " + number;
+        }
+        else
+        {
+            return "< " + number;
+        }
     }
 }
