@@ -1,6 +1,6 @@
 public class SearchService
 {
-    private static CookingInstructor.RecipeNS.Recipe[]? list = new CookingInstructor.Data.Recipes().GetRecipes();
+    public static CookingInstructor.RecipeNS.Recipe[]? list = new CookingInstructor.Data.Recipes().GetRecipes();
 
     public List<CookingInstructor.RecipeNS.Recipe> originalRecipeResults = new List<CookingInstructor.RecipeNS.Recipe>();
     public List<CookingInstructor.RecipeNS.Recipe> recipeResults = new List<CookingInstructor.RecipeNS.Recipe>();

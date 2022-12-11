@@ -43,16 +43,16 @@
 
     private string constructURL(List<int> recipeIDs)
     {
-        string url = "/SearchPage?name=";
-        foreach (var index in recipeIDs)
+        string url = "/SearchPage?ids=";
+        foreach (var id in recipeIDs)
         {
-            if (index == recipeIDs[0])
+            if (id == recipeIDs[0])
             {
-                url += index;
+                url += id;
             }
             else
             {
-                url += "," + index;
+                url += "," + id;
             }
         }
         Console.WriteLine(url);

@@ -13,34 +13,49 @@
         searchMode="@SearchModeEnum.ByRecipe"
     />
     <div style="margin-bottom: 100px;">
-        @foreach(var recipe in recipeResults)
+        @foreach(var id in _IDs)
         {
+            var recipe = list[id];
             <RecipeImageHorizontal 
-                Index=@matchedRecipesIndexes[recipe]
+                Index=@id
                 Image =@recipe.imagePath
                 Difficulty =@recipe.Difficulty
                 SpicyLevel =@recipe.Spicy
                 Calories =@recipe.CaloriesPerServing
                 Name =@recipe.Name
-                Time =@recipe.Time/>
+                Time =@recipe.Time />
         }
     </div>
 </body>
 
 @code{
-    private string? _name;
+    private CookingInstructor.RecipeNS.Recipe[]? list = SearchService.list;
+
+    private List<int>? _IDs = new List<int>();
     // Use this for original recipeResults in searchBar
     public List<CookingInstructor.RecipeNS.Recipe> recipeResults = new List<CookingInstructor.RecipeNS.Recipe>();
-    public Dictionary<CookingInstructor.RecipeNS.Recipe?, int> matchedRecipesIndexes = new Dictionary<CookingInstructor.RecipeNS.Recipe?, int>();
 
 
     protected override void OnInitialized()
     {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
         var queryStrings = QueryHelpers.ParseQuery(uri.Query);
-        if (queryStrings.TryGetValue("name", out var name))
+        if (queryStrings.TryGetValue("ids", out var ids))
         {
-            _name = name;
+            string[] StringIDs = ids.ToString().Split(',');
+
+            _IDs = new List<int>(StringIDs.Length);
+            foreach(var sID in StringIDs)
+            {
+                try
+                {
+                    _IDs.Add(Int32.Parse(sID));
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
     }
 }
