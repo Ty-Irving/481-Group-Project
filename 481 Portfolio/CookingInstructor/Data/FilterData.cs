@@ -11,7 +11,8 @@ public class FilterData
             "15",
             "30",
             "45",
-            "60"
+            "60",
+            "61"
         });
 
         Difficulties = new FilterDataStore(new List<String>
