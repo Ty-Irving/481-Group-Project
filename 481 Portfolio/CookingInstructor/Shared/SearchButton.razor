@@ -28,21 +28,35 @@
 
     private void NavigateToURL()
     {
-        if ((CurrentValue != null && CurrentValue.Length > 0) ||
-            YourIngredients.list.Count > 0)
+        List<int> recipeIDs = new List<int>();
+        if (searchMode == SearchModeEnum.ByRecipe &&
+            CurrentValue != null && CurrentValue.Length > 0)
         {
-            List<int> recipeIDs = new List<int>();
-            if (searchMode == SearchModeEnum.ByRecipe)
-            {
-                recipeIDs = searchService.GetRecipeResults(CurrentValue);
-            }
-            else 
-            { 
-                recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
-            }
-
-            NavigationManager.NavigateTo(constructURL(recipeIDs));
+            recipeIDs = searchService.GetRecipeResults(CurrentValue);
         }
+        else if (searchMode == SearchModeEnum.ByRecipe &&
+                hasActiveFilter())
+        {
+            recipeIDs = searchService.AllRecipeIDs();
+        }
+        else if (searchMode == SearchModeEnum.ByIngredient &&
+                YourIngredients.list.Count > 0)
+        { 
+            recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
+        }
+        else
+        {
+            return;
+        }
+
+        NavigationManager.NavigateTo(constructURL(recipeIDs));
+    }
+    private bool hasActiveFilter()
+    {
+        bool hasFilters = FilterData.Times.Options.Count > 0 ||
+                          FilterData.Difficulties.Options.Count > 0 ||
+                          FilterData.Restrictions.Options.Count > 0;
+        return hasFilters;
     }
 
     private string constructURL(List<int> recipeIDs)

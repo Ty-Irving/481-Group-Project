@@ -13,6 +13,17 @@ public class SearchService
         filterData = fd;
     }
 
+    public List<int> AllRecipeIDs()
+    {
+        List<int> all = new List<int>();
+        
+        for (int i = 0; i < list.Length; ++i)
+        {
+            all.Add(i);
+        }
+        return all;
+    }
+
     public List<int> GetRecipeResults(String? recipeName)
     {
         RecipeModeSearchResults(recipeName);
