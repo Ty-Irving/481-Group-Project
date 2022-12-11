@@ -6,6 +6,9 @@
 
 @code {
     [Parameter]
+    public string? searchValue{get;set;} = "";
+
+    [Parameter]
     public SearchModeEnum searchMode { get; set; }
 
     public String[] autocompleteContents(SearchModeEnum mode) {
@@ -14,12 +17,27 @@
 
             foreach (var recipe in SearchService.list)
             {
-                res.Add(recipe.Name);
+                if(!searchValue.Equals("")){
+                    if(recipe.Name.ToUpper().Contains(searchValue.ToUpper()))
+                        res.Add(recipe.Name);
+                }else{
+                    res.Add(recipe.Name);
+                }
             }
-            return res.ToArray();
+            return res.Take(7).ToArray();
         }
         else { // ByIngredient
-            return CookingInstructor.Data.Recipes.allIngredients.ToArray();
+            List<string> result = new List<string>();
+            if(!searchValue.Equals("")){
+                foreach (string x in CookingInstructor.Data.Recipes.allIngredients){
+                    if(x.ToUpper().Contains(searchValue.ToUpper()))
+                        result.Add(x);
+                }
+            }
+            else{
+                result = CookingInstructor.Data.Recipes.allIngredients;
+            }
+            return result.Take(7).ToArray();
         }
     }
 }
