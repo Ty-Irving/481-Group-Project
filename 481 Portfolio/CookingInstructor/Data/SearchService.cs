@@ -39,8 +39,72 @@ public class SearchService
         //     Console.Write(i + " ");
         // }
         // Console.WriteLine();
-        
-        return;
+
+        foreach(var id in recipeResultsIndexes)
+        {
+            var recipe = list[id.Value];
+
+            if ( ! (IsCorrectTime(recipe) &&
+                    IsCorrectDifficulty(recipe) &&
+                    IsCorrectRestrictions(recipe)))
+            {
+                recipeResultsIndexes.Remove(id.Key);
+            }
+        }
+    }
+
+    // TODO: this is broken
+    private bool IsCorrectTime(CookingInstructor.RecipeNS.Recipe recipe)
+    {
+        // 0--><--15--><--30--><--45--><--60--><--60+ ->
+        // Rather than trying to understand boolean overlap, 
+        // just consider what buckets each time interval falls into
+        if (filterData.Times.Options.Count != 0)
+        {
+            int leftBound = 0;
+            for (int i = 0; i < filterData.Times.Options.Count; ++i)
+            {
+                int rightBound = Int32.Parse(filterData.Times.Options[i]);
+
+                if ((leftBound < recipe.Time && recipe.Time <= rightBound) ||
+                    (i == filterData.Times.Options.Count - 1 && recipe.Time > rightBound))
+                {
+                    return true;
+                }
+
+                leftBound = rightBound;
+            }
+            return false;
+        }
+        else
+            return true;
+    }
+
+    private bool IsCorrectDifficulty(CookingInstructor.RecipeNS.Recipe recipe)
+    {
+        String diff = (recipe.Difficulty == 1) ? "Easy" : (recipe.Difficulty == 2) ? "Medium" : "Hard";
+
+        bool contains = filterData.Difficulties.Options.Count == 0 ||
+                        filterData.Difficulties.Options.Contains(diff);
+        return contains;
+    }
+
+    private bool IsCorrectRestrictions(CookingInstructor.RecipeNS.Recipe recipe)
+    {
+        Dictionary<CookingInstructor.RecipeNS.Classification, String> RestrictionLookup = new Dictionary<CookingInstructor.RecipeNS.Classification, String>()
+        {
+            { CookingInstructor.RecipeNS.Classification.normal, "Normal" },
+            { CookingInstructor.RecipeNS.Classification.GF, "Gluten-Free" },
+            { CookingInstructor.RecipeNS.Classification.vegi, "Vegetarian" },
+            { CookingInstructor.RecipeNS.Classification.vegan, "Vegan" },
+        };
+
+        var restriction = RestrictionLookup[recipe.Specialty];
+
+        bool contains = filterData.Difficulties.Options.Count == 0 ||
+                        filterData.Difficulties.Options.Contains(restriction) ||
+                        recipe.Specialty == CookingInstructor.RecipeNS.Classification.normal;
+        return contains;
     }
 
     private void RecipeModeSearchResults(String? recipeName)

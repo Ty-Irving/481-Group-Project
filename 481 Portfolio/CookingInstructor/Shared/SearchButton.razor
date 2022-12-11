@@ -28,17 +28,21 @@
 
     private void NavigateToURL()
     {
-        List<int> recipeIDs;
-        if (searchMode == SearchModeEnum.ByRecipe)
+        if ((CurrentValue != null && CurrentValue.Length > 0) ||
+            YourIngredients.list.Count > 0)
         {
-            recipeIDs = searchService.GetRecipeResults(CurrentValue);
-        }
-        else 
-        { 
-            recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
-        }
+            List<int> recipeIDs = new List<int>();
+            if (searchMode == SearchModeEnum.ByRecipe)
+            {
+                recipeIDs = searchService.GetRecipeResults(CurrentValue);
+            }
+            else 
+            { 
+                recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
+            }
 
-        NavigationManager.NavigateTo(constructURL(recipeIDs));
+            NavigationManager.NavigateTo(constructURL(recipeIDs));
+        }
     }
 
     private string constructURL(List<int> recipeIDs)
