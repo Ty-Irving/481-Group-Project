@@ -7,12 +7,46 @@
         Add
 </button>
 
+@if (showAdd)
+{
+  <div id="#addModal"
+    class="modal fade show justify-content-center" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true"
+    style="display: @modalDisplayType; background-color: rgba(10,10,10,.4);"
+    @onclick="closeModal">
+    <div 
+      class="modal-dialog modal-dialog-centered" 
+      role="document"
+      @onclick:stopPropagation="true">
+      <div class="modal-content">
+        <div class="modal-body" style="border-radius: 50%">
+          The ingredient: "@IngredientName" does not exist.
+          <br>
+          <button
+              class="btn btn-outline-primary" 
+              type="submit" 
+              @onclick="@ChangeShowAddToFalse">
+                  Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+}
+
 @code {
   public static List<string> allIngredients = new CookingInstructor.Data.Recipes().GetIngredients();
   
   [Parameter]
   public string? IngredientName { get; set; } = "";
   
+  private bool showAdd = false;
+  private bool isModalVisible = false;
+  public string modalDisplayType { get { return isModalVisible ? "block" : "none"; } }
+
   private void AddToYourIngredients() 
   {
     int result = allIngredients.FindIndex(x => x.Equals(IngredientName, StringComparison.OrdinalIgnoreCase));
@@ -20,6 +54,25 @@
     if (result >= 0) {
       YourIngredients.Insert(0, allIngredients[result]);
     }
+    else {
+      showAdd = true;
+      openModal();
+    }
+  }
+
+  private void ChangeShowAddToFalse()
+  {
+    showAdd = false;
+  }
+
+  public void openModal()
+  {
+    isModalVisible = true;
+  }
+  
+  public void closeModal()
+  {
+    isModalVisible = false;
   }
  
 }
