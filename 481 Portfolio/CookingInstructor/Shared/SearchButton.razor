@@ -37,7 +37,7 @@
         else if (searchMode == SearchModeEnum.ByRecipe &&
                 hasActiveFilter())
         {
-            recipeIDs = searchService.AllRecipeIDs();
+            recipeIDs = searchService.Filter(searchService.AllRecipeIDs());
         }
         else if (searchMode == SearchModeEnum.ByIngredient &&
                 YourIngredients.list.Count > 0)

@@ -27,8 +27,8 @@ public class SearchService
     public List<int> GetRecipeResults(String? recipeName)
     {
         RecipeModeSearchResults(recipeName);
-        Filter();
-        return new List<int>(recipeResultsIndexes.Values);
+
+        return Filter(new List<int>(recipeResultsIndexes.Values));
     }
 
     public List<int> GetRecipeResults(List<String> yourIngredients)
@@ -38,30 +38,23 @@ public class SearchService
         return new List<int>(recipeResultsIndexes.Values);
     }
 
-    private void Filter()
+    public List<int> Filter(List<int> recipeIDs)
     {
-        // foreach(var i in recipeResultsIndexes.Keys)
-        // {
-        //     Console.Write(i.Name + " ");
-        // }
-        // Console.WriteLine();
-        // foreach(var i in recipeResultsIndexes.Values)
-        // {
-        //     Console.Write(i + " ");
-        // }
-        // Console.WriteLine();
+        List<int> filteredRecipeIDs = new List<int>(recipeIDs);
 
-        foreach(var id in recipeResultsIndexes)
+        foreach(var id in recipeIDs)
         {
-            var recipe = list[id.Value];
+            var recipe = list[id];
 
             if ( ! (IsCorrectTime(recipe) &&
                     IsCorrectDifficulty(recipe) &&
                     IsCorrectRestrictions(recipe)))
             {
-                recipeResultsIndexes.Remove(id.Key);
+                filteredRecipeIDs.Remove(id);
             }
         }
+
+        return filteredRecipeIDs;
     }
 
     // TODO: this is broken
