@@ -38,6 +38,23 @@
 
     protected override void OnInitialized()
     {
+        NavManager.LocationChanged += onURLChange;
+        HandleURLChange();
+    }
+
+    public void Dispose()
+    {
+        NavManager.LocationChanged -= onURLChange;
+    }
+
+    public void onURLChange(object sender, LocationChangedEventArgs e)
+    {
+        HandleURLChange();
+        StateHasChanged();
+    }
+
+    public void HandleURLChange()
+    {
         var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
         var queryStrings = QueryHelpers.ParseQuery(uri.Query);
         if (queryStrings.TryGetValue("ids", out var ids))
