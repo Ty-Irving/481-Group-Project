@@ -34,7 +34,7 @@ public class SearchService
     public List<int> GetRecipeResults(List<String> yourIngredients)
     {
         IngredientModeSearchResults(yourIngredients);
-        Filter();
+        //Filter();
         return new List<int>(recipeResultsIndexes.Values);
     }
 
