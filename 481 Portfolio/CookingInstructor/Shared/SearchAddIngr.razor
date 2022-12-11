@@ -13,13 +13,20 @@
   [Parameter]
   public string? IngredientName { get; set; } = "";
   
-  private void AddToYourIngredients() 
+  [Parameter]
+  public EventCallback OnAddIngredient { get; set; }
+
+  public async Task onIngredientAdded() {
+      await OnAddIngredient.InvokeAsync();
+  }
+  
+  private async Task AddToYourIngredients() 
   {
     int result = allIngredients.FindIndex(x => x.Equals(IngredientName, StringComparison.OrdinalIgnoreCase));
 
     if (result >= 0) {
       YourIngredients.Insert(0, allIngredients[result]);
+      await onIngredientAdded();
     }
   }
- 
 }

@@ -1,13 +1,13 @@
 public class YourIngredients
 {
-    public event Action? OnChange;
+    public event EventHandler? OnChange;
     
     public List<String> list { get; private set; } = new List<String> {};
 
     public void Set(List<String> newList)
     {
         list = newList;
-        OnChange?.Invoke();
+        NotifyStateChanged();
     }
 
     public void Add(String name)
@@ -15,7 +15,7 @@ public class YourIngredients
         if (! list.Contains(name))
         {
             list.Add(name);
-            OnChange?.Invoke();
+            NotifyStateChanged();
         }
     }
 
@@ -24,13 +24,18 @@ public class YourIngredients
         if (! list.Contains(name))
         {
             list.Insert(index, name);
-            OnChange?.Invoke();
+            NotifyStateChanged();
         }
     }
 
     public void Remove(String name)
     {
         list.Remove(name);
-        OnChange?.Invoke();
+        NotifyStateChanged();
+    }
+
+    public void NotifyStateChanged()
+    {
+        OnChange?.Invoke(this, new EventArgs());
     }
 }
