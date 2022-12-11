@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using CookingInstructor.Data;
+using CookingInstructor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddSingleton<YourIngredients>();
 builder.Services.AddSingleton<CommonIngredients>();
 builder.Services.AddScoped<SessionFavourites>();
 builder.Services.AddScoped<FilterData>();
+builder.Services.AddScoped<IClipboardService, ClipboardService>();
 
 var app = builder.Build();
 

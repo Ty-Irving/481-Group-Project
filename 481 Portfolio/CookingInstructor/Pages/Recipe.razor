@@ -2,6 +2,7 @@
 
 @using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavManager
+@inject IClipboardService Clipper
 
 <PageTitle>Recipe</PageTitle>
 
@@ -15,7 +16,7 @@
             </div>
         </a>
 
-        <div @onclick="ToggleShared" class="fs-2" style="cursor:pointer">
+        <div class="fs-2" style="cursor:pointer" @onclick ="CopyClip">
             <div class="d-inline-flex">
                 @if (@IsShared)
                 {
@@ -115,6 +116,11 @@
     public string diffcolor;
     public string spicyColor;
 
+    private async Task CopyClip()
+    {
+        ToggleShared();
+        await Clipper.CopyToClipboard("https://localhost:7041/recipe?name="+_name+"&Index="+_index);
+    }
 
     protected override void OnInitialized()
     {
