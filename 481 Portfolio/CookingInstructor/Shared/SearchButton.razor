@@ -1,6 +1,8 @@
 @inject YourIngredients YourIngredients
+@inject FilterData FilterData
 @inject NavigationManager NavigationManager
 @inject IJSRuntime jsRuntime
+
 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick=@NavigateToURL>
     <svg xmlns="http://www.w3.org/2000/svg"
          width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -17,28 +19,43 @@
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
 
+    private SearchService searchService;
+
+    protected override void OnInitialized()
+    {
+        searchService = new SearchService(FilterData);
+    }
+
     private void NavigateToURL()
     {
-        string url = "/SearchPage?name=";
-
+        List<int> recipeIDs;
         if (searchMode == SearchModeEnum.ByRecipe)
         {
-            url += CurrentValue;
+            recipeIDs = searchService.GetRecipeResults(CurrentValue);
         }
         else 
         { 
-            foreach (var name in YourIngredients.list)
+            recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
+        }
+
+        NavigationManager.NavigateTo(constructURL(recipeIDs));
+    }
+
+    private string constructURL(List<int> recipeIDs)
+    {
+        string url = "/SearchPage?name=";
+        foreach (var index in recipeIDs)
+        {
+            if (index == recipeIDs[0])
             {
-                if (name == YourIngredients.list[0])
-                {
-                    url += name;
-                }
-                else
-                {
-                    url += "," + name;
-                }
+                url += index;
+            }
+            else
+            {
+                url += "," + index;
             }
         }
-        NavigationManager.NavigateTo(url);
+        Console.WriteLine(url);
+        return url;
     }
 }
