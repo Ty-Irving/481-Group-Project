@@ -7,6 +7,12 @@
     @if (searchMode == SearchModeEnum.ByRecipe) {
         <SearchFilter />
     }
+    else {
+        <SearchAddIngr 
+            IngredientName="@CurrentValue"
+            OnAddIngredient="ClearSearchbar" />
+    }
+    
     <SearchButton CurrentValue ="@CurrentValue" searchMode="@searchMode"/>
 </div>
     
@@ -19,4 +25,9 @@
 
     [Parameter]
     public bool ReadyGo { get; set; }
+
+    public void ClearSearchbar()
+    {
+        CurrentValue = "";
+    }
 }

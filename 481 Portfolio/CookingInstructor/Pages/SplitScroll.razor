@@ -23,7 +23,7 @@
 </style>
 @if (show == 0)
 {
-    <div class="ingList">
+    <div class="ingList" style="margin-bottom: 75px;">
         @foreach (string x in ClubList())
         {
             <input type="checkbox" class ="largerCheckbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" />
@@ -37,7 +37,7 @@
 
 @if (show == 1)
 {
-    <div class="stepList ">
+    <div class="stepList " style="margin-bottom: 75px;">
 
         @for (int i = 0; i < RecipeObj.Steps.Length; i++)
         {
