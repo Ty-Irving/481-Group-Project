@@ -826,4 +826,5 @@ public class Recipes
         }
         return recipeIngrList;
     }
+    public static List<string> allIngredients = new CookingInstructor.Data.Recipes().GetIngredients();
 }
