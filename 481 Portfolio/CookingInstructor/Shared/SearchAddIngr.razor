@@ -1,0 +1,17 @@
+@inject YourIngredients YourIngredients
+
+<button 
+    class="btn btn-outline-primary" 
+    type="submit" 
+    @onclick="@AddToYourIngredients">
+        Add
+</button>
+
+@code {
+  private void AddToYourIngredients() 
+  {
+    Console.WriteLine("heyy");
+    // YourIngredients.Insert(0, "Olive Oil");
+  }
+ 
+}
