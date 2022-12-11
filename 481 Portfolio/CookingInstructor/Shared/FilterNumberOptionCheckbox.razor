@@ -38,9 +38,7 @@
 
     protected override void OnInitialized()
     {
-       state = FilterData.Times.Options.Contains(item) ||
-               FilterData.Difficulties.Options.Contains(item) ||
-               FilterData.Restrictions.Options.Contains(item);
+        state = FilterData.Times.Options.Contains(item);
     }
 
     private async Task HandleClick()
@@ -53,7 +51,7 @@
     {
         if (isLast)
         {
-            return number + "+";
+            return "60+";
         }
         else
         {

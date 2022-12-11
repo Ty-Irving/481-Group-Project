@@ -70,17 +70,18 @@ public class SearchService
         if (filterData.Times.Options.Count != 0)
         {
             int leftBound, rightBound;
-            for (int i = 0; i < filterData.Times.Options.Count; ++i)
+            String lastEntry = filterData.Times.TotalOptions().Last();
+            foreach (var option in filterData.Times.Options)
             {
                 // Last position, so check if greater than
-                if (i == filterData.Times.Options.Count - 1)
+                if (option == lastEntry)
                 {
-                    leftBound = Int32.Parse(filterData.Times.Options[i]);
+                    leftBound = Int32.Parse(option);
                     rightBound = Int32.MaxValue;
                 }
                 else
                 {
-                    rightBound = Int32.Parse(filterData.Times.Options[i]);
+                    rightBound = Int32.Parse(option);
                     leftBound = rightBound - interval;
                 }
 
@@ -98,6 +99,7 @@ public class SearchService
 
     private bool IsInRange(int time, int leftBound, int rightBound)
     {
+        Console.WriteLine(time+", "+leftBound+", "+rightBound);
         return (leftBound < time && time <= rightBound);
     }
 
