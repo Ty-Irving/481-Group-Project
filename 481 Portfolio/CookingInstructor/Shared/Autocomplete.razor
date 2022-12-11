@@ -13,31 +13,32 @@
 
     public String[] autocompleteContents(SearchModeEnum mode) {
         if (mode == SearchModeEnum.ByRecipe) {
-            List <string> res = new List<string>();
+           IList<string> res = new List<string>();
 
             foreach (var recipe in SearchService.list)
             {
                 if(!searchValue.Equals("")){
-                    if(recipe.Name.ToUpper().Contains(searchValue.ToUpper()))
+                    if(recipe.Name.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && !res.Contains(recipe.Name,StringComparer.OrdinalIgnoreCase) )
                         res.Add(recipe.Name);
                 }else{
                     res.Add(recipe.Name);
                 }
             }
-            return res.Take(7).ToArray();
+            return Enumerable.Take(res,7).ToArray();
+              //res.Take(7).ToArray();
         }
         else { // ByIngredient
-            List<string> result = new List<string>();
+           IList<string> result = new List<string>();
             if(!searchValue.Equals("")){
                 foreach (string x in CookingInstructor.Data.Recipes.allIngredients){
-                    if(x.ToUpper().Contains(searchValue.ToUpper()))
+                    if(x.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && !result.Contains(x,StringComparer.OrdinalIgnoreCase) )
                         result.Add(x);
                 }
             }
             else{
                 result = CookingInstructor.Data.Recipes.allIngredients;
             }
-            return result.Take(7).ToArray();
+            return Enumerable.Take(result,7).ToArray();
         }
     }
 }
