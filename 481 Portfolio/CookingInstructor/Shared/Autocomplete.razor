@@ -6,20 +6,39 @@
 
 @code {
     [Parameter]
+    public string? searchValue{get;set;} = "";
+
+    [Parameter]
     public SearchModeEnum searchMode { get; set; }
 
     public String[] autocompleteContents(SearchModeEnum mode) {
         if (mode == SearchModeEnum.ByRecipe) {
-            List <string> res = new List<string>();
+           IList<string> res = new List<string>();
 
             foreach (var recipe in SearchService.list)
             {
-                res.Add(recipe.Name);
+                if(!searchValue.Equals("")){
+                    if(recipe.Name.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && !res.Contains(recipe.Name,StringComparer.OrdinalIgnoreCase) )
+                        res.Add(recipe.Name);
+                }else{
+                    res.Add(recipe.Name);
+                }
             }
-            return res.ToArray();
+            return Enumerable.Take(res,7).ToArray();
+              //res.Take(7).ToArray();
         }
         else { // ByIngredient
-            return CookingInstructor.Data.Recipes.allIngredients.ToArray();
+           IList<string> result = new List<string>();
+            if(!searchValue.Equals("")){
+                foreach (string x in CookingInstructor.Data.Recipes.allIngredients){
+                    if(x.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && !result.Contains(x,StringComparer.OrdinalIgnoreCase) )
+                        result.Add(x);
+                }
+            }
+            else{
+                result = CookingInstructor.Data.Recipes.allIngredients;
+            }
+            return Enumerable.Take(result,7).ToArray();
         }
     }
 }
