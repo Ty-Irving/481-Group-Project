@@ -5,12 +5,12 @@
     </div>
     @if (show == 0)
     {
-        <div class="ingList full">
+        <div class="ingList" style="margin-bottom: 75px;">
             @foreach (string x in ClubList())
             {
                 <input type="checkbox" class ="largerCheckbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" />
                 string[] subs = x.Split(' ');
-                <label class="checkboxOffset">&nbsp;&nbsp;&nbsp;@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
+                <label>&nbsp;&nbsp;&nbsp;@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
                 <br />    
             }
 
@@ -19,7 +19,7 @@
 
     @if (show == 1)
     {
-        <div class="stepList full">
+        <div class="stepList " style="margin-bottom: 75px;">
 
             @for (int i = 0; i < RecipeObj.Steps.Length; i++)
             {
@@ -34,7 +34,7 @@
 
 <style>
     .opaqueBG {
-        background-color: red;
+        background-color: white;
         opacity: 1;
     }
     .full {
@@ -54,7 +54,6 @@
         margin-top: -2px;
       }
 </style>
-
 
 @code {
     [Parameter]

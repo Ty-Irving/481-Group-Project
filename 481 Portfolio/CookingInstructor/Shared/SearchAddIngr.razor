@@ -8,10 +8,18 @@
 </button>
 
 @code {
+  public static List<string> allIngredients = new CookingInstructor.Data.Recipes().GetIngredients();
+  
+  [Parameter]
+  public string? IngredientName { get; set; } = "";
+  
   private void AddToYourIngredients() 
   {
-    Console.WriteLine("heyy");
-    // YourIngredients.Insert(0, "Olive Oil");
+    int result = allIngredients.FindIndex(x => x.Equals(IngredientName, StringComparison.OrdinalIgnoreCase));
+
+    if (result >= 0) {
+      YourIngredients.Insert(0, allIngredients[result]);
+    }
   }
  
 }
