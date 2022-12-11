@@ -60,28 +60,45 @@ public class SearchService
     // TODO: this is broken
     private bool IsCorrectTime(CookingInstructor.RecipeNS.Recipe recipe)
     {
+        int interval = 15;
         // 0--><--15--><--30--><--45--><--60--><--60+ ->
         // Rather than trying to understand boolean overlap, 
         // just consider what buckets each time interval falls into
+        //Console.WriteLine("Time Filters active");
+        
+        
         if (filterData.Times.Options.Count != 0)
         {
-            int leftBound = 0;
+            int leftBound, rightBound;
             for (int i = 0; i < filterData.Times.Options.Count; ++i)
             {
-                int rightBound = Int32.Parse(filterData.Times.Options[i]);
-
-                if ((leftBound < recipe.Time && recipe.Time <= rightBound) ||
-                    (i == filterData.Times.Options.Count - 1 && recipe.Time > rightBound))
+                // Last position, so check if greater than
+                if (i == filterData.Times.Options.Count - 1)
                 {
-                    return true;
+                    leftBound = Int32.Parse(filterData.Times.Options[i]);
+                    rightBound = Int32.MaxValue;
+                }
+                else
+                {
+                    rightBound = Int32.Parse(filterData.Times.Options[i]);
+                    leftBound = rightBound - interval;
                 }
 
-                leftBound = rightBound;
+                if(IsInRange(recipe.Time, leftBound, rightBound)) return true;
             }
+            // No more filters, not correct time
             return false;
         }
         else
+        {
+            // No filters active
             return true;
+        }
+    }
+
+    private bool IsInRange(int time, int leftBound, int rightBound)
+    {
+        return (leftBound < time && time <= rightBound);
     }
 
     private bool IsCorrectDifficulty(CookingInstructor.RecipeNS.Recipe recipe)
