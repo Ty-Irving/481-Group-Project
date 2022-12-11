@@ -60,17 +60,20 @@
         if (queryStrings.TryGetValue("ids", out var ids))
         {
             string[] StringIDs = ids.ToString().Split(',');
-
+            
             _IDs = new List<int>(StringIDs.Length);
             foreach(var sID in StringIDs)
             {
-                try
+                if(sID.Length != 0)
                 {
-                    _IDs.Add(Int32.Parse(sID));
-                }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e.Message);
+                    try
+                    {
+                        _IDs.Add(Int32.Parse(sID));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
                 }
             }
         }
