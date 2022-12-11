@@ -7,7 +7,7 @@
         Add
 </button>
 
-@if (showAdd)
+@if (isModalVisible)
 {
   <div id="#addModal"
     class="modal fade show justify-content-center" 
@@ -17,17 +17,17 @@
     style="display: @modalDisplayType; background-color: rgba(10,10,10,.4);"
     @onclick="closeModal">
     <div 
-      class="modal-dialog modal-dialog-centered" 
+      class="modal-dialog modal-dialog-centered"
       role="document"
       @onclick:stopPropagation="true">
       <div class="modal-content">
         <div class="modal-body" style="border-radius: 50%">
-          The ingredient: "@IngredientName" does not exist.
+          Ingredient not found: "@IngredientName"
           <br>
           <button
               class="btn btn-outline-primary" 
               type="submit" 
-              @onclick="@ChangeShowAddToFalse">
+              @onclick="@closeModal">
                   Close
           </button>
         </div>
@@ -43,26 +43,27 @@
   [Parameter]
   public string? IngredientName { get; set; } = "";
   
-  private bool showAdd = false;
+  [Parameter]
+  public EventCallback OnAddIngredient { get; set; }
+
+  public async Task onIngredientAdded() {
+      await OnAddIngredient.InvokeAsync();
+  }
+
   private bool isModalVisible = false;
   public string modalDisplayType { get { return isModalVisible ? "block" : "none"; } }
 
-  private void AddToYourIngredients() 
+  private async Task AddToYourIngredients() 
   {
     int result = allIngredients.FindIndex(x => x.Equals(IngredientName, StringComparison.OrdinalIgnoreCase));
 
     if (result >= 0) {
       YourIngredients.Insert(0, allIngredients[result]);
+      await onIngredientAdded();
     }
     else {
-      showAdd = true;
       openModal();
     }
-  }
-
-  private void ChangeShowAddToFalse()
-  {
-    showAdd = false;
   }
 
   public void openModal()
@@ -74,5 +75,4 @@
   {
     isModalVisible = false;
   }
- 
 }
