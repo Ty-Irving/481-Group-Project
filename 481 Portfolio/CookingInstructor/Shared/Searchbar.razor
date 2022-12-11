@@ -2,6 +2,7 @@
     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search... " @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
     <Autocomplete 
         searchMode="@searchMode"
+        searchValue = "@CurrentValue"
     />
 
     @if (searchMode == SearchModeEnum.ByRecipe) {
@@ -18,7 +19,7 @@
     
 
 @code {
-    private string ? CurrentValue { get; set; }
+    private string ? CurrentValue { get; set; } = "";
     
     [Parameter]
     public SearchModeEnum searchMode { get; set; }
