@@ -19,7 +19,7 @@
             return res.ToArray();
         }
         else { // ByIngredient
-            return new String[] { "Beef", "Chicken", "Chicken Stock", "Potato" };
+            return CookingInstructor.Data.Recipes.allIngredients.ToArray();
         }
     }
 }
