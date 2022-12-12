@@ -26,14 +26,13 @@
         public String? Link { get; set;}
     }
 
-    private SearchService searchService;
+    //private SearchService searchService;
 
-    protected override void OnInitialized()
+    @* protected override void OnInitialized()
     {
         searchService = new SearchService(FilterData);
         ConstructLinks();
-        
-    }
+    } *@
 
     Cuisine[] CuisineList = new Cuisine[] {
         new Cuisine {
@@ -98,14 +97,14 @@
             NumberRecipes=10}
         };
 
-    private void ConstructLinks()
+    @* private void ConstructLinks()
     {
         foreach(var cuisine in CuisineList)
         {
             List<int> recipeIDs = searchService.GetCuisineResults(cuisine.Name);
             cuisine.Link = searchService.constructURL(recipeIDs);
         }
-    }
+    } *@
 }
 
 
