@@ -3,7 +3,11 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime jsRuntime
 
-<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick=@NavigateToURL>
+<button 
+    class="btn my-2 my-sm-0 bg searchBtn" 
+    style="color: black; border: 1px solid gray;"
+    type="submit" 
+    onclick=@NavigateToURL>
     <svg xmlns="http://www.w3.org/2000/svg"
          width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round"
@@ -12,6 +16,11 @@
         <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
     </svg>
 </button>
+<style>
+    .searchBtn:focus {
+        background-color: orange;
+    }
+</style>
 
 @code {
     [Parameter]

@@ -2,9 +2,14 @@
 @inject CommonIngredients CommonIngredients
 
 <div>
-    <label for="yourIngredients">Your Ingredients</label>
     <div 
-        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center mb-3"
+        for="yourIngredients"
+        class="justify-content-center bg ingLabel"
+        id="commonIngredients">
+            Your Ingredients
+    </div>
+    <div 
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center mb-3 bg"
         id="yourIngredients"
         style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
             @foreach (var name in YourIngredients.list)
@@ -16,9 +21,14 @@
             }
     </div>
 
-    <label for="commonIngredients">Common Ingredients</label>
     <div 
-        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center"
+        for="commonIngredients"
+        class="justify-content-center bg ingLabel"
+        id="commonIngredients">
+            Common Ingredients
+    </div>
+    <div 
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center bg"
         id="commonIngredients"
         style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
             @foreach (var name in CommonIngredients.list)
@@ -30,6 +40,18 @@
             }
     </div>
 </div>
+<style>
+    .bg {
+        background-color: white;
+    }
+    .ingLabel {
+        width: auto; 
+        border: gray; 
+        border-width: 1px; 
+        border-radius: 16px; 
+        border-style: solid;
+    }
+</style>
 
 @code {
     protected override void OnInitialized()

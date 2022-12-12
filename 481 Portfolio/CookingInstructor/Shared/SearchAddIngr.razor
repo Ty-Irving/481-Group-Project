@@ -1,7 +1,8 @@
 @inject YourIngredients YourIngredients
 
 <button 
-    class="btn btn-outline-primary" 
+    class="btn bg addBtn" 
+    style="background-color: #ef5c5c; color: white; border: 1px solid black;"
     type="submit" 
     @onclick="@AddToYourIngredients">
         Add
@@ -46,6 +47,7 @@
   [Parameter]
   public EventCallback OnAddIngredient { get; set; }
 
+
   public async Task onIngredientAdded() {
       await OnAddIngredient.InvokeAsync();
   }
@@ -61,6 +63,7 @@
 
       if (result >= 0) {
         YourIngredients.Insert(0, allIngredients[result]);
+        
         await onIngredientAdded();
       }
       else {

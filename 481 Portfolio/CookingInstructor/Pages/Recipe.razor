@@ -168,7 +168,7 @@
     private bool IsFavorite { get; set; } = false;
     public String Message2
     {
-        get { return IsFavorite ? "Remove Favorite" : "Add Favorite"; }
+        get { return list[_index??0].isFavorite ? "Remove Favorite" : "Add Favorite"; }
     }
 
     private void ToggleFavorite()
