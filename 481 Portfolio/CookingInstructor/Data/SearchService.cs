@@ -57,18 +57,15 @@ public class SearchService
         return filteredRecipeIDs;
     }
 
-    // TODO: this is broken
     private bool IsCorrectTime(CookingInstructor.RecipeNS.Recipe recipe)
     {
-        int interval = 15;
         // 0--><--15--><--30--><--45--><--60--><--60+ ->
         // Rather than trying to understand boolean overlap, 
         // just consider what buckets each time interval falls into
-        //Console.WriteLine("Time Filters active");
-        
         
         if (filterData.Times.Options.Count != 0)
         {
+            int interval = 15;
             int leftBound, rightBound;
             String lastEntry = filterData.Times.TotalOptions().Last();
             foreach (var option in filterData.Times.Options)
@@ -99,7 +96,7 @@ public class SearchService
 
     private bool IsInRange(int time, int leftBound, int rightBound)
     {
-        Console.WriteLine(time+", "+leftBound+", "+rightBound);
+        // Console.WriteLine(time+", "+leftBound+", "+rightBound);
         return (leftBound < time && time <= rightBound);
     }
 
@@ -140,11 +137,6 @@ public class SearchService
                 recipeResultsIndexes[list[i]] = i;
             }
         }
-
-        foreach (var entry in recipeResults)
-        {
-            Console.WriteLine(entry.Name);
-        }
     }
 
     private void IngredientModeSearchResults(List<String> yourIngredients)
@@ -177,10 +169,10 @@ public class SearchService
 
         matchedRecipesCounts = matchedRecipesCounts.OrderByDescending(key => key.Value).ToDictionary(k => k.Key, v => v.Value);
         
-        foreach (var entry in matchedRecipesCounts)
-        {
-            Console.WriteLine(entry.Key.Name + ": " + entry.Value);
-        }
+        // foreach (var entry in matchedRecipesCounts)
+        // {
+        //     Console.WriteLine(entry.Key.Name + ": " + entry.Value);
+        // }
 
         foreach (var entry in matchedRecipesCounts)
         {
