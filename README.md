@@ -31,8 +31,8 @@ To experience the full capacities of the system, we recommend inputting data tha
 
 ## The walkthrough/expected usage of the system is as follows:
 * Depending on the user's goal with using the app, a user can either select Search by Ingredient or Search Recipes from the Home page to get started. 
-    * The recipe search looks through the list of recipes and suggests them to the user based on the user prompt, same as ingredients. 
-        * Users can click on the "Filter" button to apply filtering to the search results.
+    * The recipe search looks through the list of recipes and suggests them to the user based on the user prompt, same as ingredients as described below. 
+        * Users can navigate to the top and click on the "Filter" button to apply filtering to the search results or search another recipe.
     * Search by Ingredient takes the user's inputs and searches through the recipes' ingredients in the database. 
         * If there exists such an ingredient or ingredients, they are shown as autocomplete suggestions to the user. 
     * Selecting the autocomplete suggestions fills up the search bar, and a user can do actions based on the tab they are on (Ingredient or Recipe). 
