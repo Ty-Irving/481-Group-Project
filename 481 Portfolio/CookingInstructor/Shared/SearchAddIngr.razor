@@ -1,14 +1,17 @@
 @inject YourIngredients YourIngredients
 
 <button 
-    class="btn btn-outline-primary bg" 
+    class="btn bg addBtn" 
     style="color: black; border: 1px solid gray;"
     type="submit" 
     @onclick="@AddToYourIngredients">
         Add
 </button>
 <style>
-
+    .addBtn:focus {
+        color: white;
+        background-color: #ef5c5c;
+    }
 </style>
 
 @if (isModalVisible)
