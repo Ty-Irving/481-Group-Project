@@ -88,6 +88,7 @@
             NavigationManager.NavigateTo(constructURL(recipeIDs));
         }
     }
+    
     private bool hasActiveFilter()
     {
         bool hasFilters = FilterData.Times.Options.Count > 0 ||
@@ -96,7 +97,7 @@
         return hasFilters;
     }
 
-     private string constructURL(List<int> recipeIDs)
+    private string constructURL(List<int> recipeIDs)
     {
         string url = "/SearchPage?ids=";
         foreach (var id in recipeIDs)
