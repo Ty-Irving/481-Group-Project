@@ -13,6 +13,24 @@ public class SearchService
         filterData = fd;
     }
 
+    public string constructURL(List<int> recipeIDs)
+    {
+        string url = "/SearchPage?ids=";
+        foreach (var id in recipeIDs)
+        {
+            if (id == recipeIDs[0])
+            {
+                url += id;
+            }
+            else
+            {
+                url += "," + id;
+            }
+        }
+        Console.WriteLine(url);
+        return url;
+    }
+
     public List<int> AllRecipeIDs()
     {
         List<int> all = new List<int>();
@@ -36,6 +54,27 @@ public class SearchService
         IngredientModeSearchResults(yourIngredients);
         //Filter();
         return new List<int>(recipeResultsIndexes.Values);
+    }
+
+    public List<int> GetCuisineResults(String cuisine)
+    {
+        var allRecipeIDs = AllRecipeIDs();
+        List<int> filteredRecipeIDs = new List<int>(allRecipeIDs);
+
+        if (cuisine != "All")
+        {
+            foreach(var id in allRecipeIDs)
+            {
+                var recipe = list[id];
+
+                if ( recipe.Category != cuisine )
+                {
+                    filteredRecipeIDs.Remove(id);
+                }
+            }
+        }
+        
+        return filteredRecipeIDs;
     }
 
     public List<int> Filter(List<int> recipeIDs)
