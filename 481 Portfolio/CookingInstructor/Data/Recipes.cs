@@ -57,7 +57,7 @@ public class Recipes
             imagePath = "/BraisedPork/final.jpg"
         },
         new CookingInstructor.RecipeNS.Recipe{ 
-            Name = "MapoTofu", 
+            Name = "Mapo Tofu", 
             Category = "Chinese",
             IngredientList = new CookingInstructor.RecipeNS.Ingredient[]
                                 {new CookingInstructor.RecipeNS.Ingredient("Tofu","g",700),

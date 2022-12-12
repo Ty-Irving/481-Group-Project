@@ -85,13 +85,27 @@ public class SearchService
         {
             var recipe = list[id];
 
-            if ( ! (IsCorrectTime(recipe) &&
-                    IsCorrectDifficulty(recipe) &&
-                    IsCorrectRestrictions(recipe)))
+            bool correctTime = IsCorrectTime(recipe);
+            bool correctDiff = IsCorrectDifficulty(recipe);
+            bool correctRestriction = IsCorrectRestrictions(recipe);
+
+            // Console.Write(correctTime + " && " + correctDiff + " && " + correctRestriction);
+            // Console.WriteLine();
+
+            if ( ! (correctTime &&
+                    correctDiff &&
+                    correctRestriction))
             {
                 filteredRecipeIDs.Remove(id);
+                //Console.WriteLine("   Removing " + list[id].Name);
             }
         }
+
+        // foreach(var id in filteredRecipeIDs)
+        // {
+        //     Console.Write(list[id].Name + ", ");
+        // }
+        // Console.WriteLine();
 
         return filteredRecipeIDs;
     }
@@ -121,6 +135,7 @@ public class SearchService
                     leftBound = rightBound - interval;
                 }
 
+                // Console.WriteLine(recipe.Name +"."+ recipe.Time +": "+ IsInRange(recipe.Time, leftBound, rightBound));
                 if(IsInRange(recipe.Time, leftBound, rightBound)) return true;
             }
             // No more filters, not correct time
@@ -142,6 +157,7 @@ public class SearchService
     private bool IsCorrectDifficulty(CookingInstructor.RecipeNS.Recipe recipe)
     {
         String diff = (recipe.Difficulty == 1) ? "Easy" : (recipe.Difficulty == 2) ? "Medium" : "Hard";
+        // Console.WriteLine(recipe.Name +"."+ diff +": "+ filterData.Difficulties.Options.Contains(diff));
 
         bool contains = filterData.Difficulties.Options.Count == 0 ||
                         filterData.Difficulties.Options.Contains(diff);
@@ -159,9 +175,10 @@ public class SearchService
         };
 
         var restriction = RestrictionLookup[recipe.Specialty];
+        // Console.WriteLine(restriction + ": ");
 
-        bool contains = filterData.Difficulties.Options.Count == 0 ||
-                        filterData.Difficulties.Options.Contains(restriction) ||
+        bool contains = filterData.Restrictions.Options.Count == 0 ||
+                        filterData.Restrictions.Options.Contains(restriction) ||
                         recipe.Specialty == CookingInstructor.RecipeNS.Classification.normal;
         return contains;
     }
