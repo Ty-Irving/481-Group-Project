@@ -1,10 +1,11 @@
 ﻿@page "/"
+@layout IndexLayout
 @inject SearchMode SearchMode
 
 <PageTitle>Index</PageTitle>
 
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="text-center">Feeling Hungry?</h1>
+    <h1 class="text-center hungry">Feeling Hungry?</h1>
 
     <div class="d-grid gap-3">
         <SearchModeButtons />
@@ -18,6 +19,15 @@
         <SearchIngredientsDisplay />
     }
 </div>
+<style>
+    .hungry {
+        background-color: white;
+        border: black; 
+        border-width: 1px; 
+        border-radius: 16px; 
+        border-style: solid;
+    }
+</style>
 
 
 @code {

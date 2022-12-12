@@ -1,11 +1,15 @@
 @inject YourIngredients YourIngredients
 
 <button 
-    class="btn btn-outline-primary" 
+    class="btn btn-outline-primary bg" 
+    style="color: black; border: 1px solid gray;"
     type="submit" 
     @onclick="@AddToYourIngredients">
         Add
 </button>
+<style>
+
+</style>
 
 @if (isModalVisible)
 {

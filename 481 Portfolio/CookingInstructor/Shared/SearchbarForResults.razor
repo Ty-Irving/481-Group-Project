@@ -1,6 +1,6 @@
 <div class="h-100 d-flex align-items-center justify-content-center">
     <Backbutton />
-    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
+    <input class="form-control bg" list="datalistOptions" id="exampleDataList" placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
     <Autocomplete 
         searchMode="@searchMode"
         searchValue = "@CurrentValue"

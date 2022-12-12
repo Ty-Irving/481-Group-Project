@@ -1,0 +1,25 @@
+@inherits LayoutComponentBase
+
+<PageTitle>CookingInstructor</PageTitle>
+
+<div class="page page-background-class" >
+    <div class ="topbar">    
+        <NavMenu />
+    </div>
+    
+    <main>
+        <article class="content px-4 page-background-class">
+            @Body
+        </article>
+    </main>
+</div>
+<style>
+    .page-background-class {
+        background-image: url("/App/cooking_bg.jpg");
+        position: absolute;
+        background-repeat: repeat;
+        /* 640 x 960 */
+        width: 100%;
+        height: 100%;
+    }
+</style>
