@@ -4,7 +4,7 @@
 @inject IJSRuntime jsRuntime
 
 <div class="h-100 d-flex align-items-center justify-content-center">
-    <input class="form-control" list="datalistOptions" id="exampleDataList" onkeypress=@Enter placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
+    <input class="form-control bg searchInput" list="datalistOptions" id="exampleDataList" onkeypress=@Enter placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
     <Autocomplete 
         searchMode="@searchMode"
         searchValue = "@CurrentValue"
@@ -21,7 +21,14 @@
     
     <SearchButton CurrentValue ="@CurrentValue" searchMode="@searchMode"/>
 </div>
-    
+<style>
+    .bg {
+        background-color: white;
+    }
+    .searchInput {
+        border: black 1px solid;
+    }
+</style>
 
 @code {
     private string ? CurrentValue { get; set; } = "";
