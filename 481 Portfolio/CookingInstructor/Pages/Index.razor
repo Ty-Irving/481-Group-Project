@@ -9,21 +9,22 @@
 </style>
 
 <PageTitle>Index</PageTitle>
-<div class="px-4 py-5 my-5 text-center" style="background-color: white; border-radius:5%;">
+<div class="px-4 py-5 my-5 text-center" >
+    <div class="bg" style="border-radius:5%;">
+        <h1 class="text-center hungry">Feeling Hungry?</h1>
     
-    <h1 class="text-center hungry">Feeling Hungry?</h1>
-    
-    <div class="d-grid gap-3">
-        <SearchModeButtons />
+        <div class="d-grid gap-3">
+            <SearchModeButtons />
 
-        <Searchbar 
-            searchMode="@SearchMode.state"
-        />
+            <Searchbar 
+                searchMode="@SearchMode.state"
+            />
+        </div>
+
+        @if (SearchMode.state == SearchModeEnum.ByIngredient) {
+            <SearchIngredientsDisplay />
+        }
     </div>
-
-    @if (SearchMode.state == SearchModeEnum.ByIngredient) {
-        <SearchIngredientsDisplay />
-    }
 </div>
 <style>
     .hungry {
