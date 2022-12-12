@@ -9,6 +9,9 @@
 <PageTitle>Searches</PageTitle>
 
 <body>
+    <div class="header1">
+        <Backbutton />
+    </div>
     <Searchbar 
         searchMode="@SearchModeEnum.ByRecipe"
     />
@@ -32,6 +35,16 @@
         }
     </div>
 </body>
+
+<style>
+    .header1 {
+        display: flex;
+        height: 40px;
+        justify-content: left;
+        margin-bottom: 10px;
+        /* background-color: lightblue; */
+    }
+</style>
 
 @code{
     private CookingInstructor.RecipeNS.Recipe[]? list = SearchService.list;
