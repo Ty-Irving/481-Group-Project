@@ -19,12 +19,18 @@
             OnAddIngredient="ClearSearchbar" />
     }
     
-    <SearchButton CurrentValue ="@CurrentValue" searchMode="@searchMode"/>
+    <SearchButton
+        CurrentValue ="@CurrentValue" 
+        searchMode="@searchMode"
+        URL="@URL"/>
 </div>
     
 
 @code {
     private string ? CurrentValue { get; set; } = "";
+
+    [Parameter]
+    public String URL {get;set;} = "";
     
     private SearchModeEnum searchMode { get; set; } = SearchModeEnum.ByRecipe;
 

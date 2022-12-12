@@ -9,7 +9,9 @@
 <PageTitle>Searches</PageTitle>
 
 <body>
-    <SearchbarForResults />
+    <SearchbarForResults 
+        URL="/searchpage"
+    />
     <div style="margin-bottom: 100px;">
         @if (_IDs.Count == 0) {
             <h1 style="margin-top: 10px;">No recipes found...</h1>
@@ -35,9 +37,6 @@
     private CookingInstructor.RecipeNS.Recipe[]? list = SearchService.list;
 
     private List<int>? _IDs = new List<int>();
-    // Use this for original recipeResults in searchBar
-    public List<CookingInstructor.RecipeNS.Recipe> recipeResults = new List<CookingInstructor.RecipeNS.Recipe>();
-
 
     protected override void OnInitialized()
     {

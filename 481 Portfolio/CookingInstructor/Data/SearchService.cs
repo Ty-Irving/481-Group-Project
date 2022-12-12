@@ -56,18 +56,18 @@ public class SearchService
         return new List<int>(recipeResultsIndexes.Values);
     }
 
-    public List<int> GetCuisineResults(String cuisine)
+    public List<int> GetCuisineResults(String targetCuisine)
     {
         var allRecipeIDs = AllRecipeIDs();
         List<int> filteredRecipeIDs = new List<int>(allRecipeIDs);
 
-        if (cuisine != "All")
+        if (targetCuisine != "All")
         {
             foreach(var id in allRecipeIDs)
             {
                 var recipe = list[id];
 
-                if ( recipe.Category != cuisine )
+                if ( ! targetCuisine.Contains(recipe.Category)  )
                 {
                     filteredRecipeIDs.Remove(id);
                 }
@@ -219,5 +219,15 @@ public class SearchService
         }
 
         recipeResults = new List<CookingInstructor.RecipeNS.Recipe>(matchedRecipesCounts.Keys);
+    }
+}
+
+
+public class RecipeIDEventArgs : EventArgs
+{
+    List<int> recipeIDs {get;set;} = new List<int>();
+    public RecipeIDEventArgs(List<int> ids)
+    {
+        recipeIDs = ids;
     }
 }
