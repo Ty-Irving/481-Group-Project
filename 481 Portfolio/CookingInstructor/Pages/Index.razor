@@ -2,17 +2,23 @@
 @layout IndexLayout
 @inject SearchMode SearchMode
 
+<style>
+    body{
+    background-image: url("/App/cooking_bg.jpg");
+    }
+</style>
+
 <PageTitle>Index</PageTitle>
-
-<div class="px-4 py-5 my-5 text-center">
+<div class="px-4 py-5 my-5 text-center" style="background-color: white; border-radius:5%;">
+    
     <h1 class="text-center hungry">Feeling Hungry?</h1>
-
+    
     <div class="d-grid gap-3">
         <SearchModeButtons />
 
         <Searchbar 
             searchMode="@SearchMode.state"
-         />
+        />
     </div>
 
     @if (SearchMode.state == SearchModeEnum.ByIngredient) {
