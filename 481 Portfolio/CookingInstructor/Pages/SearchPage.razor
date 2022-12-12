@@ -9,9 +9,7 @@
 <PageTitle>Searches</PageTitle>
 
 <body>
-    <Searchbar 
-        searchMode="@SearchModeEnum.ByRecipe"
-    />
+    <SearchbarForResults />
     <div style="margin-bottom: 100px;">
         @if (_IDs.Count == 0) {
             <h1 style="margin-top: 10px;">No recipes found...</h1>

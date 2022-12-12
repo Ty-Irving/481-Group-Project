@@ -1,0 +1,40 @@
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <Backbutton />
+    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
+    <Autocomplete 
+        searchMode="@searchMode"
+        searchValue = "@CurrentValue"
+    />
+
+    @if (searchMode == SearchModeEnum.ByRecipe) {
+        <SearchFilter />
+    }
+    else {
+        <SearchAddIngr 
+            IngredientName="@CurrentValue"
+            OnAddIngredient="ClearSearchbar" />
+    }
+    
+    <SearchButton CurrentValue ="@CurrentValue" searchMode="@searchMode"/>
+</div>
+    
+
+@code {
+    private string ? CurrentValue { get; set; } = "";
+    
+    private SearchModeEnum searchMode { get; set; } = SearchModeEnum.ByRecipe;
+
+    public void ClearSearchbar()
+    {
+        CurrentValue = "";
+    }
+
+    public String formatPlaceholder()
+    {   
+        if (searchMode == SearchModeEnum.ByRecipe)
+        {
+            return "Type a recipe... ";
+        }
+        return "Type an ingredient... ";
+    }
+}
