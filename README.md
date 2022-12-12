@@ -11,7 +11,7 @@
 The Voracious Chefs Cooking Instructor App provides the ability for beginner and experienced cooks to look up and follow their desired recipes. People have many ways of finding recipes and learning to cook. Physical cookbooks are tedious, time-consuming, and spacious to put on a cooking counter. Regular cooking sites and blogs are riddled with confusing walls of text and multiple recipes for the same dish with varying difficulty and ingredients. Not just that, but it is also full of pop-up ads. With our Digital Cookbook Instructor, users can access all their favorite recipes on their mobile devices because this will help negate having to attain physical texts that include difficult-to-navigate processes, as well as reduce the overall difficulty of having the dish they want.
 
 # How to Use the System
-To be able to use the app, you first need to clone the project to a local folder. Once done, enter the root folder and run the commands:
+To be able to use the app, you first need to clone the project to a local folder. Make sure you pull the 'staging' branch. Once done, enter the root folder and run the commands:
 `cd 481 Portfolio`
 `cd CookingInstructor`
 
