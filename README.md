@@ -26,25 +26,25 @@ If you would like to enable Hot Reload, use:
 # The System and the Walkthrough
 To experience the full capacities of the system, we recommend inputting data that exists in our database. We also recommend using the system with 414x896/iPhone XR dimensions with a zoom in the range of 75% or 100% or just the "Fit to window" option chosen on Chrome for the best experience. While the user is on Search Recipe tab, they are able to search and apply various Filters like the recipe difficulty or cooking time to any of the available recipes. The queried recipes are then displayed to the user in a card component form with quick insights to the recipe information like its calories per serving at a glance. List of all the available recipes are: 
 
-Braised Pork With Beancurd Sheet
-MapoTofu
-Spicy Fry Shredded Potato
-Tomato-Egg Noodle
-Tomato with Egg
-German Potato Salad
-Fideua Paella
-Balsamic Chicken Breast
-Margaiana - Dummy
-Margaiana - Dummy
-MargaianaVegan - Dummy
-Poutine - Dummy
-Chili Chicken
-Beef Donburi
-French Bisque
-French Apple Tart
-Dongpo Pork
-Frying Chicken
-Chili Chicken
+Braised Pork With Beancurd Sheet  
+MapoTofu  
+Spicy Fry Shredded Potato  
+Tomato-Egg Noodle  
+Tomato with Egg  
+German Potato Salad  
+Fideua Paella  
+Balsamic Chicken Breast  
+Margaiana - Dummy  
+Margaiana - Dummy  
+MargaianaVegan - Dummy  
+Poutine - Dummy  
+Chili Chicken  
+Beef Donburi  
+French Bisque  
+French Apple Tart  
+Dongpo Pork  
+Frying Chicken  
+Chili Chicken  
 
 
 
