@@ -1,7 +1,7 @@
 <div class="content opaqueBG">
-    <div class="buttons full">
-        <button class="ingListBut" style="@ingColor" @onclick="ing">Ingredients (@ClubMember.Count/@RecipeObj.IngredientList.Length)</button>
-        <button class="stepListBut" style="@stepColor" @onclick="step">Directions</button>
+    <div class="d-flex buttons justify-content-center mb-3">
+        <button class="ingListBut px-4 mx-2" style="@ingColor" @onclick="ing">Ingredients (@ClubMember.Count/@RecipeObj.IngredientList.Length)</button>
+        <button class="stepListBut px-4" style="@stepColor" @onclick="step">Directions</button>
     </div>
     @if (show == 0)
     {
@@ -65,10 +65,10 @@
 
     public EventCallback<ChangeEventArgs> ValueChanged { get; set; }
     private int show = 0;
-    private string ingColor = "background-color:blue; color: white;";
-    private string stepColor = "background-color: #e7e7e7; color: black;";
-    private string color1 = "background-color:blue; color: white;";
-    private string color2 = "background-color: #e7e7e7; color: black;";
+    private string ingColor = "background-color: #ef5c5c; color: white; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string stepColor = "background-color: #e7e7e7; color: black; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string highlightColor = "background-color: #ef5c5c; color: white; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string baseColor = "background-color: #e7e7e7; color: black; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
 
 
     int incheck_num;
@@ -88,8 +88,8 @@
     private void ing()
     {
         show = 0;
-        ingColor = color1;
-        stepColor = color2;
+        ingColor = highlightColor;
+        stepColor = baseColor;
 
     }
 
@@ -132,7 +132,7 @@
     private void step()
     {
         show = 1;
-        ingColor = color2;
-        stepColor = color1;
+        ingColor = baseColor;
+        stepColor = highlightColor;
     }
 }

@@ -4,7 +4,7 @@
 @inject IJSRuntime jsRuntime
 
 <button 
-    class="btn btn-outline-primary my-2 my-sm-0 bg" 
+    class="btn my-2 my-sm-0 bg searchBtn" 
     style="color: black; border: 1px solid gray;"
     type="submit" 
     onclick=@NavigateToURL>
@@ -16,6 +16,11 @@
         <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
     </svg>
 </button>
+<style>
+    .searchBtn:focus {
+        background-color: orange;
+    }
+</style>
 
 @code {
     [Parameter]
