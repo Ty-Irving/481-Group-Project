@@ -13,6 +13,24 @@ public class SearchService
         filterData = fd;
     }
 
+    public string constructURL(List<int> recipeIDs)
+    {
+        string url = "/SearchPage?ids=";
+        foreach (var id in recipeIDs)
+        {
+            if (id == recipeIDs[0])
+            {
+                url += id;
+            }
+            else
+            {
+                url += "," + id;
+            }
+        }
+        Console.WriteLine(url);
+        return url;
+    }
+
     public List<int> AllRecipeIDs()
     {
         List<int> all = new List<int>();
@@ -38,6 +56,27 @@ public class SearchService
         return new List<int>(recipeResultsIndexes.Values);
     }
 
+    public List<int> GetCuisineResults(String targetCuisine)
+    {
+        var allRecipeIDs = AllRecipeIDs();
+        List<int> filteredRecipeIDs = new List<int>(allRecipeIDs);
+
+        if (targetCuisine != "All")
+        {
+            foreach(var id in allRecipeIDs)
+            {
+                var recipe = list[id];
+
+                if ( ! targetCuisine.Contains(recipe.Category)  )
+                {
+                    filteredRecipeIDs.Remove(id);
+                }
+            }
+        }
+        
+        return filteredRecipeIDs;
+    }
+
     public List<int> Filter(List<int> recipeIDs)
     {
         List<int> filteredRecipeIDs = new List<int>(recipeIDs);
@@ -46,13 +85,27 @@ public class SearchService
         {
             var recipe = list[id];
 
-            if ( ! (IsCorrectTime(recipe) &&
-                    IsCorrectDifficulty(recipe) &&
-                    IsCorrectRestrictions(recipe)))
+            bool correctTime = IsCorrectTime(recipe);
+            bool correctDiff = IsCorrectDifficulty(recipe);
+            bool correctRestriction = IsCorrectRestrictions(recipe);
+
+            // Console.Write(correctTime + " && " + correctDiff + " && " + correctRestriction);
+            // Console.WriteLine();
+
+            if ( ! (correctTime &&
+                    correctDiff &&
+                    correctRestriction))
             {
                 filteredRecipeIDs.Remove(id);
+                //Console.WriteLine("   Removing " + list[id].Name);
             }
         }
+
+        // foreach(var id in filteredRecipeIDs)
+        // {
+        //     Console.Write(list[id].Name + ", ");
+        // }
+        // Console.WriteLine();
 
         return filteredRecipeIDs;
     }
@@ -82,6 +135,7 @@ public class SearchService
                     leftBound = rightBound - interval;
                 }
 
+                // Console.WriteLine(recipe.Name +"."+ recipe.Time +": "+ IsInRange(recipe.Time, leftBound, rightBound));
                 if(IsInRange(recipe.Time, leftBound, rightBound)) return true;
             }
             // No more filters, not correct time
@@ -103,6 +157,7 @@ public class SearchService
     private bool IsCorrectDifficulty(CookingInstructor.RecipeNS.Recipe recipe)
     {
         String diff = (recipe.Difficulty == 1) ? "Easy" : (recipe.Difficulty == 2) ? "Medium" : "Hard";
+        // Console.WriteLine(recipe.Name +"."+ diff +": "+ filterData.Difficulties.Options.Contains(diff));
 
         bool contains = filterData.Difficulties.Options.Count == 0 ||
                         filterData.Difficulties.Options.Contains(diff);
@@ -120,9 +175,10 @@ public class SearchService
         };
 
         var restriction = RestrictionLookup[recipe.Specialty];
+        // Console.WriteLine(restriction + ": ");
 
-        bool contains = filterData.Difficulties.Options.Count == 0 ||
-                        filterData.Difficulties.Options.Contains(restriction) ||
+        bool contains = filterData.Restrictions.Options.Count == 0 ||
+                        filterData.Restrictions.Options.Contains(restriction) ||
                         recipe.Specialty == CookingInstructor.RecipeNS.Classification.normal;
         return contains;
     }
@@ -180,5 +236,15 @@ public class SearchService
         }
 
         recipeResults = new List<CookingInstructor.RecipeNS.Recipe>(matchedRecipesCounts.Keys);
+    }
+}
+
+
+public class RecipeIDEventArgs : EventArgs
+{
+    List<int> recipeIDs {get;set;} = new List<int>();
+    public RecipeIDEventArgs(List<int> ids)
+    {
+        recipeIDs = ids;
     }
 }

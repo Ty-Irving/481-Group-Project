@@ -39,3 +39,8 @@ public class YourIngredients
         OnChange?.Invoke(this, new EventArgs());
     }
 }
+
+public class SearchIngredientsResults
+{
+    public List<int> RecipeIDs {get;set;} = new List<int>();
+}

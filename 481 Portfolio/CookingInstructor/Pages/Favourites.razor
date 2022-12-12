@@ -1,22 +1,25 @@
 ﻿@page "/favourites"
 @using Microsoft.AspNetCore.WebUtilities
 @inject NavigationManager NavManager
+@inject FilterData FilterData
 
 <PageTitle>Favourites</PageTitle>
 
-<SearchbarForResults />
+<SearchbarForResults 
+    URL="/favourites"
+/>
 <div class = "recipeContainer" style="margin-bottom: 100px;">
-        @for(var i = 0; i < list.Length; i++){
-            if(list[i].isFavorite == true){
+        @foreach(var id in _IDs){
+            if(list[id].isFavorite == true){
                 display = true;
                 <RecipeImageHorizontal
-                    Image = "@list[i].imagePath"
-                    Difficulty = "@list[i].Difficulty"
-                    SpicyLevel = "@list[i].Spicy"
-                    Calories = "@list[i].CaloriesPerServing"
-                    Name = "@list[i].Name"
-                    Time = "@list[i].Time"
-                    Index ="@i"
+                    Image = "@list[id].imagePath"
+                    Difficulty = "@list[id].Difficulty"
+                    SpicyLevel = "@list[id].Spicy"
+                    Calories = "@list[id].CaloriesPerServing"
+                    Name = "@list[id].Name"
+                    Time = "@list[id].Time"
+                    Index ="@id"
                 />
             }
         }
@@ -24,15 +27,59 @@
         @if(display == false){
             <h1 style="margin-top: 10px;">No favourites found...</h1>
         }
-        
 </div>
 
 @code{
     private CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
 
     private bool display = false;
+
+    private List<int>? _IDs = new List<int>();
+
+    private SearchService searchService;
     protected override void OnInitialized()
     {
-        Data.Recipes myClass = new Data.Recipes();
+        NavManager.LocationChanged += onURLChange;
+        
+        searchService = new SearchService(FilterData);
+        _IDs = searchService.AllRecipeIDs();
+    }
+
+    public void Dispose()
+    {
+        NavManager.LocationChanged -= onURLChange;
+    }
+
+    public void onURLChange(object sender, LocationChangedEventArgs e)
+    {
+        display = false;
+        HandleURLChange();
+        StateHasChanged();
+    }
+
+    public void HandleURLChange()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+        if (queryStrings.TryGetValue("ids", out var ids))
+        {
+            string[] StringIDs = ids.ToString().Split(',');
+            
+            _IDs = new List<int>(StringIDs.Length);
+            foreach(var sID in StringIDs)
+            {
+                if(sID.Length != 0)
+                {
+                    try
+                    {
+                        _IDs.Add(Int32.Parse(sID));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+        }
     }
 }
