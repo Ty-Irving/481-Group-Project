@@ -809,6 +809,12 @@ public class Recipes
         }
     };
     public CookingInstructor.RecipeNS.Recipe[] GetRecipes() {
+
+        // for(int i = 0; i < list.Length; i++)
+        // {
+        //     Console.WriteLine(list[i].Name);
+        // }
+
         return list;
     }
     public List <string> GetIngredients() {
