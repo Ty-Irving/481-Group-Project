@@ -1,4 +1,6 @@
-﻿<nav class="fixed-bottom bg-light">
+﻿@inject NavOracle NavOracle
+
+<nav class="fixed-bottom bg-light">
     <ul class="nav justify-content-center" style="width: 100%;">
         <li class="nav-item"
         style="background-color: @bgHome; width:33.33%">
@@ -39,23 +41,48 @@
     private static String bgHighlight = "#ef5c5c";
     private static String bgNormal = "white";
 
-    private String bgHome { get; set; } = bgHighlight;
-    private String bgDiscover { get; set; } = bgNormal;
-    private String bgFav { get; set; } = bgNormal;
+    private String bgHome { get; set; } = "";
+    private String bgDiscover { get; set; } = "";
+    private String bgFav { get; set; } = "";
+
+    protected override void OnInitialized()
+    {
+        if (NavOracle.current == "Home")
+        {
+            bgHome      = bgHighlight;
+            bgDiscover  = bgNormal;
+            bgFav       = bgNormal;
+        }
+        else if (NavOracle.current == "Discover")
+        {
+            bgHome      = bgNormal;
+            bgDiscover  = bgHighlight;
+            bgFav       = bgNormal;
+        }
+        else if (NavOracle.current == "Favourites")
+        {
+            bgHome      = bgNormal;
+            bgDiscover  = bgNormal;
+            bgFav       = bgHighlight;
+        }
+    }
 
     public void OnClickHome() {
+        NavOracle.current="Home";
         bgHome      = bgHighlight;
         bgDiscover  = bgNormal;
         bgFav       = bgNormal;
     }
 
     public void OnClickDiscover() {
+        NavOracle.current="Discover";
         bgHome      = bgNormal;
         bgDiscover  = bgHighlight;
         bgFav       = bgNormal;
     }
     
     public void OnClickFavourites() {
+        NavOracle.current="Favourites";
         bgHome      = bgNormal;
         bgDiscover  = bgNormal;
         bgFav       = bgHighlight;

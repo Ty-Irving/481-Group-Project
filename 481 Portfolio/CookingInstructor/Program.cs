@@ -11,6 +11,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<SearchMode>();
 builder.Services.AddSingleton<YourIngredients>();
 builder.Services.AddSingleton<CommonIngredients>();
+builder.Services.AddSingleton<NavOracle>();
 builder.Services.AddScoped<SessionFavourites>();
 builder.Services.AddScoped<FilterData>();
 builder.Services.AddScoped<IClipboardService, ClipboardService>();
