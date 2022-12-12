@@ -4,7 +4,8 @@
 
 
 <PageTitle>Results</PageTitle>
-    
+
+<SearchbarForResults />
 <div class = "recipeContainer" style="margin-bottom: 100px;">
     @if(list == null){
         <h1>Error loading recipes...</h1>
@@ -45,6 +46,16 @@
         <h1>No results found...</h1>
     }
 </div>
+
+<style>
+    .cuisineResultsBackButton {
+        display: flex;
+        height: 20px;
+        justify-content: left;
+        margin-bottom: 5px;
+        /* background-color: lightblue; */
+    }
+</style>
 
 
 @code{

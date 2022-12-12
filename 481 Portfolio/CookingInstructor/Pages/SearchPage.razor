@@ -9,21 +9,24 @@
 <PageTitle>Searches</PageTitle>
 
 <body>
-    <Searchbar 
-        searchMode="@SearchModeEnum.ByRecipe"
-    />
+    <SearchbarForResults />
     <div style="margin-bottom: 100px;">
-        @foreach(var id in _IDs)
-        {
-            var recipe = list[id];
-            <RecipeImageHorizontal 
-                Index=@id
-                Image =@recipe.imagePath
-                Difficulty =@recipe.Difficulty
-                SpicyLevel =@recipe.Spicy
-                Calories =@recipe.CaloriesPerServing
-                Name =@recipe.Name
-                Time =@recipe.Time />
+        @if (_IDs.Count == 0) {
+            <h1 style="margin-top: 10px;">No recipes found...</h1>
+        }
+        else {
+            @foreach(var id in _IDs)
+            {
+                var recipe = list[id];
+                <RecipeImageHorizontal 
+                    Index=@id
+                    Image =@recipe.imagePath
+                    Difficulty =@recipe.Difficulty
+                    SpicyLevel =@recipe.Spicy
+                    Calories =@recipe.CaloriesPerServing
+                    Name =@recipe.Name
+                    Time =@recipe.Time />
+            }
         }
     </div>
 </body>
