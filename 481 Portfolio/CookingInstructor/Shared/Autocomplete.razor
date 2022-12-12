@@ -1,3 +1,5 @@
+@inject YourIngredients YourIngredients
+
 <datalist id="datalistOptions">
     @foreach (var suggestion in autocompleteContents(searchMode) ) {
         <option value="@suggestion"></option>
@@ -31,8 +33,10 @@
            IList<string> result = new List<string>();
             if(!searchValue.Equals("")){
                 foreach (string x in CookingInstructor.Data.Recipes.allIngredients){
-                    if(x.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && !result.Contains(x,StringComparer.OrdinalIgnoreCase) )
-                        result.Add(x);
+                    if(x.Contains(searchValue,StringComparison.OrdinalIgnoreCase) && 
+                        !result.Contains(x,StringComparer.OrdinalIgnoreCase) &&
+                        !YourIngredients.list.Contains(x,StringComparer.OrdinalIgnoreCase))
+                            result.Add(x);
                 }
             }
             else{
