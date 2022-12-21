@@ -7,6 +7,10 @@
 - Zhongmin Ma @lexahoa - 30105936
 
 
+
+https://user-images.githubusercontent.com/74677790/208823993-6df85a99-4940-4f75-899b-fbe113670605.mp4
+
+
 # Voracious Chefs
 The Voracious Chefs Cooking Instructor App provides the ability for beginner and experienced cooks to look up and follow their desired recipes. People have many ways of finding recipes and learning to cook. Physical cookbooks are tedious, time-consuming, and spacious to put on a cooking counter. Regular cooking sites and blogs are riddled with confusing walls of text and multiple recipes for the same dish with varying difficulty and ingredients. Not just that, but it is also full of pop-up ads. With our Digital Cookbook Instructor, users can access all their favorite recipes on their mobile devices because this will help negate having to attain physical texts that include difficult-to-navigate processes, as well as reduce the overall difficulty of having the dish they want.
 
@@ -54,7 +58,8 @@ To experience the full capacities of the system, we recommend inputting data tha
     * While the user is on Search Recipe tab, they are able to search and apply various Filters like the recipe difficulty or cooking time to any of the available recipes. 
     * The queried recipes are then displayed to the user in a card component form with quick insights to the recipe information like its calories per serving at a glance. 
 
-* List of all the available recipes are: 
+
+List of all the available recipes are: 
 
 Braised Pork With Beancurd Sheet  
 MapoTofu  
@@ -84,7 +89,8 @@ Chili Chicken
     * These ingredients can be added to "Your Ingredients" with a click and can be removed from Your Ingredients the same way with plus and minus signs that make the interaction more instinctive. 
     * If an ingredient doesn't exist in the available list, user is accordingly notified. 
     
-* List of all the available ingredients are:
+List of all the available ingredients are:
+
 
 Pork
 Beancurd Sheet
