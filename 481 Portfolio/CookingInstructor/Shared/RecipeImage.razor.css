@@ -1,0 +1,64 @@
+.Recipe{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.Recipe img{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+}
+
+.recipeImage{
+    z-index: 0;
+}
+
+
+.spicyLevel{
+    color: red;
+    position:absolute;
+    top: 8px;
+    right: 16px;
+    text-shadow: 0 0 10px blue;
+    font-size: 25px
+}
+
+.difficultyLevel{
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    text-shadow: 0 0 10px blue;
+    font-size: 25px;
+    
+}
+
+.recipeLink{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    background-image:
+    linear-gradient(to bottom, rgba(114, 114, 114, 0.52), rgba(0, 0, 0, 0.73));
+    background-size: cover;
+    color: white;
+}
+
+
+.recipeLink h1{
+    text-align: center;
+    width: 300px;
+    color: white;
+}
+
+.recipeTime{
+    display: inline;
+    color: white;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-style: bold;
+    text-shadow: 1px black;
+    
+}

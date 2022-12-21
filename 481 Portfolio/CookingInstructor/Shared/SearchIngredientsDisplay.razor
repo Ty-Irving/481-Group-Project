@@ -1,0 +1,88 @@
+@inject YourIngredients YourIngredients
+@inject CommonIngredients CommonIngredients
+
+<div>
+    <div 
+        for="yourIngredients"
+        class="justify-content-center bg ingLabel"
+        id="commonIngredients">
+            Your Ingredients
+    </div>
+    <div 
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center mb-3 bg"
+        id="yourIngredients"
+        style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+            @foreach (var name in YourIngredients.list)
+            {
+                <IngredientEntry
+                    data="@(new IngredientEntryData(name, IngredientEntryMode.Remove))"
+                    OnClickIngredient="handleIngredientMove"
+                />
+            }
+    </div>
+
+    <div 
+        for="commonIngredients"
+        class="justify-content-center bg ingLabel"
+        id="commonIngredients">
+            Common Ingredients
+    </div>
+    <div 
+        class="ingredient-box d-flex align-content-start flex-wrap justify-content-center bg"
+        id="commonIngredients"
+        style="height: 120px; overflow-y: auto; border: gray; border-width: 1px; border-radius: 16px; border-style: solid;">
+            @foreach (var name in CommonIngredients.list)
+            {
+                <IngredientEntry
+                    data="@(new IngredientEntryData(name, IngredientEntryMode.Add))"
+                    OnClickIngredient="handleIngredientMove"
+                />
+            }
+    </div>
+</div>
+<style>
+    .bg {
+        background-color: white;
+    }
+    .ingLabel {
+        width: auto; 
+        border: gray; 
+        border-width: 1px; 
+        border-radius: 16px; 
+        border-style: solid;
+    }
+</style>
+
+@code {
+    protected override void OnInitialized()
+    {
+        YourIngredients.OnChange += UpdateState;
+    }
+
+    public void Dispose()
+    {
+        YourIngredients.OnChange -= UpdateState;
+    }
+
+    private async void UpdateState(object sender, EventArgs e)
+    {
+        // InvokeAsync is inherited, it syncs the call back to the render thread
+        await InvokeAsync(() => 
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void handleIngredientMove(IngredientEntryData ingredient) {
+        if (ingredient.mode == IngredientEntryMode.Add)
+        {
+            CommonIngredients.Remove(ingredient.name);
+            YourIngredients.Insert(0, ingredient.name);
+        }
+        else // Remove
+        {
+            YourIngredients.Remove(ingredient.name);
+            CommonIngredients.Insert(0, ingredient.name);
+        }
+    }
+}

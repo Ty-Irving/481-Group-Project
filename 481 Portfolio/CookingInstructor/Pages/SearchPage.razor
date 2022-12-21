@@ -1,0 +1,96 @@
+@page "/searchpage"
+@using Microsoft.AspNetCore.WebUtilities
+@using System
+@using System.Linq
+@using System.Collections.Generic;
+@inject NavigationManager NavManager
+@inject SearchMode SearchMode
+@inject SearchIngredientsResults SearchIngredientsResults
+
+<PageTitle>Searches</PageTitle>
+
+<body>
+    <SearchbarForResults 
+        URL="@nextURL()"
+    />
+    <div style="margin-bottom: 100px;">
+        @if (_IDs.Count == 0) {
+            <h1 style="margin-top: 10px;">No recipes found...</h1>
+        }
+        else {
+            @foreach(var id in _IDs)
+            {
+                var recipe = list[id];
+                <RecipeImageHorizontal 
+                    Index=@id
+                    Image =@recipe.imagePath
+                    Difficulty =@recipe.Difficulty
+                    SpicyLevel =@recipe.Spicy
+                    Calories =@recipe.CaloriesPerServing
+                    Name =@recipe.Name
+                    Time =@recipe.Time />
+            }
+        }
+    </div>
+</body>
+
+@code{
+    private CookingInstructor.RecipeNS.Recipe[]? list = SearchService.list;
+
+    private List<int>? _IDs = new List<int>();
+
+    public String nextURL() //{get;set;} = "/searchpage";
+    {
+        return SearchMode.state == SearchModeEnum.ByRecipe ? "/searchpage" : "/searchpageIngredient";
+    }
+
+    protected override void OnInitialized()
+    {
+        NavManager.LocationChanged += onURLChange;
+        //nextURL = SearchMode.state == SearchModeEnum.ByRecipe ? "/searchpage" : "/searchpageIngredient";
+
+        HandleURLChange();
+        if (SearchMode.state == SearchModeEnum.ByIngredient)
+        {
+            SearchIngredientsResults.RecipeIDs = _IDs;
+        }
+    }
+
+    public void Dispose()
+    {
+        NavManager.LocationChanged -= onURLChange;
+        SearchIngredientsResults.RecipeIDs = new List<int>();
+    }
+
+    public void onURLChange(object sender, LocationChangedEventArgs e)
+    {
+        HandleURLChange();
+        StateHasChanged();
+    }
+
+    public void HandleURLChange()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+        if (queryStrings.TryGetValue("ids", out var ids))
+        {
+            string[] StringIDs = ids.ToString().Split(',');
+            
+            _IDs = new List<int>(StringIDs.Length);
+            foreach(var sID in StringIDs)
+            {
+                if(sID.Length != 0)
+                {
+                    try
+                    {
+                        _IDs.Add(Int32.Parse(sID));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+        }
+    }
+}

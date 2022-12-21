@@ -1,0 +1,138 @@
+<div class="content opaqueBG">
+    <div class="d-flex buttons justify-content-center mb-3">
+        <button class="ingListBut px-4 mx-2" style="@ingColor" @onclick="ing">Ingredients (@ClubMember.Count/@RecipeObj.IngredientList.Length)</button>
+        <button class="stepListBut px-4" style="@stepColor" @onclick="step">Directions</button>
+    </div>
+    @if (show == 0)
+    {
+        <div class="ingList" style="margin-bottom: 75px;">
+            @foreach (string x in ClubList())
+            {
+                <input type="checkbox" class ="largerCheckbox" checked="@ischeck(x)" @onchange="eventArgs => { CheckboxClicked(x, eventArgs.Value); }" />
+                string[] subs = x.Split(' ');
+                <label>&nbsp;&nbsp;&nbsp;@RecipeObj.IngredientList[Int16.Parse(subs[1])].toString() <br /> </label>
+                <br />    
+            }
+
+        </div>
+    }
+
+    @if (show == 1)
+    {
+        <div class="stepList " style="margin-bottom: 75px;">
+
+            @for (int i = 0; i < RecipeObj.Steps.Length; i++)
+            {
+                <!---id="Instruction" name="Instruction" value="XXXX"-->
+                <Teststar index=@index CurrentStep=@i Value=@RecipeObj.Steps[i] image=@RecipeObj.stepImages[i] ></Teststar>
+
+            }
+
+        </div>
+    }
+</div>
+
+<style>
+    .opaqueBG {
+        background-color: white;
+        opacity: 1;
+    }
+    .full {
+        opacity: 1;
+    }
+    .content {
+        width: auto;
+    }
+    input.largerCheckbox {
+        width:20px;
+        height:20px;
+        margin-bottom: 20px;
+        accent-color: #ef5c5c;
+    }
+    label.checkboxOffset {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -2px;
+      }
+</style>
+
+@code {
+    [Parameter]
+    public CookingInstructor.RecipeNS.Recipe? RecipeObj { get; set; }
+
+    [Parameter]
+    public int? index { get; set; }
+
+    public EventCallback<ChangeEventArgs> ValueChanged { get; set; }
+    private int show = 0;
+    private string ingColor = "background-color: #ef5c5c; color: white; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string stepColor = "background-color: #e7e7e7; color: black; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string highlightColor = "background-color: #ef5c5c; color: white; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+    private string baseColor = "background-color: #e7e7e7; color: black; border: black; border-width: 1px; border-radius: 16px; border-style: solid;";
+
+
+    int incheck_num;
+    bool[] ingMember;
+
+    protected override void OnInitialized()
+    {
+        ingMember = new bool[RecipeObj.IngredientList.Length];
+        incheck_num = 0;
+    }
+
+    public bool checkImportance(string x)
+    {
+        return x != "";
+    }
+
+    private void ing()
+    {
+        show = 0;
+        ingColor = highlightColor;
+        stepColor = baseColor;
+
+    }
+
+    public List<string> ClubMember { get; set; } = new List<string>();
+    void CheckboxClicked(string clubID, object checkedValue)
+    {
+        if ((bool)checkedValue)
+        {
+            if (!ClubMember.Contains(clubID))
+            {
+                ClubMember.Add(clubID);
+            }
+        }
+        else
+        {
+            if (ClubMember.Contains(clubID))
+            {
+                ClubMember.Remove(clubID);
+            }
+        }
+    }
+
+    bool ischeck(string x) {
+        if (!ClubMember.Contains(x))
+            return false;
+        else
+            return true;
+    }
+
+    public List<String> ClubList()
+    {
+        List<String> c = new List<String>();
+        for (int i = 0; i < RecipeObj.IngredientList.Length; i++)
+        {
+            c.Add("club "+i);
+        }
+        return c;
+    }
+
+    private void step()
+    {
+        show = 1;
+        ingColor = baseColor;
+        stepColor = highlightColor;
+    }
+}

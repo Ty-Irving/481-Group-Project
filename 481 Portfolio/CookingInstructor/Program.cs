@@ -1,13 +1,21 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using CookingInstructor.Data;
+using CookingInstructor;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton<SearchMode>();
+builder.Services.AddSingleton<YourIngredients>();
+builder.Services.AddSingleton<CommonIngredients>(); 
+builder.Services.AddSingleton<NavOracle>();
+builder.Services.AddSingleton<SearchIngredientsResults>();
+builder.Services.AddScoped<SessionFavourites>();
+builder.Services.AddScoped<FilterData>();
+builder.Services.AddScoped<IClipboardService, ClipboardService>();
 
 var app = builder.Build();
 

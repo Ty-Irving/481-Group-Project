@@ -1,0 +1,91 @@
+.recipeLink{
+    height: 175px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 812px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.recipeImage{
+    width: 30%;
+    height: 165px;
+    margin-top: 5px;
+    margin-left: 5px;
+    min-width: 165px;
+    max-width: 200px;
+}
+
+.Recipe{
+    width: 100%;
+    border-radius: 2%;
+    height: 175px;
+    display: flex;
+    flex-wrap: nowrap;
+    color: black;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 25px;
+}
+
+.recipeName h1
+{
+    padding-left: 5%;
+}
+
+.recipeName h2
+{
+    font-size: 16px;
+    font-weight:525;
+
+}
+
+.recipeInfo{
+    vertical-align: middle;
+    
+}
+
+.RecipeInfo{
+    display: inline;
+}
+
+.difficultyLevel{
+    flex-grow: 8;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
+.spicyLevel{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.recipeCals{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.recipeTime{
+    margin-left: 10px;
+}
+
+.recipeName{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.recipeTime{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .difficultyLevel h2{
+        font-size: medium;
+        margin-top: 5px;
+    }
+}

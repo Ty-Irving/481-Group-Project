@@ -1,0 +1,21 @@
+@inject FilterData FilterData
+
+<div id="filterChecks">
+    <FilterOptionsContainer 
+        label="Time (minutes)"
+        filterType="@FilterData.Times"
+        displayNumbers="@true"
+    />
+
+    <FilterOptionsContainer 
+        label="Difficulty"
+        filterType="@FilterData.Difficulties"
+        displayNumbers="@false"
+    />
+
+    <FilterOptionsContainer 
+        label="Restrictions"
+        filterType="@FilterData.Restrictions"
+        displayNumbers="@false"
+    />
+</div>

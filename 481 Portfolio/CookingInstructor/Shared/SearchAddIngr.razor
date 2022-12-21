@@ -1,0 +1,84 @@
+@inject YourIngredients YourIngredients
+
+<button 
+    class="btn bg addBtn" 
+    style="background-color: #ef5c5c; color: white; border: 1px solid black;"
+    type="submit" 
+    @onclick="@AddToYourIngredients">
+        Add
+</button>
+
+@if (isModalVisible)
+{
+  <div id="#addModal"
+    class="modal fade show justify-content-center" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true"
+    style="display: @modalDisplayType; background-color: rgba(10,10,10,.4);"
+    @onclick="closeModal">
+    <div 
+      class="modal-dialog modal-dialog-centered"
+      role="document"
+      @onclick:stopPropagation="true">
+      <div class="modal-content">
+        <div class="modal-body" style="border-radius: 50%">
+          Ingredient not found: "@IngredientName"
+          <br>
+          <button
+              class="btn btn-outline-primary" 
+              type="submit" 
+              @onclick="@closeModal">
+                  Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+}
+
+@code {
+  public static List<string> allIngredients = new CookingInstructor.Data.Recipes().GetIngredients();
+  
+  [Parameter]
+  public string? IngredientName { get; set; } = "";
+  
+  [Parameter]
+  public EventCallback OnAddIngredient { get; set; }
+
+
+  public async Task onIngredientAdded() {
+      await OnAddIngredient.InvokeAsync();
+  }
+
+  private bool isModalVisible = false;
+  public string modalDisplayType { get { return isModalVisible ? "block" : "none"; } }
+
+  private async Task AddToYourIngredients() 
+  {
+    if (!IngredientName.Equals(""))
+    {
+      int result = allIngredients.FindIndex(x => x.Equals(IngredientName, StringComparison.OrdinalIgnoreCase));
+
+      if (result >= 0) {
+        YourIngredients.Insert(0, allIngredients[result]);
+        
+        await onIngredientAdded();
+      }
+      else {
+        openModal();
+      }
+    }
+  }
+
+  public void openModal()
+  {
+    isModalVisible = true;
+  }
+  
+  public void closeModal()
+  {
+    isModalVisible = false;
+  }
+}

@@ -1,0 +1,49 @@
+<button 
+    class="btn"
+    style="background-color: #ef5c5c; border: black 1px solid; color: white"
+    @onclick="openModal" 
+    data-target="#filterModal">
+        Filter
+</button>
+
+<div 
+    id="#filterModal"
+    class="modal fade show justify-content-center" 
+    tabindex="-1" 
+    role="dialog" 
+    aria-labelledby="exampleModalLabel" aria-hidden="true"
+    style="display: @modalDisplayType; background-color: rgba(10,10,10,.4);"
+    @onclick="closeModal">
+      <div 
+        class="modal-dialog modal-dialog-centered" 
+        role="document"
+        @onclick:stopPropagation="true">
+          <div class="modal-content">
+            <div class="modal-body">
+              <SearchFilterContent />
+            </div>
+            <div class="modal-footer">
+              <button type="button" 
+                  class="btn btn-secondary" 
+                  @onclick="closeModal">
+                      Done
+              </button>
+            </div>
+          </div>
+      </div>
+</div>
+
+@code {
+    private bool isModalVisible = false;
+    public string modalDisplayType { get { return isModalVisible ? "block" : "none"; } }
+
+    public void openModal()
+    {
+        isModalVisible = true;
+    }
+    
+    public void closeModal()
+    {
+        isModalVisible = false;
+    }
+}

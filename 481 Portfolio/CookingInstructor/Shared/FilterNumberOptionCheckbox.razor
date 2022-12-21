@@ -1,0 +1,62 @@
+@* Ideally I wouldn't inject this here and break data flow, but this is pastaland babyyy *@
+@inject FilterData FilterData
+
+<div class="mx-1" style="display:inline">
+    <input 
+        type="checkbox"
+        class="largerCheckbox"
+        @onclick="HandleClick"
+        @bind="@state"> 
+    <label class="checkboxOffset">
+        @formatNumber(item, isLast)
+    </label>
+</div>
+
+<style>
+    input.largerCheckbox {
+        width:20px;
+        height:20px;
+        margin-bottom: 20px;
+        accent-color: #ef5c5c;
+    }
+	label.checkboxOffset {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -2px;
+     }
+</style>
+
+@code {
+    [Parameter]
+    public String item { get; set; } = "";
+    [Parameter]
+    public EventCallback<CheckboxData> OnClickCheckbox { get; set; }
+
+    [Parameter] 
+    public bool isLast { get; set; } = false;
+
+    private bool state { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        state = FilterData.Times.Options.Contains(item);
+    }
+
+    private async Task HandleClick()
+    {
+        state = ! state;
+        await OnClickCheckbox.InvokeAsync(new CheckboxData(item, state));
+    }
+
+    public String formatNumber(String number, bool isLast)
+    {
+        if (isLast)
+        {
+            return "60+";
+        }
+        else
+        {
+            return "≤ " + number;
+        }
+    }
+}

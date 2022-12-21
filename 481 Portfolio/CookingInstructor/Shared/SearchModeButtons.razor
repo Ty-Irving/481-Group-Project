@@ -1,0 +1,81 @@
+@inject SearchMode SearchMode
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <button
+        class="me-3 recipeButton modeButton"
+        @onclick="onSearchRecipes">
+    Search Recipes</button>
+    <button
+        class="ingredientButton modeButton"
+        @onclick="onSearchIngredients">
+    Search by Ingredient</button>
+</div>
+
+<style>
+    .recipeButton {
+        background-color: @recipeBGColor;
+        color: @recipeTextColor;
+    }
+
+    .ingredientButton {
+        background-color: @ingredientBGColor;
+        color: @ingredientTextColor;
+    }
+
+    .modeButton {
+        border: black; 
+        border-width: 1px; 
+        border-radius: 16px; 
+        border-style: solid;
+    }
+</style>
+
+@code {
+    private static String bgHighlight = "#ef5c5c";
+    private static String bgNormal = "white";
+
+    private static String textLight = "white";
+    private static String textDark = "black";
+
+    private String recipeBGColor { get; set; }// = bgHighlight;
+    private String recipeTextColor { get; set; }// = textLight;
+
+    private String ingredientBGColor { get; set; }// = bgNormal;
+    private String ingredientTextColor { get; set; }// = textDark;
+
+    protected override void OnInitialized()
+    {
+        updateButtonStyling();
+    }
+
+    private void onSearchRecipes()
+    {
+        SearchMode.state = SearchModeEnum.ByRecipe;
+        updateButtonStyling();
+    }
+    private void onSearchIngredients()
+    {
+        SearchMode.state = SearchModeEnum.ByIngredient;
+        updateButtonStyling();
+    }
+
+    public void updateButtonStyling()
+    {
+        if (SearchMode.state == SearchModeEnum.ByRecipe)
+        {
+            recipeBGColor = bgHighlight;
+            ingredientBGColor = bgNormal;
+
+            recipeTextColor = textLight;
+            ingredientTextColor = textDark;
+        }
+        else
+        {
+            recipeBGColor = bgNormal;
+            ingredientBGColor = bgHighlight;
+
+            recipeTextColor = textDark;
+            ingredientTextColor = textLight;
+        }
+    }
+}

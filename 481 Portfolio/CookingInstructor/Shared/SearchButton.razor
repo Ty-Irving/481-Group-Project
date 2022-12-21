@@ -1,0 +1,97 @@
+@inject YourIngredients YourIngredients
+@inject FilterData FilterData
+@inject NavigationManager NavigationManager
+@inject IJSRuntime jsRuntime
+
+<button 
+    class="btn my-2 my-sm-0 bg searchBtn" 
+    style="color: black; border: 1px solid gray;"
+    type="submit" 
+    onclick=@NavigateToURL>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round"
+         class="mx-3">
+        <circle cx="10.5" cy="10.5" r="8"></circle>
+        <line x1="21" y1="25" x2="15.8" y2="18.8"></line>
+    </svg>
+</button>
+<style>
+    .searchBtn:focus {
+        background-color: orange;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string? CurrentValue { get; set; }
+    [Parameter]
+    public SearchModeEnum searchMode { get; set; }
+    [Parameter]
+    public String URL {get;set;} = "";
+
+    public static event EventHandler<RecipeIDEventArgs>? OnSearch;
+
+    private SearchService searchService;
+
+    protected override void OnInitialized()
+    {
+        searchService = new SearchService(FilterData);
+    }
+
+    private void NavigateToURL()
+    {
+        List<int> recipeIDs = new List<int>();
+        if (searchMode == SearchModeEnum.ByRecipe &&
+            CurrentValue != null && CurrentValue.Length > 0)
+        {
+            recipeIDs = searchService.GetRecipeResults(CurrentValue);
+        }
+        else if (searchMode == SearchModeEnum.ByRecipe &&
+                hasActiveFilter())
+        {
+            recipeIDs = searchService.Filter(searchService.AllRecipeIDs());
+        }
+        else if (searchMode == SearchModeEnum.ByIngredient &&
+                YourIngredients.list.Count > 0)
+        { 
+            recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
+        }
+        else
+        {
+            return;
+        }
+
+        NotifyStateChanged(recipeIDs);
+        NavigationManager.NavigateTo(constructURL(recipeIDs));
+    }
+    private bool hasActiveFilter()
+    {
+        bool hasFilters = FilterData.Times.Options.Count > 0 ||
+                          FilterData.Difficulties.Options.Count > 0 ||
+                          FilterData.Restrictions.Options.Count > 0;
+        return hasFilters;
+    }
+    public void NotifyStateChanged(List<int> recipeIDs)
+    {
+        OnSearch?.Invoke(this, new RecipeIDEventArgs(recipeIDs));
+    }
+
+    private string constructURL(List<int> recipeIDs)
+    {
+        string url = URL + "?ids=";
+        foreach (var id in recipeIDs)
+        {
+            if (id == recipeIDs[0])
+            {
+                url += id;
+            }
+            else
+            {
+                url += "," + id;
+            }
+        }
+        Console.WriteLine(url);
+        return url;
+    }
+}

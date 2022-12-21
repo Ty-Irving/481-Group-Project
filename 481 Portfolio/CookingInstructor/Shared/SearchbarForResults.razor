@@ -1,0 +1,112 @@
+@inject YourIngredients YourIngredients
+@inject NavigationManager NavigationManager
+@inject FilterData FilterData
+
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <Backbutton />
+    <input class="form-control bg" style="border: black 1px solid" list="datalistOptions" id="exampleDataList" onkeypress=@Enter placeholder="@formatPlaceholder()" @bind="@CurrentValue" @oninput="@((e) => { CurrentValue=(string)e.Value;})" >
+    <Autocomplete 
+        searchMode="@searchMode"
+        searchValue = "@CurrentValue"
+    />
+
+    @if (searchMode == SearchModeEnum.ByRecipe) {
+        <SearchFilter />
+    }
+    else {
+        <SearchAddIngr 
+            IngredientName="@CurrentValue"
+            OnAddIngredient="ClearSearchbar" />
+    }
+    
+    <SearchButton
+        CurrentValue ="@CurrentValue" 
+        searchMode="@searchMode"
+        URL="@URL"/>
+</div>
+    
+
+@code {
+    private string ? CurrentValue { get; set; } = "";
+
+    [Parameter]
+    public String URL {get;set;} = "";
+    
+    private SearchModeEnum searchMode { get; set; } = SearchModeEnum.ByRecipe;
+
+    private SearchService searchService;
+
+    protected override void OnInitialized()
+    {
+        searchService = new SearchService(FilterData);
+    }
+
+    public void ClearSearchbar()
+    {
+        CurrentValue = "";
+    }
+
+    public String formatPlaceholder()
+    {   
+        if (searchMode == SearchModeEnum.ByRecipe)
+        {
+            return "Type a recipe... ";
+        }
+        return "Type an ingredient... ";
+    }
+
+    private void Enter(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            List<int> recipeIDs = new List<int>();
+            if (searchMode == SearchModeEnum.ByRecipe &&
+            CurrentValue != null && CurrentValue.Length > 0)
+            {
+                recipeIDs = searchService.GetRecipeResults(CurrentValue);
+            }
+            else if (searchMode == SearchModeEnum.ByRecipe &&
+                hasActiveFilter())
+            {
+                recipeIDs = searchService.Filter(searchService.AllRecipeIDs());
+            }
+            else if (searchMode == SearchModeEnum.ByIngredient &&
+                YourIngredients.list.Count > 0 && CurrentValue.Length == 0)
+            { 
+                recipeIDs = searchService.GetRecipeResults(YourIngredients.list);
+            }
+            else
+            {
+                return;
+            }
+
+            NavigationManager.NavigateTo(constructURL(recipeIDs));
+        }
+    }
+
+    private bool hasActiveFilter()
+    {
+        bool hasFilters = FilterData.Times.Options.Count > 0 ||
+                          FilterData.Difficulties.Options.Count > 0 ||
+                          FilterData.Restrictions.Options.Count > 0;
+        return hasFilters;
+    }
+
+    private string constructURL(List<int> recipeIDs)
+    {
+        string url = "/SearchPage?ids=";
+        foreach (var id in recipeIDs)
+        {
+            if (id == recipeIDs[0])
+            {
+                url += id;
+            }
+            else
+            {
+                url += "," + id;
+            }
+        }
+        Console.WriteLine(url);
+        return url;
+    }
+}

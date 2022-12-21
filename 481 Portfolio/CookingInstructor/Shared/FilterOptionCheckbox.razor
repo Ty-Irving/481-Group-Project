@@ -1,0 +1,49 @@
+@* Ideally I wouldn't inject this here and break data flow, but this is pastaland babyyy *@
+@inject FilterData FilterData
+
+<div class="mx-1" style="display:inline">
+    <input 
+        type="checkbox"
+        class="largerCheckbox"
+        @onclick="HandleClick"
+        @bind="@state"> 
+    <label class="checkboxOffset">
+        @item
+    </label>
+</div>
+
+<style>
+    input.largerCheckbox {
+        width:20px;
+        height:20px;
+        margin-bottom: 20px;
+    }
+	label.checkboxOffset {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -2px;
+        accent-color: #ef5c5c;
+     }
+</style>
+
+@code {
+    [Parameter] 
+    public String item { get; set; } = "";
+    [Parameter]
+    public EventCallback<CheckboxData> OnClickCheckbox { get; set; }
+
+    private bool state { get; set; }
+
+    protected override void OnInitialized()
+    {
+       state = FilterData.Times.Options.Contains(item) ||
+               FilterData.Difficulties.Options.Contains(item) ||
+               FilterData.Restrictions.Options.Contains(item);
+    }
+
+    private async Task HandleClick()
+    {
+        state = ! state;
+        await OnClickCheckbox.InvokeAsync(new CheckboxData(item, state));
+    }
+}

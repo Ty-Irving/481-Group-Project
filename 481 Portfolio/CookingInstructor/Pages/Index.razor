@@ -1,9 +1,64 @@
 ﻿@page "/"
+@layout IndexLayout
+@inject SearchMode SearchMode
+
+<style>
+    body{
+    background-image: url("/App/cooking_bg.jpg");
+    }
+</style>
 
 <PageTitle>Index</PageTitle>
+<div class="px-4 py-5 my-5 text-center" >
+    <div class="bg" style="border-radius:5%;">
+        <h1 class="text-center hungry">Feeling Hungry?</h1>
+    
+        <div class="d-grid gap-3">
+            <SearchModeButtons />
 
-<h1>Hello, world!</h1>
+            <Searchbar 
+                searchMode="@SearchMode.state"
+            />
+        </div>
 
-Welcome to your new app.
+        @if (SearchMode.state == SearchModeEnum.ByIngredient) {
+            <SearchIngredientsDisplay />
+        }
+    </div>
+</div>
+<style>
+    .hungry {
+        background-color: white;
+        border: black; 
+        border-width: 1px; 
+        border-radius: 16px; 
+        border-style: solid;
+    }
+</style>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    public static CookingInstructor.RecipeNS.Recipe[]? staticlist = new CookingInstructor.Data.Recipes().GetRecipes();
+
+    protected override void OnInitialized()
+    {
+        SearchMode.OnChange += UpdateState;
+    }
+
+    public void Dispose()
+    {
+        SearchMode.OnChange -= UpdateState;
+    }
+
+    private async void UpdateState(object sender, EventArgs e)
+    {
+        // InvokeAsync is inherited, it syncs the call back to the render thread
+        await InvokeAsync(() => 
+        {
+            StateHasChanged();
+        });
+    }
+}
+
+
+

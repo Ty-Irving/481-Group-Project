@@ -1,0 +1,125 @@
+@page "/Discover/Cuisineresults"
+@using Microsoft.AspNetCore.WebUtilities
+@inject NavigationManager NavManager
+@inject FilterData FilterData
+
+<PageTitle>Results</PageTitle>
+
+<SearchbarForResults 
+    URL="/Discover/Cuisineresults"
+/>
+<div class = "recipeContainer" style="margin-bottom: 100px;">
+    @if(list == null){
+        <h1>Error loading recipes...</h1>
+    }
+    else if(_cuisine == "All")
+    {
+        @foreach(var i in _IDs)
+        {
+            display = true;
+            <RecipeImageHorizontal
+                Image ="@list[i].imagePath"
+                Difficulty = "@list[i].Difficulty"
+                SpicyLevel = "@list[i].Spicy"
+                Calories = "@list[i].CaloriesPerServing"
+                Name = "@list[i].Name"
+                Time = "@list[i].Time"
+                Index ="@i"
+            />
+        }
+    }
+    else{
+        @foreach(var id in _IDs)
+        {
+            if (_cuisine.Contains(@list[id].Category))
+            {
+                display = true;
+                <RecipeImageHorizontal
+                    Image = "@list[id].imagePath"
+                    Difficulty = "@list[id].Difficulty"
+                    SpicyLevel = "@list[id].Spicy"
+                    Calories = "@list[id].CaloriesPerServing"
+                    Name = "@list[id].Name"
+                    Time = "@list[id].Time"
+                    Index ="@id"
+                />
+            }
+        }
+    }
+
+    @if(display == false){
+        <h1>No results found...</h1>
+    }
+</div>
+
+<style>
+    .cuisineResultsBackButton {
+        display: flex;
+        height: 20px;
+        justify-content: left;
+        margin-bottom: 5px;
+        /* background-color: lightblue; */
+    }
+</style>
+
+
+@code{
+    private string? _cuisine;
+    private CookingInstructor.RecipeNS.Recipe[]? list = Index.staticlist;
+    private bool display = false;
+
+    private List<int>? _IDs = new List<int>();
+
+    private SearchService searchService;
+    protected override void OnInitialized()
+    {
+        NavManager.LocationChanged += onURLChange;
+        searchService = new SearchService(FilterData);
+
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+        if(queryStrings.TryGetValue("cuisine", out var cuisine))
+        {
+            _cuisine = cuisine;
+            _IDs = searchService.GetCuisineResults(_cuisine);
+        }
+    }
+
+    public void Dispose()
+    {
+        NavManager.LocationChanged -= onURLChange;
+    }
+
+    public void onURLChange(object sender, LocationChangedEventArgs e)
+    {
+        display = false;
+        HandleURLChange();
+        StateHasChanged();
+    }
+
+    public void HandleURLChange()
+    {
+        var uri = NavManager.ToAbsoluteUri(NavManager.Uri);
+        var queryStrings = QueryHelpers.ParseQuery(uri.Query);
+        if (queryStrings.TryGetValue("ids", out var ids))
+        {
+            string[] StringIDs = ids.ToString().Split(',');
+            
+            _IDs = new List<int>(StringIDs.Length);
+            foreach(var sID in StringIDs)
+            {
+                if(sID.Length != 0)
+                {
+                    try
+                    {
+                        _IDs.Add(Int32.Parse(sID));
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+            }
+        }
+    }
+}

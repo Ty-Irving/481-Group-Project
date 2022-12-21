@@ -1,0 +1,110 @@
+@page "/Discover"
+@inject FilterData FilterData
+
+<PageTitle>Discover</PageTitle>
+
+<body>
+    <div class = "Categories" style="margin-bottom: 100px;">
+        @for (int i = 0; i < CuisineList.Length; i++)
+        {
+            <CuisineImage
+                Name = "@CuisineList[i].Name"
+                Image = "@CuisineList[i].Image"
+                Link = "@CuisineList[i].Link"
+                NumberRecipes="@CuisineList[i].NumberRecipes"
+            />
+
+        }
+    </div>
+</body>
+
+@code{
+    class Cuisine{
+        public String Name { get; set;} = "";
+        public int NumberRecipes { get; set;}
+        public String? Image { get; set; }
+        public String? Link { get; set;}
+    }
+
+    //private SearchService searchService;
+
+    @* protected override void OnInitialized()
+    {
+        searchService = new SearchService(FilterData);
+        ConstructLinks();
+    } *@
+
+    Cuisine[] CuisineList = new Cuisine[] {
+        new Cuisine {
+            Name="All",                    
+            Image ="https://cf.ltkcdn.net/cooking/images/orig/214593-1732x1732-Cuisine-of-different-countries.jpg", 
+            Link="/discover/cuisineresults?cuisine=All", 
+            NumberRecipes=82},
+        new Cuisine{
+            Name="Chinese Recipes",        
+            Image ="https://cdn.yoyochinese.com/attachment/upload/blog/image/1509749199730.jpg", 
+            Link="/discover/cuisineresults?cuisine=Chinese", 
+            NumberRecipes=7},
+        new Cuisine{
+            Name="Japanese Recipes",       
+            Image ="https://blog.japanwondertravel.com/wp-content/uploads/2021/08/5009898_s.jpg", 
+            Link="/discover/cuisineresults?cuisine=Japanese", 
+            NumberRecipes=6},
+        new Cuisine{
+            Name="Korean Recipes",         
+            Image ="https://static.toiimg.com/thumb/82085026.cms?resizemode=4&width=1200", 
+            Link="/discover/cuisineresults?cuisine=Korean", 
+            NumberRecipes=9},
+        new Cuisine{
+            Name="European Recipes",       
+            Image ="https://insanelygoodrecipes.com/wp-content/uploads/2020/12/Homemade-Anglesey-Eggs.png", 
+            Link="/discover/cuisineresults?cuisine=European", 
+            NumberRecipes=15},
+        new Cuisine{
+            Name="Middle Eastern Recipes", 
+            Image ="https://cms-b-assets.familysearch.org/dims4/default/2cd45e9/2147483647/strip/true/crop/800x500+0+0/resize/800x500!/format/jpg/quality/90/?url=http%3A%2F%2Ffh.familysearch.org%2Fsystem%2Ffiles%2Fteam%2Fait%2Fimages%2Fblog%2Ffood-of-the-middle-east.jpg", 
+            Link="/discover/cuisineresults?cuisine=MiddleEast", 
+            NumberRecipes=3},
+        new Cuisine{
+            Name="Latin American Recipes", 
+            Image ="https://www.cheapoair.com/miles-away/wp-content/uploads/2017/10/feature-latin-food-750x400.jpg", 
+            Link="/discover/cuisineresults?cuisine=Latin",
+            NumberRecipes=9},
+        new Cuisine{
+            Name="Canadian Recipes",       
+            Image ="https://img1.10bestmedia.com/Images/Photos/384376/GettyImages-1170406126_54_990x660.jpg", 
+            Link="/discover/cuisineresults?cuisine=Canadian", 
+            NumberRecipes=3},
+        new Cuisine{
+            Name="U.S Recipes",            
+            Image ="https://media.istockphoto.com/id/531564300/photo/homemade-memorial-day-hamburger-picnic.jpg?s=612x612&w=0&k=20&c=GnsgW8Yy3Sw2jNBLhSV5tWxNZIw-mCeK4J-ZcDoS-cs=",
+            Link="/discover/cuisineresults?cuisine=US",
+            NumberRecipes=4},
+        new Cuisine{
+            Name="Mediterranean Recipes",  
+            Image ="https://i.insider.com/5b33c37a1ae6621d008b499c?width=1136&format=jpeg", 
+            Link="/discover/cuisineresults?cuisine=Mediterranian",
+            NumberRecipes=6},
+        new Cuisine{
+            Name="Thai Recipes",           
+            Image ="https://a.cdn-hotels.com/gdcs/production109/d913/52127df7-ccff-4762-8255-01b3ba749fca.jpg", 
+            Link="/discover/cuisineresults?cuisine=Thai", 
+            NumberRecipes=4},
+        new Cuisine{
+            Name="French Recipes",         
+            Image ="https://www.expatica.com/app/uploads/sites/5/2014/05/french-food-1920x1080.jpg", 
+            Link="/discover/cuisineresults?cuisine=French", 
+            NumberRecipes=10}
+        };
+
+    @* private void ConstructLinks()
+    {
+        foreach(var cuisine in CuisineList)
+        {
+            List<int> recipeIDs = searchService.GetCuisineResults(cuisine.Name);
+            cuisine.Link = searchService.constructURL(recipeIDs);
+        }
+    } *@
+}
+
+

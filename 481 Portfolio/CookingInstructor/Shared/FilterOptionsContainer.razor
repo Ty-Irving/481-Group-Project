@@ -1,0 +1,51 @@
+<h4><u>@label</u></h4>
+<div> @* style="padding-left:0px" *@
+    @if (displayNumbers)
+    {
+        var indexLastItem = filterType.TotalOptions().Count - 1;
+        @for (int i = 0; i < indexLastItem; ++i) {
+            <FilterNumberOptionCheckbox 
+                item="@filterType.TotalOptions()[i]"
+                isLast="@false"
+                OnClickCheckbox="HandleClick"
+            />
+        }
+        <FilterNumberOptionCheckbox 
+            item="@filterType.TotalOptions()[indexLastItem]"
+            isLast="@true"
+            OnClickCheckbox="HandleClick"
+        />
+    }
+    else
+    {
+        @foreach (var option in filterType.TotalOptions()) {
+            <FilterOptionCheckbox 
+                item="@option"
+                OnClickCheckbox="HandleClick"
+            />
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public String label { get; set; } = "";
+
+    [Parameter]
+    public FilterDataStore filterType { get; set; } = new FilterDataStore(new List<String>() {});
+
+    [Parameter]
+    public bool displayNumbers { get; set; } = false;
+
+    public void HandleClick(CheckboxData checkbox)
+    {
+        if (checkbox.isClicked)
+        {
+            filterType.Add(checkbox.item);
+        }
+        else // isClicked == false
+        {
+            filterType.Remove(checkbox.item);
+        }
+    }
+}
