@@ -7,6 +7,11 @@
 - Zhongmin Ma @lexahoa - 30105936
 
 
+
+https://user-images.githubusercontent.com/74677790/208823993-6df85a99-4940-4f75-899b-fbe113670605.mp4
+
+
+
 # Voracious Chefs
 The Voracious Chefs Cooking Instructor App provides the ability for beginner and experienced cooks to look up and follow their desired recipes. People have many ways of finding recipes and learning to cook. Physical cookbooks are tedious, time-consuming, and spacious to put on a cooking counter. Regular cooking sites and blogs are riddled with confusing walls of text and multiple recipes for the same dish with varying difficulty and ingredients. Not just that, but it is also full of pop-up ads. With our Digital Cookbook Instructor, users can access all their favorite recipes on their mobile devices because this will help negate having to attain physical texts that include difficult-to-navigate processes, as well as reduce the overall difficulty of having the dish they want.
 
