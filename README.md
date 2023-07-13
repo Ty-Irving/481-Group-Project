@@ -6,6 +6,13 @@
 - Takahiro Fujita @TakahiroFujitaSJB - 30069999
 - Zhongmin Ma @lexahoa - 30105936
 
+# Sample Screenshots and Demo
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/7e1697b9-4997-4c19-871f-bd0c92f1fe0a)
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/70c6ed78-c9c7-4849-94c3-1e2cca57284d)
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/67e936f7-5348-44ff-a2ab-a95053786a53)
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/f6ab347f-999c-4a4d-9228-9f2ae5cb8b54)
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/9eda8523-3792-4ff8-b5af-3dc99a003f57)
+![image](https://github.com/Ty-Irving/481-Group-Project/assets/72108920/43855d2f-a9b6-40be-8b58-7d6720de9e6a)
 
 
 https://user-images.githubusercontent.com/74677790/208823993-6df85a99-4940-4f75-899b-fbe113670605.mp4
